@@ -12,13 +12,19 @@ new Chart(document.getElementById('brand_followers'),{type:'line',data:{labels:[
 new Chart(document.getElementById('brand_impressions'),{type:'bar',data:{labels:['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Impressions',data:[85000,120000,145000,180000,210000,255000,290000,320000,370000,425000],backgroundColor:'rgba(255,107,157,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
 new Chart(document.getElementById('brand_search'),{type:'line',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10'],datasets:[{label:'Brand Search Index',data:[20,23,28,35,45,58,72,85,90,96],borderColor:'#4F8EFF',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#4F8EFF',fill:true},{label:'Baseline',data:[20,20,20,20,20,20,20,20,20,20],borderColor:'rgba(255,255,255,.2)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v}},x:{grid:{display:false}}}}});
 
+
+// Education leads chart
+new Chart(document.getElementById('edu_leads_chart'),{type:'bar',data:{labels:['Overseas Education','Jain University','JECRC University'],datasets:[{label:'Meta Ads',data:[10000,8000,12000],backgroundColor:'rgba(255,107,157,.75)',borderRadius:5,borderSkipped:false},{label:'Google Ads',data:[3000,2000,3000],backgroundColor:'rgba(79,142,255,.75)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:9,padding:8,font:{size:10}}}},scales:{x:{stacked:false,grid:{display:false}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}});
+// Education bar animation
+new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.edu-bar').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}},{threshold:.3}).observe(document.getElementById('edu_leads_chart'));
+
 // Case Study Charts
 // CS1: Lead volume
 new Chart(document.getElementById('cs1_leads'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.75)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'}},x:{grid:{display:false}}}}});
 // CS1: Channel pie
 new Chart(document.getElementById('cs1_channels'),{type:'doughnut',data:{labels:['LinkedIn Ads','Google Ads','Meta Ads','Email'],datasets:[{data:[38,28,22,12],backgroundColor:['#4F8EFF','#00E5B0','#FF6B9D','#FFB830'],borderWidth:0,hoverOffset:4}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'right',labels:{boxWidth:9,padding:8,font:{size:10}}}}}});
 // CS2: CPL
-new Chart(document.getElementById('cs2_cpl'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,103,104],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline ($148)',data:[148,148,148,148,148,148,148,148,148,148],borderColor:'rgba(255,107,157,.35)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('cs2_cpl'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Oct'],datasets:[{label:'CPL ($)',data:[52,49,45,40,34,26,18,12,8,7],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline ($52)',data:[52,52,52,52,52,52,52,52,52,52],borderColor:'rgba(255,107,157,.35)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
 // CS2: SEO
 new Chart(document.getElementById('cs2_seo'),{type:'bar',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8'],datasets:[{label:'After SEO',data:[8200,10200,11500,13100,14800,16200,18100,21800],backgroundColor:'rgba(79,142,255,.75)',borderRadius:4,borderSkipped:false},{label:'Baseline',data:[8200,8400,8600,8800,9000,9100,9200,9300],backgroundColor:'rgba(255,255,255,.08)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
 // CS3: CTR growth
@@ -426,7 +432,7 @@ footer p{font-size:.72rem;color:var(--dim);}
     <div>
       <div class="htag"><span class="htd"></span>Open to senior opportunities · B2B SaaS Growth</div>
       <h1>I build<br>marketing<br>engines that<br><span class="g">fill pipelines.</span></h1>
-      <p class="hp">6+ years of performance marketing, demand generation and full-funnel growth — turning ad budgets into qualified leads, SQLs and $100M+ in influenced pipeline for B2B SaaS companies.</p>
+      <p class="hp">6+ years of performance marketing, demand generation and full-funnel growth — turning ad budgets into qualified leads, SQLs and $500M+ in influenced pipeline for B2B SaaS companies.</p>
       <div class="hb"><a href="#campaigns" class="b1">See my work ↓</a><a href="#contact" class="b2">Let's connect</a></div>
     </div>
     <div class="pc r">
@@ -435,11 +441,11 @@ footer p{font-size:.72rem;color:var(--dim);}
       <div class="pr">Performance &amp; Growth Marketing Lead</div>
       <div class="ps">
         <div class="pst"><span class="pk">Experience</span><span class="pv">6+ Years</span></div>
-        <div class="pst"><span class="pk">Pipeline Generated</span><span class="pv g">$100M+</span></div>
-        <div class="pst"><span class="pk">Leads Per Campaign</span><span class="pv g">4,000+</span></div>
+        <div class="pst"><span class="pk">Pipeline Influenced</span><span class="pv g">$500M+ B2B</span></div>
+        <div class="pst"><span class="pk">Total Leads Generated</span><span class="pv g">42,000+</span></div>
         <div class="pst"><span class="pk">Webinar CVR</span><span class="pv g">45%+</span></div>
-        <div class="pst"><span class="pk">CPL Reduction</span><span class="pv g">−30%</span></div>
-        <div class="pst"><span class="pk">Markets</span><span class="pv">India · US Enterprise</span></div>
+        <div class="pst"><span class="pk">CPL Reduction</span><span class="pv g">−87%</span></div>
+        <div class="pst"><span class="pk">B2B Leads</span><span class="pv g">4,200+</span></div><div class="pst"><span class="pk">Education Leads</span><span class="pv g">38,000+</span></div><div class="pst"><span class="pk">Markets</span><span class="pv">Global</span></div><div class="pst"><span class="pk">Key Regions</span><span class="pv">India · US · UK · EMEA</span></div>
       </div>
       <div class="ptg"><span class="pt">B2B SaaS</span><span class="pt">Paid Media</span><span class="pt">Demand Gen</span><span class="pt">CRO</span><span class="pt">HubSpot</span></div>
     </div>
@@ -479,7 +485,7 @@ footer p{font-size:.72rem;color:var(--dim);}
             <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.12);color:var(--a2)">3</div><div><div class="gft">Registration</div><div class="gfs">Webinar sign-ups · 62% form CVR</div></div><div class="gfm" style="color:#ccc">4,240</div></div>
             <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a2)">4</div><div><div class="gft">Attendance</div><div class="gfs">Live attendees · 45% show-up rate</div></div><div class="gfm" style="color:#ccc">1,908</div></div>
             <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.12);color:var(--a4)">5</div><div><div class="gft">MQL</div><div class="gfs">Lead scored → sales handoff</div></div><div class="gfm" style="color:#ddd">382</div></div>
-            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a3)">6</div><div><div class="gft">Revenue</div><div class="gfs">Pipeline influenced by marketing</div></div><div class="gfm" style="color:#999">$100M+</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a3)">6</div><div><div class="gft">Revenue</div><div class="gfs">Pipeline influenced by marketing</div></div><div class="gfm" style="color:#999">$500M+</div></div>
           </div>
         </div>
         <div class="gri">
@@ -502,10 +508,10 @@ footer p{font-size:.72rem;color:var(--dim);}
   <div class="w">
     <div class="ey bl">Numbers</div>
     <h2 class="sh">Career Performance Dashboard</h2>
-    <p class="sd">Real metrics across 6+ years of B2B campaigns, funnels, and growth projects.</p>
+    <p class="sd">Real metrics across 6+ years of B2B &amp; education campaigns, funnels, and growth projects.</p>
     <div class="md r">
       <div class="mc"><div class="mci">💰</div><div class="mv">$<span id="m1">0</span><span class="u">M+</span></div><div class="ml2">Pipeline Influenced</div><div class="mt tg">↑ Quadrant Technologies</div></div>
-      <div class="mc"><div class="mci">🎯</div><div class="mv"><span id="m2">0</span><span class="u">K+</span></div><div class="ml2">Leads Generated</div><div class="mt tb">↑ Multi-channel events</div></div>
+      <div class="mc"><div class="mci">🎯</div><div class="mv"><span id="m2">0</span><span class="u">K+</span></div><div class="ml2">Total Leads Generated</div><div class="mt tb">↑ B2B + Education campaigns</div></div>
       <div class="mc"><div class="mci">📈</div><div class="mv"><span id="m3">0</span><span class="u">%+</span></div><div class="ml2">Webinar Conv. Rate</div><div class="mt tg">↑ 2× industry avg</div></div>
       <div class="mc"><div class="mci">⚡</div><div class="mv"><span id="m4">0</span><span class="u">%</span></div><div class="ml2">CPL Reduction</div><div class="mt ta">↑ ISDC Global</div></div>
     </div>
@@ -513,7 +519,37 @@ footer p{font-size:.72rem;color:var(--dim);}
       <div class="mrc"><div class="mrv" style="color:#ccc">+22%</div><div class="mrl">Landing Page CVR</div><div class="mrs">A/B testing 6 variants</div></div>
       <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#fff">+40%</div><div class="mrl">Organic Traffic</div><div class="mrs">8 months · SEO strategy</div></div>
       <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#ddd">+25%</div><div class="mrl">Email Open Rate</div><div class="mrs">HubSpot automation</div></div>
-      <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#999">−20%</div><div class="mrl">Wasted Ad Spend</div><div class="mrs">Weekly optimisation</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#999">&#8722;20%</div><div class="mrl">Wasted Ad Spend</div><div class="mrs">Weekly optimisation</div></div>
+    </div>
+
+    <!-- EDUCATION IMPACT BAND -->
+    <div class="r r3" style="margin-top:1.2rem;background:linear-gradient(135deg,rgba(79,142,255,.07),rgba(0,229,176,.05));border:1px solid rgba(79,142,255,.18);border-radius:14px;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;">
+      <div>
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a1);margin-bottom:.3rem;">&#127979; Education &amp; University Campaigns &middot; ISDC Global</div>
+        <div style="font-size:.8rem;color:var(--sub);font-weight:300;">Overseas Education &middot; Jain University &middot; JECRC University &mdash; Meta &amp; Google Ads</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(255,255,255,.08);border-radius:10px;overflow:hidden;">
+        <div style="background:var(--bg3);padding:.7rem 1.2rem;text-align:center;min-width:100px;">
+          <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:var(--text);">38K<span style="font-size:.85rem;color:var(--a2);">+</span></div>
+          <div style="font-size:.62rem;color:var(--sub);margin-top:.1rem;">Total Leads</div>
+        </div>
+        <div style="background:var(--bg3);padding:.7rem 1.2rem;text-align:center;min-width:100px;">
+          <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:var(--a3);">30K<span style="font-size:.85rem;">+</span></div>
+          <div style="font-size:.62rem;color:var(--sub);margin-top:.1rem;">Meta Ads</div>
+        </div>
+        <div style="background:var(--bg3);padding:.7rem 1.2rem;text-align:center;min-width:100px;">
+          <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:var(--a1);">8K<span style="font-size:.85rem;">+</span></div>
+          <div style="font-size:.62rem;color:var(--sub);margin-top:.1rem;">Google Ads</div>
+        </div>
+        <div style="background:var(--bg3);padding:.7rem 1.2rem;text-align:center;min-width:100px;">
+          <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:var(--a4);">3</div>
+          <div style="font-size:.62rem;color:var(--sub);margin-top:.1rem;">Clients</div>
+        </div>
+        <div style="background:var(--bg3);padding:.7rem 1.2rem;text-align:center;min-width:100px;">
+          <div style="font-size:1.4rem;font-weight:900;letter-spacing:-.03em;color:var(--a2);">10<span style="font-size:.85rem;"> mo</span></div>
+          <div style="font-size:.62rem;color:var(--sub);margin-top:.1rem;">Duration</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -535,7 +571,7 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="cco">📍 Quadrant Technologies · Oct 2024 – Present</div>
         </div>
         <div class="ckpis">
-          <div class="kpi"><div class="kpiv" style="color:#ddd">$100M+</div><div class="kpil">Pipeline<br>Influenced</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ddd">$500M+</div><div class="kpil">Pipeline<br>Influenced</div></div>
           <div class="kpi"><div class="kpiv" style="color:#ccc">4,200+</div><div class="kpil">Leads<br>Generated</div></div>
           <div class="kpi"><div class="kpiv" style="color:#fff">45%+</div><div class="kpil">Webinar<br>CVR</div></div>
           <div class="kpi"><div class="kpiv" style="color:#ccc">+22%</div><div class="kpil">LP CVR<br>Lift</div></div>
@@ -551,7 +587,7 @@ footer p{font-size:.72rem;color:var(--dim);}
               <div class="gads">
                 <div class="gads-nav"><span class="gads-logo">Google Ads</span><span class="gads-camp">Azure Event Campaign · Active</span><span class="gads-camp" style="background:#eeeeee;color:#444444">▲ 38% below target CPL</span></div>
                 <div class="gads-stat-row">
-                  <div class="gads-stat"><div class="v">$18.40</div><div class="l">Cost per lead</div></div>
+                  <div class="gads-stat"><div class="v">$7.20</div><div class="l">Cost per lead</div></div>
                   <div class="gads-stat"><div class="v" style="color:#333333">4,21</div><div class="l">Conversions</div></div>
                   <div class="gads-stat"><div class="v">4.18%</div><div class="l">Conv. rate</div></div>
                   <div class="gads-stat"><div class="v" style="color:#444444">3.2×</div><div class="l">ROAS</div></div>
@@ -559,9 +595,9 @@ footer p{font-size:.72rem;color:var(--dim);}
                 <table class="gads-table">
                   <thead><tr><th>Campaign</th><th>Status</th><th>Clicks</th><th>CTR</th><th>Conv.</th><th>CPL</th></tr></thead>
                   <tbody>
-                    <tr><td>Azure FabCon – Search</td><td class="gads-green">● Eligible</td><td>3,841</td><td class="gads-blue">4.6%</td><td>312</td><td class="gads-green">$14.20</td></tr>
-                    <tr><td>Azure Events – PMax</td><td class="gads-green">● Eligible</td><td>2,190</td><td>3.8%</td><td>248</td><td class="gads-green">$22.50</td></tr>
-                    <tr><td>Webinar Retargeting – Display</td><td class="gads-green">● Eligible</td><td>890</td><td>0.8%</td><td>94</td><td class="gads-green">$10.80</td></tr>
+                    <tr><td>Azure FabCon – Search</td><td class="gads-green">● Eligible</td><td>3,841</td><td class="gads-blue">4.6%</td><td>312</td><td class="gads-green">$6.80</td></tr>
+                    <tr><td>Azure Events – PMax</td><td class="gads-green">● Eligible</td><td>2,190</td><td>3.8%</td><td>248</td><td class="gads-green">$8.40</td></tr>
+                    <tr><td>Webinar Retargeting – Display</td><td class="gads-green">● Eligible</td><td>890</td><td>0.8%</td><td>94</td><td class="gads-green">$5.20</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -582,7 +618,7 @@ footer p{font-size:.72rem;color:var(--dim);}
       <!-- FUNNEL -->
       <div class="fn-box r">
         <h3>Webinar Funnel — Full Conversion Architecture</h3>
-        <div class="fn-fsub">Single campaign · Quadrant Technologies · 2024 · End-to-end from impression to $100M+ pipeline</div>
+        <div class="fn-fsub">Single campaign · Quadrant Technologies · 2024 · End-to-end from impression to $500M+ pipeline</div>
         <div class="fn-stages" id="fnS">
           <div class="fn-row"><div class="fn-lbl">Ad Impressions</div><div class="fn-track"><div class="fn-fill" data-w="100" style="background:linear-gradient(90deg,#4F8EFF,#00E5B0)"><span>285,000 impressions · 4 channels</span></div></div><div class="fn-cnt" style="color:#fff">285K</div><div class="fn-rate" style="background:rgba(79,142,255,.12);color:var(--a1)">—</div></div>
           <div class="fn-arr">↓ 2.4% avg CTR across channels</div>
@@ -804,7 +840,7 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="lk" style="border-radius:8px;overflow:hidden;border:1px solid rgba(79,142,255,.15);">
             <div class="lk-nav"><span class="lk-logo">📊 Looker Studio</span><span class="lk-title">Quadrant · Campaign Performance · Live</span></div>
             <div class="lk-content">
-              <div class="lk-card"><div class="lk-cv">$18.40</div><div class="lk-cl">Avg CPL (All Channels)</div><div class="lk-cg">↓ 38% vs target</div></div>
+              <div class="lk-card"><div class="lk-cv">$7.20</div><div class="lk-cl">Avg CPL (All Channels)</div><div class="lk-cg">↓ 38% vs target</div></div>
               <div class="lk-card"><div class="lk-cv">4,241</div><div class="lk-cl">Total Leads (MTD)</div><div class="lk-cg">↑ 24% vs last month</div></div>
               <div class="lk-card"><div class="lk-cv">45.2%</div><div class="lk-cl">Webinar CVR</div><div class="lk-cg">↑ 2× benchmark</div></div>
               <div class="lk-card"><div class="lk-cv">3.2×</div><div class="lk-cl">Overall ROAS</div><div class="lk-cg">↑ Target: 2.5×</div></div>
@@ -1367,7 +1403,7 @@ footer p{font-size:.72rem;color:var(--dim);}
         </div>
       </div>
       <div class="cs-big-metrics r r2">
-        <div class="cs-bm"><div class="cs-bm-val">−30%</div><div class="cs-bm-label">CPL Reduction<br>($148 → $104)</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">−87%</div><div class="cs-bm-label">CPL Reduction<br>($52 → ~$7 avg)</div></div>
         <div class="cs-bm"><div class="cs-bm-val">+40%</div><div class="cs-bm-label">Organic Traffic<br>in 8 months</div></div>
         <div class="cs-bm"><div class="cs-bm-val">2.7×</div><div class="cs-bm-label">Form Completion<br>Rate Increase</div></div>
         <div class="cs-bm"><div class="cs-bm-val">−20%</div><div class="cs-bm-label">Wasted Ad<br>Spend Eliminated</div></div>
@@ -1378,7 +1414,7 @@ footer p{font-size:.72rem;color:var(--dim);}
       <div class="cs-coa-card">
         <div class="cs-coa-label" style="color:#FF6B9D;">🔴 The Challenge</div>
         <h4>High CPL, poor lead quality, zero organic presence</h4>
-        <p>When I joined, the average CPL was $148 — 40% above industry benchmark. Audiences were broadly targeted with no segmentation. Landing pages had 7-field forms with no message match from ads. There was no SEO strategy, no CRM workflow, and the team had no reporting structure. Budget was being spent but results were not tracked properly.</p>
+        <p>When I joined, the average CPL was $52 — above industry benchmark. Over 10 months, I drove it down to an average of $7. Audiences were broadly targeted with no segmentation. Landing pages had 7-field forms with no message match from ads. There was no SEO strategy, no CRM workflow, and the team had no reporting structure. Budget was being spent but results were not tracked properly.</p>
       </div>
       <div class="cs-coa-card">
         <div class="cs-coa-label" style="color:#FFB830;">🟡 The Strategy</div>
@@ -1388,7 +1424,7 @@ footer p{font-size:.72rem;color:var(--dim);}
       <div class="cs-coa-card">
         <div class="cs-coa-label" style="color:#00E5B0;">🟢 The Outcome</div>
         <h4>CPL dropped 30%, organic sessions up 40%, team 3× faster</h4>
-        <p>CPL fell from $148 to $104 over 10 months. Organic traffic grew 40%+ with 6 keywords reaching Page 1. HubSpot automation reduced time from MQL to sales contact from 8 days to 2.1 days. The 3-person team I managed delivered campaigns 40% faster through structured sprint planning.</p>
+        <p>CPL fell from $52 to an average of $7 over 10 months — a 87% reduction. Organic traffic grew 40%+ with 6 keywords reaching Page 1. HubSpot automation reduced time from MQL to sales contact from 8 days to 2.1 days. The 3-person team I managed delivered campaigns 40% faster through structured sprint planning.</p>
       </div>
     </div>
 
@@ -1398,7 +1434,7 @@ footer p{font-size:.72rem;color:var(--dim);}
         <div class="cs-step-dot"></div>
         <div class="cs-step-num">Month 1</div>
         <div class="cs-step-title">Full Paid Media Audit</div>
-        <div class="cs-step-desc">Audited 12 months of Google Ads and Meta Ads data. Found 35% of budget going to irrelevant search terms with zero conversion history. Paused underperforming ad sets, restructured campaigns around 3 core audience segments: Workshop Seekers, Certification Buyers, and Corporate Training Buyers. Immediate 20% reduction in wasted spend.</div>
+        <div class="cs-step-desc">Audited 12 months of Google Ads and Meta Ads data. Found 35% of budget going to irrelevant search terms with zero conversion history. Paused underperforming ad sets, restructured campaigns around 3 core audience segments: Workshop Seekers, Certification Buyers, and Corporate Training Buyers. Immediate reduction in wasted spend — beginning of a CPL journey from $52 to $7.</div>
         <div class="cs-step-pills"><span class="cs-pill">Google Ads Audit</span><span class="cs-pill">Meta Ads Audit</span><span class="cs-pill">Keyword Sculpting</span><span class="cs-pill">Audience Rebuild</span></div>
       </div>
       <div class="cs-step">
@@ -1426,7 +1462,7 @@ footer p{font-size:.72rem;color:var(--dim);}
 
     <div class="cs-results r">
       <div class="cs-results-left">
-        <div class="cs-result-row"><div class="cs-result-icon">📉</div><div class="cs-result-body"><div class="cs-result-label">CPL: $148 → $104 (over 10 months)</div><div class="cs-result-val" style="color:var(--a2);">−30% CPL</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="70" style="background:var(--a2)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">📉</div><div class="cs-result-body"><div class="cs-result-label">CPL: $52 → $7 avg (over 10 months)</div><div class="cs-result-val" style="color:var(--a2);">−87% CPL</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="70" style="background:var(--a2)"></div></div></div></div>
         <div class="cs-result-row"><div class="cs-result-icon">📊</div><div class="cs-result-body"><div class="cs-result-label">Organic sessions: 8,200 → 21,800/mo</div><div class="cs-result-val" style="color:var(--a1);">+40% Traffic</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="82" style="background:var(--a1)"></div></div></div></div>
         <div class="cs-result-row"><div class="cs-result-icon">📝</div><div class="cs-result-body"><div class="cs-result-label">Form completion: 14.3% → 38.7%</div><div class="cs-result-val" style="color:var(--a4);">2.7× increase</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="100" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
         <div class="cs-result-row"><div class="cs-result-icon">⚡</div><div class="cs-result-body"><div class="cs-result-label">MQL to sales contact: 8 days → 2.1 days</div><div class="cs-result-val" style="color:var(--a2);">74% faster</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="74" style="background:var(--a2)"></div></div></div></div>
@@ -1435,7 +1471,7 @@ footer p{font-size:.72rem;color:var(--dim);}
       </div>
       <div>
         <div class="cs-chart-card" style="margin-bottom:1rem;">
-          <div class="cs-chart-title">CPL Journey — $148 to $104 Over 10 Months</div>
+          <div class="cs-chart-title">CPL Journey — $52 to ~$7 Avg Over 10 Months</div>
           <canvas id="cs2_cpl" style="max-height:130px;"></canvas>
         </div>
         <div class="cs-chart-card">
@@ -1456,6 +1492,215 @@ footer p{font-size:.72rem;color:var(--dim);}
         <div class="cs-learning"><div class="cs-learning-emoji">💬</div><div class="cs-learning-text"><b>WhatsApp re-engagement is underrated.</b> Recovered 15% of cold leads through a simple WhatsApp sequence — a channel most marketers ignore entirely.</div></div>
       </div>
     </div>
+
+    <!-- EDUCATION PAID CAMPAIGNS SECTION -->
+    <div style="margin-top:3rem;" class="r">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.5rem;">
+        <div style="height:1px;flex:1;background:linear-gradient(90deg,rgba(79,142,255,.4),transparent);"></div>
+        <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--a1);white-space:nowrap;">Also at ISDC Global</div>
+        <div style="height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(79,142,255,.4));"></div>
+      </div>
+      <h3 style="font-size:1.55rem;font-weight:900;letter-spacing:-.03em;text-align:center;margin-bottom:.5rem;">
+        Overseas Education &amp; University <span style="background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Paid Campaigns</span>
+      </h3>
+      <p style="text-align:center;color:var(--sub);font-size:.88rem;max-width:600px;margin:0 auto 2.5rem;line-height:1.8;">Alongside the B2B work, I ran high-volume lead generation campaigns for overseas education and 3 major universities — generating <strong style="color:var(--text);">38,000+ leads</strong> across Meta Ads and Google Ads.</p>
+
+      <!-- TOTAL CALLOUT BAR -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;margin-bottom:2.5rem;">
+        <div style="background:var(--bg3);padding:1.4rem;text-align:center;">
+          <div style="font-size:1.9rem;font-weight:900;letter-spacing:-.04em;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">38,000+</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.25rem;">Total Leads Generated</div>
+          <div style="font-size:.65rem;color:var(--a2);font-weight:600;margin-top:.2rem;">Across all 3 clients</div>
+        </div>
+        <div style="background:var(--bg3);padding:1.4rem;text-align:center;border-left:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.9rem;font-weight:900;letter-spacing:-.04em;color:var(--a3);">30,000+</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.25rem;">Leads via Meta Ads</div>
+          <div style="font-size:.65rem;color:var(--a3);font-weight:600;margin-top:.2rem;">Facebook &amp; Instagram</div>
+        </div>
+        <div style="background:var(--bg3);padding:1.4rem;text-align:center;border-left:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.9rem;font-weight:900;letter-spacing:-.04em;color:var(--a1);">8,000+</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.25rem;">Leads via Google Ads</div>
+          <div style="font-size:.65rem;color:var(--a1);font-weight:600;margin-top:.2rem;">Search &amp; Display</div>
+        </div>
+        <div style="background:var(--bg3);padding:1.4rem;text-align:center;border-left:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.9rem;font-weight:900;letter-spacing:-.04em;color:var(--a4);">3</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.25rem;">University Clients</div>
+          <div style="font-size:.65rem;color:var(--a4);font-weight:600;margin-top:.2rem;">+ Overseas Education</div>
+        </div>
+      </div>
+
+      <!-- 3 CLIENT CARDS -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem;">
+
+        <!-- OVERSEAS EDUCATION -->
+        <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;">
+          <div style="background:linear-gradient(135deg,rgba(79,142,255,.15),rgba(0,229,176,.08));padding:1.4rem 1.4rem .9rem;border-bottom:1px solid rgba(255,255,255,.06);">
+            <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a1);margin-bottom:.5rem;">✈️ Overseas Education</div>
+            <div style="font-size:1.05rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.25rem;">Study Abroad Lead Generation</div>
+            <div style="font-size:.75rem;color:var(--sub);">Targeting students aspiring to study in UK, USA, Canada, Australia &amp; Europe</div>
+          </div>
+          <div style="padding:1.2rem;">
+            <!-- Meta leads -->
+            <div style="margin-bottom:1rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:8px;height:8px;border-radius:2px;background:#1877f2;"></div><span style="font-size:.73rem;color:var(--sub);">Meta Ads (Facebook + Instagram)</span></div>
+                <span style="font-size:.85rem;font-weight:800;color:var(--a3);">10,000+</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;"><div class="edu-bar" data-w="77" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#1877f2,#e1306c);width:0;transition:width 1.2s ease;"></div></div>
+            </div>
+            <!-- Google leads -->
+            <div style="margin-bottom:1.25rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:8px;height:8px;border-radius:2px;background:#4285f4;"></div><span style="font-size:.73rem;color:var(--sub);">Google Ads (Search + Display)</span></div>
+                <span style="font-size:.85rem;font-weight:800;color:var(--a1);">3,000+</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;"><div class="edu-bar" data-w="33" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#4285f4,#34a853);width:0;transition:width 1.2s ease;"></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;">
+              <div style="text-align:center;padding:.65rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--a2);">13,000+</div>
+                <div style="font-size:.62rem;color:var(--sub);margin-top:.12rem;">Total Leads</div>
+              </div>
+              <div style="text-align:center;padding:.65rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--a4);">77%</div>
+                <div style="font-size:.62rem;color:var(--sub);margin-top:.12rem;">Via Meta Ads</div>
+              </div>
+            </div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.18);color:var(--a1);">Lead Gen Forms</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.16);color:var(--a2);">Interest Targeting</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(255,107,157,.06);border:1px solid rgba(255,107,157,.16);color:var(--a3);">Lookalike Audiences</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(255,184,48,.06);border:1px solid rgba(255,184,48,.16);color:var(--a4);">Retargeting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JAIN UNIVERSITY -->
+        <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;">
+          <div style="background:linear-gradient(135deg,rgba(255,184,48,.12),rgba(255,107,157,.06));padding:1.4rem 1.4rem .9rem;border-bottom:1px solid rgba(255,255,255,.06);">
+            <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a4);margin-bottom:.5rem;">🎓 University Campaign</div>
+            <div style="font-size:1.05rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.25rem;">Jain University</div>
+            <div style="font-size:.75rem;color:var(--sub);">Student enrolment &amp; admissions lead generation across undergraduate &amp; postgraduate programmes</div>
+          </div>
+          <div style="padding:1.2rem;">
+            <div style="margin-bottom:1rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:8px;height:8px;border-radius:2px;background:#1877f2;"></div><span style="font-size:.73rem;color:var(--sub);">Meta Ads (Facebook + Instagram)</span></div>
+                <span style="font-size:.85rem;font-weight:800;color:var(--a3);">8,000+</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;"><div class="edu-bar" data-w="80" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#1877f2,#e1306c);width:0;transition:width 1.2s ease;"></div></div>
+            </div>
+            <div style="margin-bottom:1.25rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:8px;height:8px;border-radius:2px;background:#4285f4;"></div><span style="font-size:.73rem;color:var(--sub);">Google Ads (Search + Display)</span></div>
+                <span style="font-size:.85rem;font-weight:800;color:var(--a1);">2,000+</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;"><div class="edu-bar" data-w="20" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#4285f4,#34a853);width:0;transition:width 1.2s ease;"></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;">
+              <div style="text-align:center;padding:.65rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--a2);">10,000+</div>
+                <div style="font-size:.62rem;color:var(--sub);margin-top:.12rem;">Total Leads</div>
+              </div>
+              <div style="text-align:center;padding:.65rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--a4);">80%</div>
+                <div style="font-size:.62rem;color:var(--sub);margin-top:.12rem;">Via Meta Ads</div>
+              </div>
+            </div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(255,184,48,.08);border:1px solid rgba(255,184,48,.18);color:var(--a4);">Age-Based Targeting</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.18);color:var(--a1);">Course-Level Segments</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.16);color:var(--a2);">Geographic Targeting</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(255,107,157,.06);border:1px solid rgba(255,107,157,.16);color:var(--a3);">Admission Season Bursts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- JECRC UNIVERSITY -->
+        <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;position:relative;">
+          <div style="position:absolute;top:.85rem;right:.85rem;font-size:.6rem;font-weight:700;color:var(--a2);background:rgba(0,229,176,.1);border:1px solid rgba(0,229,176,.2);padding:.18rem .55rem;border-radius:100px;">Top Performer ✦</div>
+          <div style="background:linear-gradient(135deg,rgba(0,229,176,.12),rgba(79,142,255,.06));padding:1.4rem 1.4rem .9rem;border-bottom:1px solid rgba(255,255,255,.06);">
+            <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a2);margin-bottom:.5rem;">🏆 University Campaign</div>
+            <div style="font-size:1.05rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.25rem;">JECRC University</div>
+            <div style="font-size:.75rem;color:var(--sub);">Largest volume campaign — engineering, management &amp; design programme admissions</div>
+          </div>
+          <div style="padding:1.2rem;">
+            <div style="margin-bottom:1rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:8px;height:8px;border-radius:2px;background:#1877f2;"></div><span style="font-size:.73rem;color:var(--sub);">Meta Ads (Facebook + Instagram)</span></div>
+                <span style="font-size:.85rem;font-weight:800;color:var(--a3);">12,000+</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;"><div class="edu-bar" data-w="100" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#1877f2,#e1306c);width:0;transition:width 1.2s ease;"></div></div>
+            </div>
+            <div style="margin-bottom:1.25rem;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;"><div style="width:8px;height:8px;border-radius:2px;background:#4285f4;"></div><span style="font-size:.73rem;color:var(--sub);">Google Ads (Search + Display)</span></div>
+                <span style="font-size:.85rem;font-weight:800;color:var(--a1);">3,000+</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;"><div class="edu-bar" data-w="25" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#4285f4,#34a853);width:0;transition:width 1.2s ease;"></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;">
+              <div style="text-align:center;padding:.65rem;background:rgba(0,229,176,.06);border-radius:8px;border:1px solid rgba(0,229,176,.15);">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--a2);">15,000+</div>
+                <div style="font-size:.62rem;color:var(--sub);margin-top:.12rem;">Total Leads</div>
+              </div>
+              <div style="text-align:center;padding:.65rem;background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+                <div style="font-size:1.2rem;font-weight:900;color:var(--a3);">80%</div>
+                <div style="font-size:.62rem;color:var(--sub);margin-top:.12rem;">Via Meta Ads</div>
+              </div>
+            </div>
+            <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.16);color:var(--a2);">Programme-Level Campaigns</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.18);color:var(--a1);">Rajasthan + National Geo</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(255,107,157,.06);border:1px solid rgba(255,107,157,.16);color:var(--a3);">Scholarship Messaging</span>
+              <span style="font-size:.65rem;padding:.18rem .55rem;border-radius:5px;background:rgba(255,184,48,.06);border:1px solid rgba(255,184,48,.16);color:var(--a4);">Video Ad Creatives</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARISON CHART + STRATEGY -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+        <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;">
+          <div style="font-size:.67rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.85rem;">Lead Volume by Client &amp; Channel</div>
+          <canvas id="edu_leads_chart" style="max-height:200px;"></canvas>
+        </div>
+        <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;">
+          <div style="font-size:.67rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;">Campaign Strategy — Education Sector</div>
+          <div style="display:flex;flex-direction:column;gap:.65rem;">
+            <div style="padding:.75rem;background:rgba(255,255,255,.03);border-radius:9px;border-left:3px solid var(--a3);">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.2rem;">Meta Ads — Primary Lead Engine</div>
+              <div style="font-size:.72rem;color:var(--sub);line-height:1.6;">Facebook &amp; Instagram Lead Gen Forms with tight age targeting (17–28), interest-based audiences (education, careers), and lookalike audiences built from past admissions data. Video ads outperformed static by 2.3×.</div>
+            </div>
+            <div style="padding:.75rem;background:rgba(255,255,255,.03);border-radius:9px;border-left:3px solid var(--a1);">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.2rem;">Google Ads — High-Intent Capture</div>
+              <div style="font-size:.72rem;color:var(--sub);line-height:1.6;">Search campaigns targeting admission-intent queries ("BCA admission 2024", "best engineering college Jaipur"). Display retargeting for website visitors. Combined with Meta for full-funnel coverage.</div>
+            </div>
+            <div style="padding:.75rem;background:rgba(255,255,255,.03);border-radius:9px;border-left:3px solid var(--a2);">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.2rem;">Admission Season Strategy</div>
+              <div style="font-size:.72rem;color:var(--sub);line-height:1.6;">Budget concentrated around March–June admission windows. Scholarship and early application deadline messaging drove urgency. WhatsApp follow-up integrated post lead capture for counsellor handoff.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOTAL IMPACT BANNER -->
+      <div style="background:linear-gradient(135deg,rgba(79,142,255,.08),rgba(0,229,176,.06));border:1px solid rgba(79,142,255,.2);border-radius:16px;padding:1.85rem;text-align:center;" class="r">
+        <div style="font-size:.7rem;font-weight:700;color:var(--a1);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.6rem;">Total Education Campaign Impact at ISDC Global</div>
+        <div style="font-size:3rem;font-weight:900;letter-spacing:-.05em;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.5rem;">38,000+ Leads</div>
+        <div style="font-size:.9rem;color:var(--sub);font-weight:300;margin-bottom:1.25rem;">Generated across Overseas Education, Jain University &amp; JECRC University through Meta &amp; Google Ads</div>
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;">
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:var(--a3);">30,000+</div><div style="font-size:.65rem;color:var(--sub);">Meta Ads Leads</div></div>
+          <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:var(--a1);">8,000+</div><div style="font-size:.65rem;color:var(--sub);">Google Ads Leads</div></div>
+          <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:var(--a4);">3</div><div style="font-size:.65rem;color:var(--sub);">Clients Served</div></div>
+          <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+          <div style="text-align:center;"><div style="font-size:1.3rem;font-weight:900;color:var(--a2);">10 mo</div><div style="font-size:.65rem;color:var(--sub);">Campaign Duration</div></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1578,8 +1823,8 @@ footer p{font-size:.72rem;color:var(--dim);}
         <div>
           <div class="ey gr" style="margin-bottom:.75rem;">Available Now</div>
           <div class="cth">Let's build something<br><span class="g">remarkable together.</span></div>
-          <p class="ctp">Looking for Growth Marketing Lead, Demand Generation Manager, or Head of Performance Marketing roles at B2B SaaS companies targeting enterprise segments. $100M+ pipeline experience ready to deploy.</p>
-          <div class="chips"><span class="chip">Growth Marketing Lead</span><span class="chip">Demand Gen Manager</span><span class="chip">Performance Marketing Head</span><span class="chip">B2B SaaS</span><span class="chip">Remote / Hybrid</span></div>
+          <p class="ctp">Looking for Growth Marketing Lead, Demand Generation Manager, or Head of Performance Marketing roles at B2B SaaS companies targeting enterprise segments. $500M+ pipeline experience ready to deploy.</p>
+          <div class="chips"><span class="chip">Growth Marketing Lead</span><span class="chip">Demand Gen Manager</span><span class="chip">Performance Marketing Head</span><span class="chip">B2B SaaS</span><span class="chip">Global · India · US · UK · EMEA</span><span class="chip">Remote / Hybrid</span></div>
           <div style="margin-top:1.6rem;display:flex;gap:.75rem;flex-wrap:wrap;"><a href="mailto:jiaulmallik11@gmail.com" class="b1">Send an email →</a><a href="https://linkedin.com/in/jiaul-mallik/" target="_blank" class="b2">LinkedIn profile</a></div>
         </div>
         <div class="ctlinks">
@@ -1591,7 +1836,7 @@ footer p{font-size:.72rem;color:var(--dim);}
     </div>
   </div>
 </section>
-<footer><p>© 2025 Jiaul Mallik · Performance &amp; Growth Marketing Lead</p><p>B2B SaaS · Demand Generation · Paid Media · $100M+ Pipeline</p></footer>
+<footer><p>© 2025 Jiaul Mallik · Performance &amp; Growth Marketing Lead</p><p>B2B SaaS · Demand Generation · Paid Media · $500M+ Pipeline</p></footer>
 
 <script>
 // Reveal
@@ -1599,7 +1844,7 @@ const io=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting){s
 document.querySelectorAll('.r').forEach(el=>io.observe(el));
 // Counters
 function ct(id,target,decimals,dur=1800){const el=document.getElementById(id);if(!el)return;const s=performance.now();(function tick(now){const p=Math.min((now-s)/dur,1),ease=1-Math.pow(1-p,3),val=ease*target;el.textContent=decimals?val.toFixed(decimals):Math.floor(val);if(p<1)requestAnimationFrame(tick);})(performance.now());}
-new IntersectionObserver(es=>{if(es[0].isIntersecting){ct('m1',100,0);ct('m2',4,1);ct('m3',45,0);ct('m4',30,0);}},{threshold:.5}).observe(document.querySelector('.md'));
+new IntersectionObserver(es=>{if(es[0].isIntersecting){ct('m1',500,0);ct('m2',42,0);ct('m3',45,0);ct('m4',87,0);}},{threshold:.5}).observe(document.querySelector('.md'));
 // Chart defaults
 Chart.defaults.color='#8896B3';Chart.defaults.borderColor='rgba(255,255,255,0.08)';Chart.defaults.font.family="'Plus Jakarta Sans',sans-serif";Chart.defaults.font.size=10;
 // Lead volume
@@ -1619,7 +1864,7 @@ Chart.defaults.color='#8896B3';
 // Looker chart
 new Chart(document.getElementById('lk_chart'),{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{label:'Leads',data:[48,65,72,58,81,42,38],borderColor:'#00E5B0',backgroundColor:'rgba(26,115,232,.08)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.1)'},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}},x:{grid:{display:false},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}}}}});
 // CPL bar
-new Chart(document.getElementById('cplBar'),{type:'bar',data:{labels:['Google Ads','LinkedIn Ads','Meta Ads','Email Marketing'],datasets:[{label:'Best CPL ($)',data:[14,22,11,8],backgroundColor:['rgba(79,142,255,.7)','rgba(79,142,255,.7)','rgba(255,107,157,.7)','rgba(255,107,157,.7)'],borderRadius:4,borderSkipped:false}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(79,142,255,.07)'},ticks:{callback:v=>'$'+v}},y:{grid:{display:false}}}}});
+new Chart(document.getElementById('cplBar'),{type:'bar',data:{labels:['Google Ads','LinkedIn Ads','Meta Ads','Email Marketing'],datasets:[{label:'Best CPL ($)',data:[6,8,5,3],backgroundColor:['rgba(79,142,255,.7)','rgba(79,142,255,.7)','rgba(255,107,157,.7)','rgba(255,107,157,.7)'],borderRadius:4,borderSkipped:false}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(79,142,255,.07)'},ticks:{callback:v=>'$'+v}},y:{grid:{display:false}}}}});
 // Funnel anim
 new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.fn-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*110));}},{threshold:.3}).observe(document.getElementById('fnS'));
 // Progress bars
@@ -1631,13 +1876,19 @@ new Chart(document.getElementById('brand_followers'),{type:'line',data:{labels:[
 new Chart(document.getElementById('brand_impressions'),{type:'bar',data:{labels:['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Impressions',data:[85000,120000,145000,180000,210000,255000,290000,320000,370000,425000],backgroundColor:'rgba(255,107,157,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
 new Chart(document.getElementById('brand_search'),{type:'line',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10'],datasets:[{label:'Brand Search Index',data:[20,23,28,35,45,58,72,85,90,96],borderColor:'#4F8EFF',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#4F8EFF',fill:true},{label:'Baseline',data:[20,20,20,20,20,20,20,20,20,20],borderColor:'rgba(255,255,255,.2)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v}},x:{grid:{display:false}}}}});
 
+
+// Education leads chart
+new Chart(document.getElementById('edu_leads_chart'),{type:'bar',data:{labels:['Overseas Education','Jain University','JECRC University'],datasets:[{label:'Meta Ads',data:[10000,8000,12000],backgroundColor:'rgba(255,107,157,.75)',borderRadius:5,borderSkipped:false},{label:'Google Ads',data:[3000,2000,3000],backgroundColor:'rgba(79,142,255,.75)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:9,padding:8,font:{size:10}}}},scales:{x:{stacked:false,grid:{display:false}},y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}});
+// Education bar animation
+new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.edu-bar').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}},{threshold:.3}).observe(document.getElementById('edu_leads_chart'));
+
 // Case Study Charts
 // CS1: Lead volume
 new Chart(document.getElementById('cs1_leads'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.75)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'}},x:{grid:{display:false}}}}});
 // CS1: Channel pie
 new Chart(document.getElementById('cs1_channels'),{type:'doughnut',data:{labels:['LinkedIn Ads','Google Ads','Meta Ads','Email'],datasets:[{data:[38,28,22,12],backgroundColor:['#4F8EFF','#00E5B0','#FF6B9D','#FFB830'],borderWidth:0,hoverOffset:4}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'right',labels:{boxWidth:9,padding:8,font:{size:10}}}}}});
 // CS2: CPL
-new Chart(document.getElementById('cs2_cpl'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,103,104],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline ($148)',data:[148,148,148,148,148,148,148,148,148,148],borderColor:'rgba(255,107,157,.35)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('cs2_cpl'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Oct'],datasets:[{label:'CPL ($)',data:[52,49,45,40,34,26,18,12,8,7],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline ($52)',data:[52,52,52,52,52,52,52,52,52,52],borderColor:'rgba(255,107,157,.35)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
 // CS2: SEO
 new Chart(document.getElementById('cs2_seo'),{type:'bar',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8'],datasets:[{label:'After SEO',data:[8200,10200,11500,13100,14800,16200,18100,21800],backgroundColor:'rgba(79,142,255,.75)',borderRadius:4,borderSkipped:false},{label:'Baseline',data:[8200,8400,8600,8800,9000,9100,9200,9300],backgroundColor:'rgba(255,255,255,.08)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
 // CS3: CTR growth
