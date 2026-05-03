@@ -38,6 +38,23 @@ document.querySelectorAll('.cs-section').forEach(sec=>{
   new IntersectionObserver(es=>{if(es[0].isIntersecting){es[0].target.querySelectorAll('.cs-result-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}},{threshold:.2}).observe(sec);
 });
 
+
+function toggleNav(){
+  const nav = document.getElementById('navLinks');
+  const btn = document.getElementById('navBurger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+}
+// Close nav on link click
+document.querySelectorAll('#navLinks a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navBurger').classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -353,8 +370,8 @@ footer p{font-size:.72rem;color:var(--dim);}
 .r{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
 .r.on{opacity:1;transform:none;}
 .r2{transition-delay:.1s;}.r3{transition-delay:.2s;}.r4{transition-delay:.3s;}
-@media(max-width:960px){.hi,.ag,.c-body,.seog{grid-template-columns:1fr;}.ctin{grid-template-columns:1fr;}.chg{grid-template-columns:1fr 1fr;}.md,.mr{grid-template-columns:1fr 1fr;}.eg{grid-template-columns:1fr 1fr;}.certs{grid-template-columns:1fr 1fr;}.ckpis{grid-template-columns:repeat(3,1fr);}.c-ss{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);}.stories{grid-template-columns:1fr;}}
-@media(max-width:640px){section{padding:3.5rem 1.4rem;}nav{padding:.8rem 1.4rem;}.hero{padding:7rem 1.4rem 3.5rem;}.chg,.certs,.eg,.abg,.stories{grid-template-columns:1fr;}.sr{grid-template-columns:1fr;}.plrs{grid-template-columns:1fr;}.nl a:not(.nc){display:none;}.ctbox{padding:1.75rem 1.35rem;}}
+
+
 /* ========= CASE STUDY STYLES ========= */
 .cs-section{padding:6rem 3rem;background:var(--bg);}
 .cs-section:nth-child(even){background:var(--bg2);}
@@ -410,19 +427,202 @@ footer p{font-size:.72rem;color:var(--dim);}
 .cs-learning-text b{color:var(--text);font-weight:600;}
 /* divider between case studies */
 .cs-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(79,142,255,.3),transparent);margin:0 3rem;}
-@media(max-width:960px){.cs-hero,.cs-results{grid-template-columns:1fr;}.cs-coa{grid-template-columns:1fr;}.cs-learnings-grid{grid-template-columns:1fr 1fr;}.cs-big-metrics{grid-template-columns:1fr 1fr;}}
-@media(max-width:640px){.cs-big-metrics{grid-template-columns:1fr;}.cs-coa,.cs-learnings-grid{grid-template-columns:1fr;}.cs-timeline{padding-left:1.75rem;}}
 
+
+
+
+/* ===== RESPONSIVE — TABLET 960px ===== */
+@media(max-width:960px){
+  /* Layout */
+  .hi,.ag,.c-body,.seog,.cs-hero,.cs-results,.ctin{grid-template-columns:1fr;}
+  .chg,.md,.mr,.eg,.certs,.cs-big-metrics,.cs-learnings-grid{grid-template-columns:1fr 1fr;}
+  .ckpis,.c-kpis{grid-template-columns:repeat(3,1fr);}
+  .cs-coa,.stories{grid-template-columns:1fr;}
+  /* Borders */
+  .c-ss,.c-detail{border-right:none;border-left:none;}
+  .c-ss{border-bottom:1px solid rgba(255,255,255,.05);}
+  /* Nav */
+  .nl a:not(.nc):not(:last-of-type){display:none;}
+  /* Section padding */
+  section{padding:4rem 1.75rem;}
+  nav{padding:.85rem 1.75rem;}
+  /* Case studies */
+  .cs-num{font-size:3.5rem;}
+  /* Education band */
+  .edu-band-inner{flex-direction:column;gap:1rem;}
+}
+
+/* ===== RESPONSIVE — MOBILE 640px ===== */
+@media(max-width:640px){
+  /* Core */
+  section{padding:3rem 1.1rem;}
+  nav{padding:.75rem 1.1rem;}
+  .hero{padding:6.5rem 1.1rem 3rem;}
+  .w{padding:0;}
+
+  /* Typography */
+  h1{font-size:2.6rem !important;letter-spacing:-.035em;}
+  h2.sh{font-size:1.65rem;}
+  .cs-title{font-size:1.35rem;}
+  .cs-num{font-size:3rem;}
+  .hp,.cs-blurb{font-size:.88rem;}
+
+  /* Nav */
+  .nl a:not(.nc){display:none;}
+  .logo{font-size:.9rem;}
+
+  /* Hero */
+  .hi{grid-template-columns:1fr;gap:2rem;}
+  .pc{max-width:100%;}
+  .hb{flex-direction:column;}
+  .b1,.b2{width:100%;justify-content:center;padding:.85rem;}
+
+  /* Marquee speed on mobile */
+  .mqt{animation-duration:14s;}
+
+  /* All grids → single column */
+  .md,.mr,.chg,.certs,.eg,.abg,.stories,.plrs,.seog,
+  .cs-big-metrics,.cs-coa,.cs-learnings-grid,.cs-results,
+  .cs-hero,.ag,.c-body,.ctin,.sr,.stk .sr{grid-template-columns:1fr !important;}
+
+  /* 2-col preserved where needed */
+  .abcmp,.pstats .pst{display:flex;}
+
+  /* Profile card */
+  .pav{width:56px;height:56px;font-size:1.25rem;}
+  .pn{font-size:.95rem;}
+  .ptg{flex-wrap:wrap;}
+
+  /* Metric dash */
+  .mc{padding:1.2rem 1rem;}
+  .mv{font-size:1.5rem;}
+  .mrc{padding:.85rem 1rem;}
+  .mrv{font-size:1.1rem;}
+
+  /* KPI strips */
+  .ckpis,.c-kpis{grid-template-columns:repeat(2,1fr) !important;}
+  .kpi{padding:.85rem .5rem;}
+  .kpiv{font-size:1rem;}
+  .kpil{font-size:.6rem;}
+
+  /* Cases */
+  .c-ss,.c-detail{padding:1rem;}
+  .c-hdr,.c-hdr h3{font-size:1rem;}
+  .cbadges{flex-wrap:wrap;}
+
+  /* Funnel */
+  .fn-row{grid-template-columns:100px 1fr 50px 40px;gap:.5rem;}
+  .fn-lbl{font-size:.62rem;}
+  .fn-fill span{font-size:.6rem;}
+  .fn-cnt{font-size:.7rem;}
+  .fn-rate{font-size:.58rem;padding:.08rem .3rem;}
+  .fn-arr{padding-left:110px;font-size:.58rem;}
+
+  /* Case study timeline */
+  .cs-timeline{padding-left:1.5rem;}
+  .cs-step-dot{left:-1.4rem;}
+  .cs-step-title{font-size:.88rem;}
+  .cs-step-desc{font-size:.78rem;}
+
+  /* Result rows */
+  .cs-result-row{padding:.75rem .85rem;}
+  .cs-result-val{font-size:.9rem;}
+
+  /* Contact */
+  .ctbox{padding:1.5rem 1.1rem;}
+  .cth{font-size:1.6rem;}
+  .ctlinks{min-width:unset;width:100%;}
+  .chips{justify-content:center;}
+  .ctl{font-size:.8rem;}
+
+  /* Stack rows */
+  .sr{flex-direction:column;gap:.75rem;}
+  .srcat{font-size:.7rem;}
+
+  /* Stories */
+  .st-metrics{grid-template-columns:repeat(3,1fr);}
+
+  /* Channel progress */
+  .chf,.ecf{transition:width 1.5s ease;}
+
+  /* Email cards */
+  .ec{padding:1rem;}
+
+  /* Cert cards */
+  .cert{padding:1rem;}
+
+  /* GA4 sidebar */
+  .ga4-sidebar{grid-template-columns:1fr;}
+  .ga4-side{display:none;}
+  .ga4-row{grid-template-columns:1fr 1fr;}
+
+  /* HubSpot table */
+  .hs-email-list .hs-email-row{grid-template-columns:2fr 1fr 1fr;}
+  .hs-email-row .hs-num{display:none;}
+
+  /* Brand section */
+  .cs-section .brand-pillars{grid-template-columns:1fr 1fr !important;}
+
+  /* Education band */
+  .edu-band-metrics{flex-direction:column;gap:.5rem;}
+
+  /* Footer */
+  footer{flex-direction:column;text-align:center;gap:.35rem;padding:1.25rem;}
+
+  /* Divider */
+  .cs-divider{margin:0 1.1rem;}
+
+  /* Glow hide on mobile for performance */
+  .hg1,.hg2{display:none;}
+
+  /* Hero tag */
+  .htag{font-size:.68rem;}
+
+  /* section eyebrow */
+  .ey{font-size:.65rem;}
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE 380px ===== */
+@media(max-width:380px){
+  section{padding:2.5rem .85rem;}
+  nav{padding:.7rem .85rem;}
+  .hero{padding:6rem .85rem 2.5rem;}
+  h1{font-size:2.1rem !important;}
+  h2.sh{font-size:1.45rem;}
+  .md{grid-template-columns:1fr !important;}
+  .ckpis,.c-kpis{grid-template-columns:1fr 1fr !important;}
+  .fn-row{grid-template-columns:85px 1fr 42px;gap:.4rem;}
+  .fn-rate{display:none;}
+  .cs-big-metrics{grid-template-columns:1fr 1fr !important;}
+}
+
+
+/* HAMBURGER NAV */
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.25rem;z-index:600;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .25s;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:640px){
+  .nav-burger{display:flex;}
+  .nl{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,8,16,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:499;}
+  .nl.open{display:flex;}
+  .nl a{font-size:1.2rem;color:var(--text);}
+  .nl a.nc{background:var(--a1)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;padding:.7rem 2rem;border-radius:100px;font-size:1rem!important;}
+}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo">Jiaul <span>Mallik</span></div>
-  <div class="nl">
+  <div class="nl" id="navLinks">
     <a href="#about">About</a><a href="#campaigns">Campaigns</a><a href="#stories">Wins</a><a href="#email">Email</a><a href="#stack">Stack</a><a href="#casestudies">Case Studies</a>
     <a href="#contact" class="nc">Hire Me →</a>
   </div>
+  <button class="nav-burger" id="navBurger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1900,6 +2100,23 @@ new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.query
 // Observe all cs-sections for result bars
 document.querySelectorAll('.cs-section').forEach(sec=>{
   new IntersectionObserver(es=>{if(es[0].isIntersecting){es[0].target.querySelectorAll('.cs-result-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}},{threshold:.2}).observe(sec);
+});
+
+
+function toggleNav(){
+  const nav = document.getElementById('navLinks');
+  const btn = document.getElementById('navBurger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+}
+// Close nav on link click
+document.querySelectorAll('#navLinks a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navBurger').classList.remove('open');
+    document.body.style.overflow='';
+  });
 });
 
 </script>
