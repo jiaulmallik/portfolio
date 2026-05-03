@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiaul Mallik · Growth Marketing Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#060810;--bg2:#090C16;--bg3:#0E1220;--bg4:#131829;--a1:#4F8EFF;--a2:#00E5B0;--a3:#FF6B9D;--a4:#FFB830;--text:#EEF2FF;--sub:#8896B3;--dim:#4A5568;--grd:linear-gradient(135deg,#4F8EFF,#00E5B0);--f:'Plus Jakarta Sans',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--f);font-size:15px;line-height:1.7;overflow-x:hidden;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:.85rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(6,8,16,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.05);}
+.logo{font-weight:800;font-size:1rem;} .logo span{background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nl{display:flex;gap:1.75rem;align-items:center;}
+.nl a{font-size:.79rem;color:var(--sub);text-decoration:none;transition:color .2s;font-weight:500;}
+.nl a:hover{color:var(--text);}
+.nc{background:var(--a1)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;padding:.38rem 1.1rem;border-radius:100px;font-size:.76rem!important;font-weight:700!important;}
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden;}
+.hg1{position:absolute;top:-15%;left:-8%;width:700px;height:700px;background:radial-gradient(circle,rgba(79,142,255,.07),transparent 65%);pointer-events:none;}
+.hg2{position:absolute;bottom:-10%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,229,176,.06),transparent 65%);pointer-events:none;}
+.hi{max-width:1200px;width:100%;display:grid;grid-template-columns:1fr 290px;gap:4rem;align-items:center;position:relative;z-index:1;}
+.htag{display:inline-flex;align-items:center;gap:.6rem;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.2);border-radius:100px;padding:.32rem 1rem .32rem .55rem;font-size:.73rem;font-weight:500;color:var(--a1);margin-bottom:1.85rem;}
+.htd{width:6px;height:6px;border-radius:50%;background:var(--a2);animation:gl 2s infinite;}
+@keyframes gl{0%,100%{box-shadow:0 0 4px var(--a2);}50%{box-shadow:0 0 14px var(--a2);}}
+h1{font-size:clamp(2.9rem,5.2vw,5rem);font-weight:900;line-height:1.02;letter-spacing:-.04em;margin-bottom:1.4rem;}
+h1 .g{background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+h1 .d{color:var(--dim);}
+.hp{font-size:.98rem;color:var(--sub);max-width:480px;line-height:1.85;font-weight:300;margin-bottom:2.3rem;}
+.hb{display:flex;gap:.8rem;flex-wrap:wrap;}
+.b1{display:inline-flex;align-items:center;gap:.45rem;background:var(--grd);color:#fff;padding:.8rem 1.7rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:.85rem;transition:opacity .2s;}
+.b1:hover{opacity:.85;}
+.b2{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(255,255,255,.1);color:var(--text);padding:.8rem 1.7rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:.85rem;transition:all .2s;background:rgba(255,255,255,.02);}
+.b2:hover{border-color:var(--a1);color:var(--a1);}
+/* PROFILE CARD */
+.pc{background:var(--bg3);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:1.65rem;position:relative;overflow:hidden;}
+.pc::before{content:'';position:absolute;top:-35px;right:-35px;width:110px;height:110px;background:radial-gradient(circle,rgba(79,142,255,.14),transparent);pointer-events:none;}
+.pav{width:68px;height:68px;border-radius:50%;background:var(--grd);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.8rem;position:relative;}
+.pav::after{content:'';position:absolute;inset:-2px;border-radius:50%;background:var(--grd);z-index:-1;opacity:.4;}
+.pn{font-weight:800;font-size:1.02rem;letter-spacing:-.02em;margin-bottom:.12rem;}
+.pr{font-size:.73rem;color:var(--a1);font-weight:600;margin-bottom:1.1rem;}
+.ps{display:flex;flex-direction:column;gap:.45rem;}
+.pst{display:flex;justify-content:space-between;align-items:center;padding:.42rem .65rem;background:rgba(255,255,255,.03);border-radius:7px;}
+.pk{font-size:.68rem;color:var(--sub);}
+.pv{font-size:.76rem;font-weight:700;}.pv.g{color:var(--a2);}
+.ptg{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.9rem;}
+.pt{font-size:.63rem;padding:.16rem .52rem;border-radius:100px;border:1px solid rgba(79,142,255,.25);color:var(--a1);background:rgba(79,142,255,.06);}
+/* MARQUEE */
+.mq{padding:1.1rem 0;background:var(--bg2);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden;white-space:nowrap;}
+.mqt{display:inline-flex;animation:mq 24s linear infinite;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mi{display:inline-flex;align-items:center;gap:.5rem;padding:0 2rem;font-size:.72rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;}
+.mi .d{width:4px;height:4px;border-radius:50%;background:var(--a1);}
+/* SECTION */
+section{padding:5rem 3rem;position:relative;z-index:1;}
+.w{max-width:1200px;margin:0 auto;}
+.ey{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem;display:inline-flex;align-items:center;gap:.45rem;}
+.ey::before{content:'';width:16px;height:2px;border-radius:2px;background:currentColor;}
+.ey.bl{color:var(--a1);}.ey.gr{color:var(--a2);}.ey.pk{color:var(--a3);}.ey.am{color:var(--a4);}
+h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035em;line-height:1.15;margin-bottom:.75rem;}
+.sd{color:var(--sub);font-size:.88rem;max-width:540px;font-weight:300;line-height:1.85;margin-bottom:2.75rem;}
+/* ABOUT */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.at p{color:var(--sub);font-size:.88rem;line-height:1.9;margin-bottom:.9rem;font-weight:300;}
+.at p strong{color:var(--text);font-weight:600;}
+.plrs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.6rem;}
+.plr{background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.1rem;transition:border-color .2s;}
+.plr:hover{border-color:rgba(79,142,255,.3);}
+.pi{font-size:1.25rem;margin-bottom:.45rem;}
+.pn2{font-size:.8rem;font-weight:700;margin-bottom:.2rem;}
+.pd{font-size:.7rem;color:var(--sub);line-height:1.55;}
+.gri{background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
+.ml{font-size:.65rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.05rem;}
+.gf{display:flex;flex-direction:column;gap:0;}
+.gfr{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center;padding:.5rem 0;}
+.gfr+.gfr{border-top:1px dashed rgba(255,255,255,.05);}
+.gfn{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;flex-shrink:0;}
+.gft{font-size:.8rem;font-weight:700;margin-bottom:.1rem;}
+.gfs{font-size:.68rem;color:var(--sub);}
+.gfm{font-size:.8rem;font-weight:700;text-align:right;min-width:52px;}
+.hws{display:flex;flex-direction:column;gap:.42rem;}
+.hw{display:flex;gap:.75rem;align-items:flex-start;padding:.58rem;border-radius:9px;background:rgba(255,255,255,.02);}
+.hwn{width:23px;height:23px;border-radius:50%;background:var(--grd);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0;}
+.hwt{font-size:.78rem;font-weight:700;margin-bottom:.08rem;}
+.hwd{font-size:.68rem;color:var(--sub);}
+/* METRICS */
+.md{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:15px;overflow:hidden;margin-bottom:1.3rem;}
+.mc{background:var(--bg3);padding:1.5rem 1.3rem;}
+.mci{font-size:1.05rem;margin-bottom:.6rem;}
+.mv{font-size:1.75rem;font-weight:900;letter-spacing:-.03em;line-height:1;}
+.mv .u{font-size:.95rem;color:var(--a1);}
+.ml2{font-size:.7rem;color:var(--sub);margin-top:.28rem;}
+.mt{display:inline-flex;font-size:.63rem;font-weight:600;padding:.16rem .48rem;border-radius:100px;margin-top:.4rem;}
+.tg{background:rgba(0,229,176,.1);color:var(--a2);}.tb{background:rgba(79,142,255,.1);color:var(--a1);}.ta{background:rgba(255,184,48,.1);color:var(--a4);}
+.mr{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:13px;overflow:hidden;}
+.mrc{background:var(--bg3);padding:1rem 1.2rem;}
+.mrv{font-size:1.3rem;font-weight:900;letter-spacing:-.02em;}
+.mrl{font-size:.66rem;color:var(--sub);margin-top:.18rem;}
+.mrs{font-size:.62rem;color:var(--dim);margin-top:.08rem;}
+/* SCREENSHOT FRAME */
+.ss-frame{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#1a1f2e;box-shadow:0 25px 60px rgba(0,0,0,.5);}
+.ss-bar{background:#232938;padding:.55rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.ss-dots{display:flex;gap:.4rem;}
+.ss-dot{width:10px;height:10px;border-radius:50%;}
+.ss-dot.r{background:#FF5F57;}.ss-dot.y{background:#FEBC2E;}.ss-dot.g{background:#28C840;}
+.ss-url{flex:1;background:rgba(255,255,255,.07);border-radius:5px;padding:.22rem .75rem;font-size:.68rem;color:var(--sub);font-family:monospace;}
+/* GOOGLE ADS MOCK */
+.gads{background:#fff;padding:0;font-family:-apple-system,sans-serif;}
+.gads-nav{background:#fff;border-bottom:1px solid #e0e0e0;padding:.5rem 1.2rem;display:flex;align-items:center;gap:1rem;}
+.gads-logo{font-size:.8rem;font-weight:700;color:#1a73e8;}
+.gads-camp{font-size:.75rem;color:#5f6368;padding:.3rem .6rem;border-radius:4px;background:#f1f3f4;}
+.gads-table{width:100%;border-collapse:collapse;}
+.gads-table th{background:#f8f9fa;color:#3c4043;font-size:.68rem;font-weight:600;padding:.6rem .8rem;border-bottom:1px solid #e0e0e0;text-align:left;}
+.gads-table td{color:#3c4043;font-size:.72rem;padding:.55rem .8rem;border-bottom:1px solid #f0f0f0;}
+.gads-table tr:hover td{background:#f8f9fa;}
+.gads-green{color:#137333;font-weight:600;}
+.gads-blue{color:#1a73e8;font-weight:600;}
+.gads-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;border-top:2px solid #1a73e8;}
+.gads-stat{background:#fff;padding:.8rem 1rem;text-align:center;}
+.gads-stat .v{font-size:1.1rem;font-weight:700;color:#3c4043;}
+.gads-stat .l{font-size:.62rem;color:#5f6368;margin-top:.1rem;}
+/* LINKEDIN ADS MOCK */
+.li-ads{background:#f3f2ef;padding:0;font-family:-apple-system,sans-serif;}
+.li-nav{background:#fff;padding:.55rem 1.2rem;border-bottom:1px solid #ddd;display:flex;align-items:center;gap:1rem;}
+.li-logo{font-size:.85rem;font-weight:800;color:#0077b5;}
+.li-breadcrumb{font-size:.68rem;color:#666;}
+.li-content{padding:1rem 1.2rem;}
+.li-campaign-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem;}
+.li-campaign-name{font-size:.85rem;font-weight:700;color:#000;}
+.li-status{font-size:.62rem;background:#e6f3eb;color:#017d3f;padding:.18rem .55rem;border-radius:3px;font-weight:600;}
+.li-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-bottom:.85rem;}
+.li-m{background:#fff;border:1px solid #ddd;border-radius:6px;padding:.65rem .8rem;}
+.li-mv{font-size:1rem;font-weight:700;color:#000;}
+.li-ml{font-size:.6rem;color:#666;margin-top:.08rem;}
+.li-chart-area{background:#fff;border:1px solid #ddd;border-radius:6px;padding:.8rem;}
+.li-chart-title{font-size:.7rem;font-weight:600;color:#333;margin-bottom:.5rem;}
+/* HUBSPOT MOCK */
+.hs-mock{background:#fff;font-family:-apple-system,sans-serif;}
+.hs-nav{background:#33475b;padding:.5rem 1.2rem;display:flex;align-items:center;gap:1rem;}
+.hs-logo{font-size:.78rem;font-weight:700;color:#ff7a59;}
+.hs-tab{font-size:.68rem;color:rgba(255,255,255,.7);padding:.25rem .6rem;border-radius:3px;}
+.hs-tab.active{background:rgba(255,255,255,.15);color:#fff;}
+.hs-content{padding:1rem 1.2rem;}
+.hs-title{font-size:.82rem;font-weight:700;color:#33475b;margin-bottom:.75rem;}
+.hs-email-list{display:flex;flex-direction:column;gap:.5rem;}
+.hs-email-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:.6rem;align-items:center;padding:.55rem .7rem;border:1px solid #e5e8eb;border-radius:6px;background:#fff;}
+.hs-email-row.header{background:#f5f8fa;font-size:.62rem;font-weight:700;color:#7c98b6;border:1px solid #e5e8eb;}
+.hs-en{font-size:.72rem;font-weight:600;color:#33475b;}
+.hs-num{font-size:.72rem;font-weight:600;text-align:center;}
+.hs-rate{font-size:.72rem;font-weight:700;text-align:center;}
+.hs-bar-wrap{height:4px;background:#f0f3f5;border-radius:2px;overflow:hidden;margin-top:.25rem;}
+.hs-bar{height:100%;border-radius:2px;}
+/* GA4 MOCK */
+.ga4{background:#fff;font-family:-apple-system,sans-serif;}
+.ga4-nav{background:#1a73e8;padding:.55rem 1.2rem;display:flex;align-items:center;gap:.75rem;}
+.ga4-logo{font-size:.78rem;font-weight:700;color:#fff;}
+.ga4-prop{font-size:.68rem;color:rgba(255,255,255,.8);background:rgba(255,255,255,.15);padding:.2rem .5rem;border-radius:3px;}
+.ga4-sidebar{display:grid;grid-template-columns:160px 1fr;}
+.ga4-side{background:#f8f9fa;padding:.75rem;border-right:1px solid #e0e0e0;}
+.ga4-side-item{font-size:.68rem;color:#5f6368;padding:.32rem .55rem;border-radius:4px;margin-bottom:.12rem;cursor:default;}
+.ga4-side-item.active{background:#e8f0fe;color:#1a73e8;font-weight:600;}
+.ga4-main{padding:.85rem 1rem;}
+.ga4-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:.85rem;}
+.ga4-card{border:1px solid #e0e0e0;border-radius:8px;padding:.7rem .8rem;}
+.ga4-cv{font-size:1.05rem;font-weight:700;color:#3c4043;}
+.ga4-cl{font-size:.6rem;color:#5f6368;margin-top:.08rem;}
+.ga4-cd{font-size:.62rem;color:#137333;font-weight:600;}
+.ga4-chart-wrap{border:1px solid #e0e0e0;border-radius:8px;padding:.8rem;}
+.ga4-chart-title{font-size:.7rem;font-weight:600;color:#3c4043;margin-bottom:.5rem;}
+/* LOOKER MOCK */
+.lk{background:#1b1f3a;font-family:-apple-system,sans-serif;}
+.lk-nav{background:#151929;padding:.5rem 1.2rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.lk-logo{font-size:.78rem;font-weight:700;color:#7289da;}
+.lk-title{font-size:.7rem;color:rgba(255,255,255,.6);}
+.lk-content{padding:.85rem 1rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:.6rem;}
+.lk-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:.7rem .8rem;}
+.lk-cv{font-size:1.1rem;font-weight:700;color:#fff;}
+.lk-cl{font-size:.6rem;color:rgba(255,255,255,.5);margin-top:.08rem;}
+.lk-cg{font-size:.62rem;color:#00e5b0;font-weight:600;}
+.lk-chart{padding:0 1rem .85rem;}
+/* CASES */
+.cases{display:flex;flex-direction:column;gap:2rem;}
+.case{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;}
+.c-hdr{padding:1.65rem 1.65rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.05);}
+.cbadges{display:flex;gap:.42rem;flex-wrap:wrap;margin-bottom:.7rem;}
+.cb{font-size:.67rem;font-weight:600;padding:.2rem .65rem;border-radius:100px;}
+.cbb{background:rgba(79,142,255,.1);color:var(--a1);border:1px solid rgba(79,142,255,.18);}
+.cbg{background:rgba(0,229,176,.08);color:var(--a2);border:1px solid rgba(0,229,176,.16);}
+.cbp{background:rgba(255,107,157,.08);color:var(--a3);border:1px solid rgba(255,107,157,.16);}
+.cba{background:rgba(255,184,48,.08);color:var(--a4);border:1px solid rgba(255,184,48,.16);}
+.c-hdr h3{font-size:1.2rem;font-weight:900;letter-spacing:-.025em;margin-bottom:.32rem;}
+.c-hdr p{font-size:.83rem;color:var(--sub);max-width:700px;line-height:1.75;}
+.cco{font-size:.7rem;color:var(--dim);margin-top:.42rem;font-style:italic;}
+.ckpis{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
+.kpi{background:var(--bg4);padding:.95rem .65rem;text-align:center;}
+.kpiv{font-size:1.15rem;font-weight:900;letter-spacing:-.02em;line-height:1;}
+.kpil{font-size:.62rem;color:var(--sub);margin-top:.16rem;line-height:1.3;}
+.c-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.c-ss{padding:1.3rem;border-right:1px solid rgba(255,255,255,.05);}
+.c-detail{padding:1.3rem;}
+.clbl{font-size:.65rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;}
+.canvas-wrap canvas{max-height:115px;}
+.ds{margin-bottom:1rem;}
+.ds h5{font-size:.65rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;}
+.tc{display:flex;flex-wrap:wrap;gap:.28rem;}
+.t{font-size:.68rem;padding:.2rem .56rem;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--text);}
+.t.hi{border-color:rgba(79,142,255,.3);color:var(--a1);}
+.t.g{border-color:rgba(0,229,176,.25);color:var(--a2);}
+.wins{list-style:none;display:flex;flex-direction:column;gap:.38rem;}
+.wins li{font-size:.78rem;color:var(--sub);padding-left:1.05rem;position:relative;line-height:1.5;}
+.wins li::before{content:'▲';position:absolute;left:0;color:var(--a2);font-size:.5rem;top:.32rem;}
+.wins li b{color:var(--text);font-weight:600;}
+/* FUNNEL */
+.fn-box{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.65rem;}
+.fn-box h3{font-size:1rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.22rem;}
+.fn-fsub{font-size:.75rem;color:var(--sub);margin-bottom:1.6rem;}
+.fn-stages{display:flex;flex-direction:column;gap:.28rem;}
+.fn-row{display:grid;grid-template-columns:140px 1fr 62px 50px;gap:.75rem;align-items:center;}
+.fn-lbl{font-size:.7rem;color:var(--sub);text-align:right;}
+.fn-track{height:30px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden;}
+.fn-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 .75rem;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.fn-fill span{font-size:.68rem;font-weight:600;color:#fff;white-space:nowrap;}
+.fn-cnt{font-size:.78rem;font-weight:700;text-align:right;}
+.fn-rate{font-size:.65rem;text-align:right;padding:.1rem .42rem;border-radius:100px;font-weight:600;}
+.fn-arr{text-align:center;font-size:.63rem;color:var(--dim);padding:.07rem 0 .07rem 150px;}
+/* SUCCESS STORIES */
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.story{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;}
+.st-top{padding:1.2rem;border-bottom:1px solid rgba(255,255,255,.05);}
+.st-co{font-size:.7rem;color:var(--a1);font-weight:600;margin-bottom:.35rem;}
+.st-title{font-size:.92rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem;}
+.st-desc{font-size:.76rem;color:var(--sub);line-height:1.65;}
+.st-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);}
+.stm{background:var(--bg4);padding:.8rem .65rem;text-align:center;}
+.stmv{font-size:1rem;font-weight:900;letter-spacing:-.02em;}
+.stml{font-size:.6rem;color:var(--sub);margin-top:.15rem;}
+/* EMAIL */
+.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.ec{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;}
+.ech{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;}
+.ecn{font-size:.84rem;font-weight:700;}
+.ecs{display:flex;flex-direction:column;gap:.42rem;}
+.ecr{display:flex;justify-content:space-between;}
+.eck{font-size:.7rem;color:var(--sub);}
+.ecv{font-size:.75rem;font-weight:600;}
+.ecb{margin-top:.75rem;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.ecf{height:100%;border-radius:2px;width:0;transition:width 1.2s ease;}
+/* AB */
+.abg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.abc{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;position:relative;}
+.abw{position:absolute;top:.8rem;right:.8rem;font-size:.6rem;font-weight:700;color:var(--a2);background:rgba(0,229,176,.1);border:1px solid rgba(0,229,176,.2);padding:.15rem .5rem;border-radius:100px;}
+.abt{font-size:.84rem;font-weight:700;margin-bottom:.18rem;}
+.abd{font-size:.72rem;color:var(--sub);margin-bottom:1rem;line-height:1.6;}
+.abcmp{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+.abv{padding:.6rem;border-radius:8px;text-align:center;}
+.abv.a{background:rgba(79,142,255,.07);border:1px solid rgba(79,142,255,.14);}
+.abv.b{background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.14);}
+.abvl{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:.3rem;}
+.abvv{font-size:1.15rem;font-weight:900;letter-spacing:-.02em;}
+.abv.a .abvv{color:var(--a1);}.abv.b .abvv{color:var(--a2);}
+.abvs{font-size:.62rem;color:var(--sub);margin-top:.1rem;}
+.abl{text-align:center;margin-top:.8rem;font-size:.76rem;color:var(--a2);font-weight:600;}
+/* CHANNELS */
+.chg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.chc{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;}
+.chh{display:flex;justify-content:space-between;margin-bottom:.8rem;}
+.chn{font-weight:700;font-size:.84rem;}
+.chr{display:flex;flex-direction:column;gap:.42rem;}
+.chrr{display:flex;justify-content:space-between;}
+.chk{font-size:.7rem;color:var(--sub);}
+.chv{font-size:.74rem;font-weight:600;}
+.chprog{margin-top:.75rem;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.chf{height:100%;border-radius:2px;width:0;transition:width 1.2s ease;}
+/* SEO */
+.seog{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.seoc{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;}
+.seoc h4{font-size:.84rem;font-weight:700;margin-bottom:.22rem;}
+.seosub{font-size:.72rem;color:var(--sub);margin-bottom:1.05rem;}
+.kwtbl{width:100%;border-collapse:collapse;}
+.kwtbl td{padding:.38rem .18rem;font-size:.73rem;vertical-align:middle;}
+.kwtbl td:first-child{color:var(--text);width:56%;}
+.kwo{color:#FF6B6B;text-decoration:line-through;font-size:.68rem;}
+.kwn{color:var(--a2);font-weight:700;}
+.kwa{color:var(--dim);font-size:.6rem;}
+/* STACK */
+.stk{display:flex;flex-direction:column;gap:1rem;}
+.sr{display:grid;grid-template-columns:145px 1fr;gap:1.2rem;align-items:center;padding:1.05rem;background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;}
+.srcat{font-size:.68rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;}
+.srtools{display:flex;flex-wrap:wrap;gap:.32rem;}
+.st2{font-size:.7rem;padding:.22rem .65rem;border-radius:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--text);font-weight:500;transition:all .2s;}
+.st2:hover{border-color:var(--a1);color:var(--a1);}
+.st2.hi{border-color:rgba(79,142,255,.3);color:var(--a1);background:rgba(79,142,255,.06);}
+/* CERTS */
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:.95rem;}
+.cert{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;display:flex;gap:.8rem;align-items:flex-start;transition:all .2s;}
+.cert:hover{border-color:rgba(79,142,255,.3);transform:translateY(-2px);}
+.certic{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.cbl{background:rgba(79,142,255,.12);}.cgr{background:rgba(0,229,176,.1);}.cam{background:rgba(255,184,48,.1);}
+.certn{font-size:.8rem;font-weight:700;margin-bottom:.16rem;}
+.certi{font-size:.7rem;color:var(--sub);}
+/* CONTACT */
+.ctbox{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:3.2rem;position:relative;overflow:hidden;}
+.ctbox::before{content:'';position:absolute;top:-70px;right:-70px;width:260px;height:260px;background:radial-gradient(circle,rgba(79,142,255,.08),transparent);pointer-events:none;}
+.ctin{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;z-index:1;}
+.cth{font-size:2.1rem;font-weight:900;letter-spacing:-.035em;line-height:1.1;margin-bottom:.6rem;}
+.cth .g{background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ctp{color:var(--sub);font-size:.88rem;max-width:400px;line-height:1.8;margin-bottom:1.4rem;}
+.chips{display:flex;flex-wrap:wrap;gap:.42rem;}
+.chip{font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--text);}
+.ctlinks{display:flex;flex-direction:column;gap:.65rem;min-width:250px;}
+.ctl{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text);padding:.78rem .95rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;transition:all .2s;font-size:.82rem;font-weight:500;}
+.ctl:hover{border-color:rgba(79,142,255,.4);background:rgba(79,142,255,.06);}
+.ctli{width:32px;height:32px;border-radius:7px;background:rgba(79,142,255,.1);display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;}
+footer{padding:1.4rem 3rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:.72rem;color:var(--dim);}
+.r{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
+.r.on{opacity:1;transform:none;}
+.r2{transition-delay:.1s;}.r3{transition-delay:.2s;}.r4{transition-delay:.3s;}
+@media(max-width:960px){.hi,.ag,.c-body,.seog{grid-template-columns:1fr;}.ctin{grid-template-columns:1fr;}.chg{grid-template-columns:1fr 1fr;}.md,.mr{grid-template-columns:1fr 1fr;}.eg{grid-template-columns:1fr 1fr;}.certs{grid-template-columns:1fr 1fr;}.ckpis{grid-template-columns:repeat(3,1fr);}.c-ss{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);}.stories{grid-template-columns:1fr;}}
+@media(max-width:640px){section{padding:3.5rem 1.4rem;}nav{padding:.8rem 1.4rem;}.hero{padding:7rem 1.4rem 3.5rem;}.chg,.certs,.eg,.abg,.stories{grid-template-columns:1fr;}.sr{grid-template-columns:1fr;}.plrs{grid-template-columns:1fr;}.nl a:not(.nc){display:none;}.ctbox{padding:1.75rem 1.35rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Jiaul <span>Mallik</span></div>
+  <div class="nl">
+    <a href="#about">About</a><a href="#campaigns">Campaigns</a><a href="#stories">Wins</a><a href="#email">Email</a><a href="#stack">Stack</a>
+    <a href="#contact" class="nc">Hire Me →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hg1"></div><div class="hg2"></div>
+  <div class="hi">
+    <div>
+      <div class="htag"><span class="htd"></span>Open to senior opportunities · B2B SaaS Growth</div>
+      <h1>I build<br>marketing<br>engines that<br><span class="g">fill pipelines.</span></h1>
+      <p class="hp">6+ years of performance marketing, demand generation and full-funnel growth — turning ad budgets into qualified leads, SQLs and $100M+ in influenced pipeline for B2B SaaS companies.</p>
+      <div class="hb"><a href="#campaigns" class="b1">See my work ↓</a><a href="#contact" class="b2">Let's connect</a></div>
+    </div>
+    <div class="pc r">
+      <div class="pav">JM</div>
+      <div class="pn">Jiaul Mallik</div>
+      <div class="pr">Performance &amp; Growth Marketing Lead</div>
+      <div class="ps">
+        <div class="pst"><span class="pk">Experience</span><span class="pv">6+ Years</span></div>
+        <div class="pst"><span class="pk">Pipeline Generated</span><span class="pv g">$100M+</span></div>
+        <div class="pst"><span class="pk">Leads Per Campaign</span><span class="pv g">4,000+</span></div>
+        <div class="pst"><span class="pk">Webinar CVR</span><span class="pv g">45%+</span></div>
+        <div class="pst"><span class="pk">CPL Reduction</span><span class="pv g">−30%</span></div>
+        <div class="pst"><span class="pk">Markets</span><span class="pv">India · US Enterprise</span></div>
+      </div>
+      <div class="ptg"><span class="pt">B2B SaaS</span><span class="pt">Paid Media</span><span class="pt">Demand Gen</span><span class="pt">CRO</span><span class="pt">HubSpot</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq"><div class="mqt">
+  <span class="mi"><span class="d"></span>Google Ads</span><span class="mi"><span class="d"></span>LinkedIn Ads</span><span class="mi"><span class="d"></span>Meta Ads</span><span class="mi"><span class="d"></span>HubSpot</span><span class="mi"><span class="d"></span>GA4</span><span class="mi"><span class="d"></span>Demand Generation</span><span class="mi"><span class="d"></span>Webinar Marketing</span><span class="mi"><span class="d"></span>Funnel Optimisation</span><span class="mi"><span class="d"></span>CRO</span><span class="mi"><span class="d"></span>SEO</span><span class="mi"><span class="d"></span>Looker Studio</span><span class="mi"><span class="d"></span>Performance Max</span><span class="mi"><span class="d"></span>B2B SaaS</span><span class="mi"><span class="d"></span>A/B Testing</span><span class="mi"><span class="d"></span>Google Ads</span><span class="mi"><span class="d"></span>LinkedIn Ads</span><span class="mi"><span class="d"></span>Meta Ads</span><span class="mi"><span class="d"></span>HubSpot</span><span class="mi"><span class="d"></span>GA4</span><span class="mi"><span class="d"></span>Demand Generation</span><span class="mi"><span class="d"></span>Webinar Marketing</span><span class="mi"><span class="d"></span>Funnel Optimisation</span><span class="mi"><span class="d"></span>CRO</span><span class="mi"><span class="d"></span>SEO</span><span class="mi"><span class="d"></span>Looker Studio</span><span class="mi"><span class="d"></span>Performance Max</span><span class="mi"><span class="d"></span>B2B SaaS</span><span class="mi"><span class="d"></span>A/B Testing</span>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--bg2);">
+  <div class="w">
+    <div class="ey gr">What I Do</div>
+    <h2 class="sh">Growth Marketing = Science + Strategy + Speed</h2>
+    <div class="ag">
+      <div class="r">
+        <div class="at">
+          <p><strong>Digital marketing</strong> is the full set of online channels — paid ads, SEO, email, social, content — used to reach, engage and convert a target audience. But <strong>growth marketing</strong> goes deeper. It's a data-driven discipline that treats every touchpoint as a measurable experiment, optimising the entire customer journey from first click to closed deal.</p>
+          <p>My approach combines <strong>paid media performance</strong> (squeezing the best CPL from every dollar of ad spend), <strong>conversion rate optimisation</strong> (turning more visitors into leads), <strong>marketing automation</strong> (nurturing prospects at scale) and <strong>full-funnel analytics</strong> (knowing exactly what's working and why).</p>
+          <p>In B2B SaaS this means building systems that consistently deliver <strong>enterprise-qualified MQLs to sales</strong> — not just vanity metrics.</p>
+        </div>
+        <div class="plrs">
+          <div class="plr r r2"><div class="pi">🎯</div><div class="pn2">Paid Media</div><div class="pd">Google, LinkedIn &amp; Meta targeting ICP buyers. CPL optimisation through A/B testing &amp; audience layering.</div></div>
+          <div class="plr r r3"><div class="pi">⚡</div><div class="pn2">Demand Generation</div><div class="pd">Event &amp; webinar funnels, landing pages, lead magnets — building pipeline for sales to close.</div></div>
+          <div class="plr r r2"><div class="pi">🔄</div><div class="pn2">Marketing Automation</div><div class="pd">HubSpot workflows, lead scoring, email nurture — moving leads from MQL to SQL automatically.</div></div>
+          <div class="plr r r3"><div class="pi">📊</div><div class="pn2">Analytics &amp; Attribution</div><div class="pd">GA4, GTM, Looker Studio — infrastructure enabling real-time campaign decisions.</div></div>
+        </div>
+      </div>
+      <div class="r r2">
+        <div class="gri">
+          <div class="ml">The B2B Growth Funnel — My Typical Results</div>
+          <div class="gf">
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.15);color:var(--a1)">1</div><div><div class="gft">Awareness</div><div class="gfs">Paid ads reach ICP buyers across 4 channels</div></div><div class="gfm" style="color:var(--a1)">285K</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a1)">2</div><div><div class="gft">Interest</div><div class="gfs">Landing page visits · 2.4% avg CTR</div></div><div class="gfm" style="color:var(--a1)">6,840</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(0,229,176,.12);color:var(--a2)">3</div><div><div class="gft">Registration</div><div class="gfs">Webinar sign-ups · 62% form CVR</div></div><div class="gfm" style="color:var(--a2)">4,240</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(0,229,176,.1);color:var(--a2)">4</div><div><div class="gft">Attendance</div><div class="gfs">Live attendees · 45% show-up rate</div></div><div class="gfm" style="color:var(--a2)">1,908</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(255,184,48,.12);color:var(--a4)">5</div><div><div class="gft">MQL</div><div class="gfs">Lead scored → sales handoff</div></div><div class="gfm" style="color:var(--a4)">382</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(255,107,157,.1);color:var(--a3)">6</div><div><div class="gft">Revenue</div><div class="gfs">Pipeline influenced by marketing</div></div><div class="gfm" style="color:var(--a3)">$100M+</div></div>
+          </div>
+        </div>
+        <div class="gri">
+          <div class="ml">How I Work — My Process</div>
+          <div class="hws">
+            <div class="hw"><div class="hwn">1</div><div><div class="hwt">Research &amp; ICP Definition</div><div class="hwd">Define buyer personas, map intent signals, audit competitor campaigns</div></div></div>
+            <div class="hw"><div class="hwn">2</div><div><div class="hwt">Campaign Architecture</div><div class="hwd">Multi-channel strategy, budget allocation, creative brief, funnel design</div></div></div>
+            <div class="hw"><div class="hwn">3</div><div><div class="hwt">Launch &amp; Track</div><div class="hwd">Deploy campaigns, GA4 + GTM setup, Looker dashboards live</div></div></div>
+            <div class="hw"><div class="hwn">4</div><div><div class="hwt">Test &amp; Optimise</div><div class="hwd">A/B tests, bid adjustments, creative refresh, landing page CRO</div></div></div>
+            <div class="hw"><div class="hwn">5</div><div><div class="hwt">Report &amp; Scale</div><div class="hwd">Weekly insights to sales &amp; leadership — double down on winners</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section style="padding:3.5rem 3rem 2rem;">
+  <div class="w">
+    <div class="ey bl">Numbers</div>
+    <h2 class="sh">Career Performance Dashboard</h2>
+    <p class="sd">Real metrics across 6+ years of B2B campaigns, funnels, and growth projects.</p>
+    <div class="md r">
+      <div class="mc"><div class="mci">💰</div><div class="mv">$<span id="m1">0</span><span class="u">M+</span></div><div class="ml2">Pipeline Influenced</div><div class="mt tg">↑ Quadrant Technologies</div></div>
+      <div class="mc"><div class="mci">🎯</div><div class="mv"><span id="m2">0</span><span class="u">K+</span></div><div class="ml2">Leads Generated</div><div class="mt tb">↑ Multi-channel events</div></div>
+      <div class="mc"><div class="mci">📈</div><div class="mv"><span id="m3">0</span><span class="u">%+</span></div><div class="ml2">Webinar Conv. Rate</div><div class="mt tg">↑ 2× industry avg</div></div>
+      <div class="mc"><div class="mci">⚡</div><div class="mv"><span id="m4">0</span><span class="u">%</span></div><div class="ml2">CPL Reduction</div><div class="mt ta">↑ ISDC Global</div></div>
+    </div>
+    <div class="mr r r2">
+      <div class="mrc"><div class="mrv" style="color:var(--a2)">+22%</div><div class="mrl">Landing Page CVR</div><div class="mrs">A/B testing 6 variants</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(255,255,255,.06)"><div class="mrv" style="color:var(--a1)">+40%</div><div class="mrl">Organic Traffic</div><div class="mrs">8 months · SEO strategy</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(255,255,255,.06)"><div class="mrv" style="color:var(--a4)">+25%</div><div class="mrl">Email Open Rate</div><div class="mrs">HubSpot automation</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(255,255,255,.06)"><div class="mrv" style="color:var(--a3)">−20%</div><div class="mrl">Wasted Ad Spend</div><div class="mrs">Weekly optimisation</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMPAIGNS -->
+<section id="campaigns" style="padding-top:2rem;">
+  <div class="w">
+    <div class="ey bl">Campaign Work</div>
+    <h2 class="sh">Featured Campaigns</h2>
+    <p class="sd">Real campaigns — strategy, execution, and results from inside the actual platforms I use every day.</p>
+    <div class="cases">
+
+      <!-- CASE 1: FabCon — Google Ads screenshot -->
+      <div class="case r">
+        <div class="c-hdr">
+          <div class="cbadges"><span class="cb cbb">B2B Demand Gen</span><span class="cb cbg">Event Marketing</span><span class="cb cbp">Enterprise US</span></div>
+          <h3>FabCon &amp; Azure Enterprise Event Campaign</h3>
+          <p>Multi-channel demand generation targeting enterprise IT decision-makers (VP, Director, C-suite) across the US for Quadrant's flagship Microsoft Azure &amp; Fabric events. Owned creative strategy, ad setup, landing pages, HubSpot automation, retargeting, and post-event SQL conversion.</p>
+          <div class="cco">📍 Quadrant Technologies · Oct 2024 – Present</div>
+        </div>
+        <div class="ckpis">
+          <div class="kpi"><div class="kpiv" style="color:var(--a4)">$100M+</div><div class="kpil">Pipeline<br>Influenced</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a2)">4,200+</div><div class="kpil">Leads<br>Generated</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a1)">45%+</div><div class="kpil">Webinar<br>CVR</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a2)">+22%</div><div class="kpil">LP CVR<br>Lift</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a3)">−38%</div><div class="kpil">Cost Per<br>Registration</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a1)">3.2×</div><div class="kpil">Overall<br>ROAS</div></div>
+        </div>
+        <div class="c-body">
+          <div class="c-ss">
+            <!-- GOOGLE ADS SCREENSHOT MOCKUP -->
+            <div class="clbl">Google Ads Campaign Dashboard</div>
+            <div class="ss-frame">
+              <div class="ss-bar"><div class="ss-dots"><div class="ss-dot r"></div><div class="ss-dot y"></div><div class="ss-dot g"></div></div><div class="ss-url">ads.google.com · Quadrant Technologies · Azure Events Campaign</div></div>
+              <div class="gads">
+                <div class="gads-nav"><span class="gads-logo">Google Ads</span><span class="gads-camp">Azure Event Campaign · Active</span><span class="gads-camp" style="background:#e6f4ea;color:#137333">▲ 38% below target CPL</span></div>
+                <div class="gads-stat-row">
+                  <div class="gads-stat"><div class="v">$41.20</div><div class="l">Cost per lead</div></div>
+                  <div class="gads-stat"><div class="v" style="color:#1a73e8">4,21</div><div class="l">Conversions</div></div>
+                  <div class="gads-stat"><div class="v">4.18%</div><div class="l">Conv. rate</div></div>
+                  <div class="gads-stat"><div class="v" style="color:#137333">3.2×</div><div class="l">ROAS</div></div>
+                </div>
+                <table class="gads-table">
+                  <thead><tr><th>Campaign</th><th>Status</th><th>Clicks</th><th>CTR</th><th>Conv.</th><th>CPL</th></tr></thead>
+                  <tbody>
+                    <tr><td>Azure FabCon – Search</td><td class="gads-green">● Eligible</td><td>3,841</td><td class="gads-blue">4.6%</td><td>312</td><td class="gads-green">$38.20</td></tr>
+                    <tr><td>Azure Events – PMax</td><td class="gads-green">● Eligible</td><td>2,190</td><td>3.8%</td><td>248</td><td class="gads-green">$43.10</td></tr>
+                    <tr><td>Webinar Retargeting – Display</td><td class="gads-green">● Eligible</td><td>890</td><td>0.8%</td><td>94</td><td class="gads-green">$31.50</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div style="margin-top:1rem;">
+              <div class="clbl" style="margin-bottom:.5rem;">Monthly Lead Volume</div>
+              <canvas id="lc1" style="max-height:100px;"></canvas>
+            </div>
+          </div>
+          <div class="c-detail">
+            <div class="ds"><h5>Channels Used</h5><div class="tc"><span class="t hi">LinkedIn Ads</span><span class="t hi">Google Search</span><span class="t hi">Meta Ads</span><span class="t">Email Automation</span><span class="t">HubSpot CRM</span><span class="t">Retargeting</span><span class="t g">GA4 + GTM</span></div></div>
+            <div class="ds"><h5>Key Wins</h5><ul class="wins"><li>Webinar CVR hit <b>45% — 2× the industry benchmark</b></li><li>Post-event email sequence <b>recovered 18% of no-shows</b></li><li>6-variant LP test — winner <b>lifted CVR by 22%</b></li><li>Retargeting cut registration drop-off by <b>31%</b></li><li>LinkedIn Lead Gen Forms drove <b>1.4× more leads</b> vs LP</li><li>Retargeting audience recovered <b>$1.2M in at-risk pipeline</b></li></ul></div>
+            <div class="ds"><h5>Audience</h5><div class="tc"><span class="t">VP/Director Level</span><span class="t">C-Suite</span><span class="t">Enterprise 500+</span><span class="t">IT &amp; Cloud</span><span class="t">US Market</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FUNNEL -->
+      <div class="fn-box r">
+        <h3>Webinar Funnel — Full Conversion Architecture</h3>
+        <div class="fn-fsub">Single campaign · Quadrant Technologies · 2024 · End-to-end from impression to $100M+ pipeline</div>
+        <div class="fn-stages" id="fnS">
+          <div class="fn-row"><div class="fn-lbl">Ad Impressions</div><div class="fn-track"><div class="fn-fill" data-w="100" style="background:linear-gradient(90deg,#4F8EFF,#2a6be0)"><span>285,000 impressions · 4 channels</span></div></div><div class="fn-cnt" style="color:var(--a1)">285K</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a1)">—</div></div>
+          <div class="fn-arr">↓ 2.4% avg CTR across channels</div>
+          <div class="fn-row"><div class="fn-lbl">Landing Page Visits</div><div class="fn-track"><div class="fn-fill" data-w="76" style="background:linear-gradient(90deg,#6B9FFF,#4F8EFF)"><span>6,840 unique visitors</span></div></div><div class="fn-cnt" style="color:var(--a1)">6,840</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a1)">2.4%</div></div>
+          <div class="fn-arr">↓ 62% form fill (improved from 41% baseline)</div>
+          <div class="fn-row"><div class="fn-lbl">Registrations</div><div class="fn-track"><div class="fn-fill" data-w="54" style="background:linear-gradient(90deg,#00E5B0,#00c090)"><span>4,241 registered</span></div></div><div class="fn-cnt" style="color:var(--a2)">4,241</div><div class="fn-rate" style="background:rgba(0,229,176,.1);color:var(--a2)">62%</div></div>
+          <div class="fn-arr">↓ 45% show-up rate (industry avg is 22%)</div>
+          <div class="fn-row"><div class="fn-lbl">Live Attendees</div><div class="fn-track"><div class="fn-fill" data-w="36" style="background:linear-gradient(90deg,#00F5C0,#00E5B0)"><span>1,908 attended live</span></div></div><div class="fn-cnt" style="color:var(--a2)">1,908</div><div class="fn-rate" style="background:rgba(0,229,176,.1);color:var(--a2)">45%</div></div>
+          <div class="fn-arr">↓ Lead scoring + post-event nurture sequence</div>
+          <div class="fn-row"><div class="fn-lbl">MQLs → Sales</div><div class="fn-track"><div class="fn-fill" data-w="18" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"><span>382 MQLs passed to sales</span></div></div><div class="fn-cnt" style="color:var(--a4)">382</div><div class="fn-rate" style="background:rgba(255,184,48,.1);color:var(--a4)">20%</div></div>
+        </div>
+      </div>
+
+      <!-- CASE 2: ISDC — HubSpot + LinkedIn screenshot -->
+      <div class="case r">
+        <div class="c-hdr">
+          <div class="cbadges"><span class="cb cba">CPL Optimisation</span><span class="cb cbg">Lead Generation</span><span class="cb cbb">SEO Growth</span></div>
+          <h3>Workshop &amp; Webinar Lead Gen — CPL Reduction Drive</h3>
+          <p>Inherited a bloated, high-CPL paid media account. Conducted a full audit, rebuilt audience architecture, redesigned landing pages to reduce friction, and deployed HubSpot behavioural automation — cutting CPL by 30% while growing organic traffic 40%+ in under 8 months.</p>
+          <div class="cco">📍 ISDC Global · Dec 2023 – Oct 2024</div>
+        </div>
+        <div class="ckpis">
+          <div class="kpi"><div class="kpiv" style="color:var(--a2)">−30%</div><div class="kpil">CPL<br>Reduction</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a1)">+40%</div><div class="kpil">Organic<br>Traffic</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a4)">+25%</div><div class="kpil">Email<br>Open Rate</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a2)">−20%</div><div class="kpil">Wasted<br>Spend</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a3)">10+</div><div class="kpil">Funnels<br>Built</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a1)">3 ppl</div><div class="kpil">Team<br>Managed</div></div>
+        </div>
+        <div class="c-body">
+          <div class="c-ss">
+            <!-- HUBSPOT EMAIL SCREENSHOT -->
+            <div class="clbl">HubSpot Email Marketing Dashboard</div>
+            <div class="ss-frame">
+              <div class="ss-bar"><div class="ss-dots"><div class="ss-dot r"></div><div class="ss-dot y"></div><div class="ss-dot g"></div></div><div class="ss-url">app.hubspot.com · Marketing → Email → Campaigns</div></div>
+              <div class="hs-mock">
+                <div class="hs-nav"><span class="hs-logo">HubSpot</span><span class="hs-tab">Contacts</span><span class="hs-tab">Marketing</span><span class="hs-tab active">Email</span><span class="hs-tab">Automation</span></div>
+                <div class="hs-content">
+                  <div class="hs-title">Email Performance · Last 90 days</div>
+                  <div class="hs-email-list">
+                    <div class="hs-email-row header"><span>Email Name</span><span style="text-align:center">Sent</span><span style="text-align:center">Open %</span><span style="text-align:center">Click %</span><span style="text-align:center">CVR</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Webinar Confirmation — Save Your Seat</span><span class="hs-num">4,241</span><span class="hs-rate" style="color:#00a47c">68.4%</span><span class="hs-rate" style="color:#0091ae">22.1%</span><span class="hs-rate" style="color:#f5a623">18.2%</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Day Before Reminder — Join Tomorrow</span><span class="hs-num">4,241</span><span class="hs-rate" style="color:#00a47c">72.1%</span><span class="hs-rate" style="color:#0091ae">31.4%</span><span class="hs-rate" style="color:#f5a623">—</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Post-Event — Recording + Next Steps</span><span class="hs-num">2,333</span><span class="hs-rate" style="color:#00a47c">52.7%</span><span class="hs-rate" style="color:#0091ae">28.9%</span><span class="hs-rate" style="color:#f5a623">9.4%</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Re-engagement — We Miss You</span><span class="hs-num">1,180</span><span class="hs-rate" style="color:#f5a623">34.2%</span><span class="hs-rate" style="color:#0091ae">14.8%</span><span class="hs-rate" style="color:#00a47c">15.3%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:1rem;">
+              <div class="clbl" style="margin-bottom:.5rem;">CPL Trend — Before vs After Optimisation ($)</div>
+              <canvas id="lc3" style="max-height:100px;"></canvas>
+            </div>
+          </div>
+          <div class="c-detail">
+            <div class="ds"><h5>Optimisation Actions</h5><ul class="wins"><li>Rebuilt audiences with <b>job title + company size + intent</b> layering</li><li>Reduced registration form 7→3 fields — <b>CVR jumped 2.7×</b></li><li>Deployed <b>HubSpot lead scoring</b> to surface high-intent MQLs first</li><li>WhatsApp re-engagement recovered <b>15% of cold leads</b></li><li>Weekly reports cut <b>wasted spend 20%+</b></li><li>10+ new landing page funnels with <b>dedicated ad-to-LP message match</b></li></ul></div>
+            <div class="ds"><h5>Tools Used</h5><div class="tc"><span class="t hi">HubSpot</span><span class="t hi">Google Ads</span><span class="t hi">Meta Ads</span><span class="t g">GA4</span><span class="t">GTM</span><span class="t">Zoho CRM</span><span class="t">WhatsApp API</span><span class="t">Looker Studio</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE 3: Sutherland — GA4 + LinkedIn screenshot -->
+      <div class="case r">
+        <div class="c-hdr">
+          <div class="cbadges"><span class="cb cbg">Social Media</span><span class="cb cbb">Paid Search</span><span class="cb cba">Lead Quality</span></div>
+          <h3>Multi-Channel Digital Campaign — CTR &amp; Lead Quality Lift</h3>
+          <p>Executed full-funnel digital marketing campaigns across paid search, social, and email at Sutherland Global. Grew paid CTR by 18%+, social engagement by 30%+, and improved lead quality scores by 20% through tighter audience-to-message alignment.</p>
+          <div class="cco">📍 Sutherland Global Services · Dec 2019 – Jan 2023</div>
+        </div>
+        <div class="ckpis">
+          <div class="kpi"><div class="kpiv" style="color:var(--a1)">+18%</div><div class="kpil">Paid<br>CTR Growth</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a2)">+30%</div><div class="kpil">Social<br>Engagement</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a4)">+25%</div><div class="kpil">Organic<br>Sessions</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a2)">+20%</div><div class="kpil">Lead<br>Quality Score</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a3)">−1 wk</div><div class="kpil">Campaign<br>Launch Time</div></div>
+          <div class="kpi"><div class="kpiv" style="color:var(--a1)">3yr</div><div class="kpil">Campaign<br>Duration</div></div>
+        </div>
+        <div class="c-body">
+          <div class="c-ss">
+            <!-- GA4 SCREENSHOT MOCKUP -->
+            <div class="clbl">Google Analytics 4 — Traffic Overview</div>
+            <div class="ss-frame">
+              <div class="ss-bar"><div class="ss-dots"><div class="ss-dot r"></div><div class="ss-dot y"></div><div class="ss-dot g"></div></div><div class="ss-url">analytics.google.com · Sutherland Global · All Web Site Data</div></div>
+              <div class="ga4">
+                <div class="ga4-nav"><span class="ga4-logo">📊 Google Analytics</span><span class="ga4-prop">Sutherland Digital · GA4</span></div>
+                <div class="ga4-sidebar">
+                  <div class="ga4-side">
+                    <div class="ga4-side-item">Home</div>
+                    <div class="ga4-side-item active">Reports</div>
+                    <div class="ga4-side-item">Acquisition</div>
+                    <div class="ga4-side-item" style="padding-left:1rem;font-size:.65rem">Traffic acquisition</div>
+                    <div class="ga4-side-item">Engagement</div>
+                    <div class="ga4-side-item">Conversions</div>
+                  </div>
+                  <div class="ga4-main">
+                    <div class="ga4-row">
+                      <div class="ga4-card"><div class="ga4-cv">24,810</div><div class="ga4-cl">Users (30d)</div><div class="ga4-cd">↑ 23.4%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">38,420</div><div class="ga4-cl">Sessions</div><div class="ga4-cd">↑ 25.1%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">4.8%</div><div class="ga4-cl">Conv. Rate</div><div class="ga4-cd">↑ 18%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">1,843</div><div class="ga4-cl">Conversions</div><div class="ga4-cd">↑ 20%</div></div>
+                    </div>
+                    <div class="ga4-chart-wrap">
+                      <div class="ga4-chart-title">Sessions over time — Paid + Organic channels</div>
+                      <canvas id="ga4chart" style="max-height:75px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-detail">
+            <div class="ds"><h5>Key Results</h5><ul class="wins"><li>Grew paid campaign CTR by <b>18%+</b> through continuous ad copy testing</li><li>Increased social media engagement by <b>30%+</b> via data-backed content scheduling</li><li>Contributed to <b>25% increase in organic sessions</b> over 12 months</li><li>Improved lead quality scores by <b>20%</b> through tighter ad-to-LP message alignment</li><li>Reduced campaign launch time by <b>1 full week</b> through cross-team process improvements</li></ul></div>
+            <div class="ds"><h5>Channels &amp; Tools</h5><div class="tc"><span class="t hi">Google Ads</span><span class="t hi">Meta Ads</span><span class="t">LinkedIn</span><span class="t">Email Marketing</span><span class="t g">GA4</span><span class="t">SEO</span><span class="t">Content Calendar</span></div></div>
+            <div class="ds"><h5>Campaign Types</h5><div class="tc"><span class="t">Search Campaigns</span><span class="t">Display Ads</span><span class="t">Social Media</span><span class="t">Email Broadcast</span><span class="t">Webinar Promos</span><span class="t">Organic SEO</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section id="stories" style="background:var(--bg2);">
+  <div class="w">
+    <div class="ey pk">Success Stories</div>
+    <h2 class="sh">More Campaign Wins</h2>
+    <p class="sd">Additional results from campaigns, optimisation projects, and growth experiments across my career.</p>
+    <div class="stories r">
+      <div class="story">
+        <div class="st-top">
+          <div class="st-co">📍 Quadrant Technologies · LinkedIn Ads</div>
+          <div class="st-title">LinkedIn Lead Gen Form Campaign</div>
+          <div class="st-desc">Switched from driving traffic to landing pages to LinkedIn native Lead Gen Forms for Azure event registrations. Ran head-to-head A/B test across identical budget. LGF delivered 1.4× more leads at lower CPL.</div>
+        </div>
+        <!-- LinkedIn Ads Mock -->
+        <div style="padding:.85rem;background:#f3f2ef;">
+          <div style="background:#fff;border-radius:8px;border:1px solid #ddd;overflow:hidden;">
+            <div style="background:#0077b5;padding:.45rem .85rem;display:flex;align-items:center;gap:.6rem;"><span style="font-size:.75rem;font-weight:800;color:#fff;">in</span><span style="font-size:.68rem;color:rgba(255,255,255,.85);">Campaign Manager · Azure Event · Lead Gen Forms</span></div>
+            <div style="padding:.75rem .85rem;">
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.65rem;">
+                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#000">1,642</div><div style="font-size:.6rem;color:#666">Leads</div></div>
+                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#0077b5">0.82%</div><div style="font-size:.6rem;color:#666">CTR</div></div>
+                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#017d3f">$39.10</div><div style="font-size:.6rem;color:#666">CPL</div></div>
+                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#000">12.4%</div><div style="font-size:.6rem;color:#666">CVR</div></div>
+              </div>
+              <canvas id="li_chart" style="max-height:65px;"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="st-metrics">
+          <div class="stm"><div class="stmv" style="color:var(--a2)">1.4×</div><div class="stml">More Leads vs LP</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a1)">0.82%</div><div class="stml">LinkedIn CTR</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a4)">$39</div><div class="stml">CPL Achieved</div></div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="st-top">
+          <div class="st-co">📍 ISDC Global · SEO + Content</div>
+          <div class="st-title">Organic Traffic Turnaround</div>
+          <div class="st-desc">Ran a full technical SEO audit, fixed crawl errors, restructured site architecture, built topic clusters and optimised 40+ pages. Organic sessions grew 40%+ in 8 months while improving keyword rankings from page 4 to page 1.</div>
+        </div>
+        <!-- GA4 organic screenshot mock -->
+        <div style="padding:.85rem;background:#f8f9fa;">
+          <div style="background:#fff;border-radius:8px;border:1px solid #e0e0e0;overflow:hidden;">
+            <div style="background:#34a853;padding:.45rem .85rem;display:flex;align-items:center;gap:.6rem;"><span style="font-size:.68rem;font-weight:700;color:#fff">Google Search Console · Performance</span></div>
+            <div style="padding:.75rem .85rem;">
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.65rem;">
+                <div style="background:#e8f5e9;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#137333">21,800</div><div style="font-size:.6rem;color:#5f6368">Clicks (M8)</div></div>
+                <div style="background:#e8f5e9;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#137333">+40%</div><div style="font-size:.6rem;color:#5f6368">vs Baseline</div></div>
+                <div style="background:#e3f2fd;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#1565c0">6 kws</div><div style="font-size:.6rem;color:#5f6368">Page 1 Rankings</div></div>
+                <div style="background:#fff3e0;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#e65100">3.8%</div><div style="font-size:.6rem;color:#5f6368">Avg CTR</div></div>
+              </div>
+              <canvas id="seo_mini" style="max-height:65px;"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="st-metrics">
+          <div class="stm"><div class="stmv" style="color:var(--a2)">+40%</div><div class="stml">Organic Traffic</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a1)">6 kws</div><div class="stml">Page 1 Rankings</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a4)">8 mo</div><div class="stml">Time to Results</div></div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="st-top">
+          <div class="st-co">📍 ISDC Global · HubSpot Automation</div>
+          <div class="st-title">Lead Nurture Automation System</div>
+          <div class="st-desc">Built a full HubSpot lead nurture system from scratch — lead scoring model, 5-step email drip, sales handoff triggers, and re-engagement workflow. Reduced average time from MQL to sales contact from 8 days to 2.1 days.</div>
+        </div>
+        <div style="padding:.85rem;background:#fff8f5;">
+          <div style="background:#fff;border-radius:8px;border:1px solid #e5e8eb;overflow:hidden;">
+            <div style="background:#ff7a59;padding:.45rem .85rem;"><span style="font-size:.68rem;font-weight:700;color:#fff">HubSpot · Workflows · Lead Nurture Sequence</span></div>
+            <div style="padding:.75rem .85rem;">
+              <div style="display:flex;flex-direction:column;gap:.35rem;">
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f8fa;border-radius:5px;border-left:3px solid #00a4bd;"><span style="font-size:.65rem;font-weight:600;color:#33475b">① Trigger: New MQL (Score ≥ 40)</span><span style="margin-left:auto;font-size:.62rem;color:#7c98b6">Contact enrolled</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f8fa;border-radius:5px;border-left:3px solid #ff7a59;"><span style="font-size:.65rem;font-weight:600;color:#33475b">② Send: Welcome + Resource Email</span><span style="margin-left:auto;font-size:.62rem;color:#00a4bd">Open rate: 68%</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f8fa;border-radius:5px;border-left:3px solid #f5a623;"><span style="font-size:.65rem;font-weight:600;color:#33475b">③ Wait 2 days → Send Case Study</span><span style="margin-left:auto;font-size:.62rem;color:#00a4bd">Click rate: 31%</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#e6f3eb;border-radius:5px;border-left:3px solid #00a47c;"><span style="font-size:.65rem;font-weight:600;color:#33475b">④ Score ≥ 70 → Notify Sales + Create Deal</span><span style="margin-left:auto;font-size:.62rem;font-weight:700;color:#017d3f">SQL ✓</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="st-metrics">
+          <div class="stm"><div class="stmv" style="color:var(--a2)">2.1 days</div><div class="stml">Avg MQL→Sales</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a1)">68%</div><div class="stml">Sequence Open Rate</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a4)">18%</div><div class="stml">MQL Recovery</div></div>
+        </div>
+      </div>
+
+      <div class="story">
+        <div class="st-top">
+          <div class="st-co">📍 Quadrant Technologies · Looker Studio</div>
+          <div class="st-title">Real-Time Campaign Dashboard</div>
+          <div class="st-desc">Built a live Looker Studio dashboard pulling data from GA4, Google Ads, LinkedIn Ads, and HubSpot — giving leadership a single source of truth for all campaign KPIs. Enabled same-day budget reallocation decisions.</div>
+        </div>
+        <!-- Looker Studio Mock -->
+        <div style="padding:.85rem;background:#1b1f3a;">
+          <div class="lk" style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);">
+            <div class="lk-nav"><span class="lk-logo">📊 Looker Studio</span><span class="lk-title">Quadrant · Campaign Performance · Live</span></div>
+            <div class="lk-content">
+              <div class="lk-card"><div class="lk-cv">$41.20</div><div class="lk-cl">Avg CPL (All Channels)</div><div class="lk-cg">↓ 38% vs target</div></div>
+              <div class="lk-card"><div class="lk-cv">4,241</div><div class="lk-cl">Total Leads (MTD)</div><div class="lk-cg">↑ 24% vs last month</div></div>
+              <div class="lk-card"><div class="lk-cv">45.2%</div><div class="lk-cl">Webinar CVR</div><div class="lk-cg">↑ 2× benchmark</div></div>
+              <div class="lk-card"><div class="lk-cv">3.2×</div><div class="lk-cl">Overall ROAS</div><div class="lk-cg">↑ Target: 2.5×</div></div>
+            </div>
+            <div class="lk-chart"><canvas id="lk_chart" style="max-height:60px;"></canvas></div>
+          </div>
+        </div>
+        <div class="st-metrics">
+          <div class="stm"><div class="stmv" style="color:var(--a2)">Real-time</div><div class="stml">Dashboard Updates</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a1)">4 sources</div><div class="stml">Data Integrated</div></div>
+          <div class="stm"><div class="stmv" style="color:var(--a4)">Same-day</div><div class="stml">Budget Decisions</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL + AB -->
+<section id="email">
+  <div class="w">
+    <div class="ey pk">Email Marketing</div>
+    <h2 class="sh">Email Campaign Performance</h2>
+    <p class="sd">Automated HubSpot sequences and lead nurture flows — with real open rate, click, and conversion data.</p>
+    <div class="eg r">
+      <div class="ec"><div class="ech"><div class="ecn">Webinar Confirmation Sequence</div><span class="cb cbg" style="font-size:.6rem">3-email flow</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:var(--a2)">68.4%</span></div><div class="ecr"><span class="eck">Click Rate</span><span class="ecv">22.1%</span></div><div class="ecr"><span class="eck">Show-up Lift</span><span class="ecv" style="color:var(--a2)">+18%</span></div><div class="ecr"><span class="eck">Unsubscribe</span><span class="ecv">0.4%</span></div></div><div class="ecb"><div class="ecf" data-w="68" style="background:var(--a2)"></div></div></div>
+      <div class="ec"><div class="ech"><div class="ecn">Post-Event Nurture Drip</div><span class="cb cbb" style="font-size:.6rem">5-email flow</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:var(--a1)">52.7%</span></div><div class="ecr"><span class="eck">Click-to-Open</span><span class="ecv">31.4%</span></div><div class="ecr"><span class="eck">MQL Recovery</span><span class="ecv" style="color:var(--a2)">18%</span></div><div class="ecr"><span class="eck">Time to MQL</span><span class="ecv">4.2 days</span></div></div><div class="ecb"><div class="ecf" data-w="53" style="background:var(--a1)"></div></div></div>
+      <div class="ec"><div class="ech"><div class="ecn">Re-engagement Campaign</div><span class="cb cba" style="font-size:.6rem">cold leads</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:var(--a4)">34.2%</span></div><div class="ecr"><span class="eck">Re-engaged</span><span class="ecv" style="color:var(--a2)">15%</span></div><div class="ecr"><span class="eck">Channels</span><span class="ecv">Email + WhatsApp</span></div><div class="ecr"><span class="eck">Cold Pipeline Added</span><span class="ecv">Significant</span></div></div><div class="ecb"><div class="ecf" data-w="34" style="background:var(--a4)"></div></div></div>
+    </div>
+    <div style="margin-top:2.2rem;">
+      <div class="ey bl" style="margin-bottom:.6rem;">A/B Testing</div>
+      <h3 style="font-size:1.3rem;font-weight:900;letter-spacing:-.025em;margin-bottom:.38rem;">Experiments That Moved the Needle</h3>
+      <p style="color:var(--sub);font-size:.82rem;margin-bottom:1.3rem;font-weight:300;">Every major CVR improvement came from structured A/B tests — not guessing.</p>
+      <div class="abg r">
+        <div class="abc"><div class="abw">Winner ✓</div><div class="abt">CTA Copy: "Register Now" vs "Save My Seat"</div><div class="abd">3,200 visitors · Webinar landing pages · Statistical significance: 97%</div><div class="abcmp"><div class="abv a"><div class="abvl">Variant A</div><div class="abvv">8.2%</div><div class="abvs">"Register Now"</div></div><div class="abv b"><div class="abvl">Variant B</div><div class="abvv">12.1%</div><div class="abvs">"Save My Seat"</div></div></div><div class="abl">↑ 47.5% CVR improvement · Rolled out sitewide</div></div>
+        <div class="abc"><div class="abw">Winner ✓</div><div class="abt">Form Length: 7 fields vs 3 fields</div><div class="abd">Workshop registration pages · 2,800 visitors · Immediate result</div><div class="abcmp"><div class="abv a"><div class="abvl">7 Fields</div><div class="abvv">14.3%</div><div class="abvs">Completion rate</div></div><div class="abv b"><div class="abvl">3 Fields</div><div class="abvv">38.7%</div><div class="abvs">Completion rate</div></div></div><div class="abl">↑ 2.7× form completion · CPL dropped 22% immediately</div></div>
+        <div class="abc"><div class="abw">Winner ✓</div><div class="abt">LinkedIn Ad Format: Image vs Lead Gen Form</div><div class="abd">B2B enterprise audience · Same budget · Same targeting · 14 days</div><div class="abcmp"><div class="abv a"><div class="abvl">Single Image</div><div class="abvv">0.48%</div><div class="abvs">CTR</div></div><div class="abv b"><div class="abvl">Lead Gen Form</div><div class="abvv">0.82%</div><div class="abvs">CTR</div></div></div><div class="abl">↑ 70% higher CTR · 1.4× more leads at same budget</div></div>
+        <div class="abc"><div class="abw">Winner ✓</div><div class="abt">Email Subject: Generic vs Personalised + Urgency</div><div class="abd">Webinar reminder emails · 4,200 recipients · 3 subject line variants tested</div><div class="abcmp"><div class="abv a"><div class="abvl">Generic</div><div class="abvv">38%</div><div class="abvs">Open rate</div></div><div class="abv b"><div class="abvl">Personalised</div><div class="abvv">61%</div><div class="abvs">Open rate</div></div></div><div class="abl">↑ 60% open rate increase · Applied to all sequences</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section style="background:var(--bg2);">
+  <div class="w">
+    <div class="ey am">Paid Media</div>
+    <h2 class="sh">Channel Performance Benchmarks</h2>
+    <p class="sd">Real performance data from my B2B paid campaigns — benchmarks I've achieved in practice.</p>
+    <div class="chg r">
+      <div class="chc"><div class="chh"><div class="chn">LinkedIn Ads</div><span class="cb cbb">Primary B2B</span></div><div class="chr"><div class="chrr"><span class="chk">Avg CTR</span><span class="chv">0.68%</span></div><div class="chrr"><span class="chk">Lead Form CVR</span><span class="chv">12.4%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:var(--a2)">$42</span></div><div class="chrr"><span class="chk">Audience</span><span class="chv">C-suite / Director</span></div><div class="chrr"><span class="chk">Best Format</span><span class="chv">Lead Gen Forms</span></div></div><div class="chprog"><div class="chf" data-w="85" style="background:var(--a1)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">85% — Best B2B enterprise channel</div></div>
+      <div class="chc"><div class="chh"><div class="chn">Google Ads</div><span class="cb cbg">High Intent</span></div><div class="chr"><div class="chrr"><span class="chk">Search CTR</span><span class="chv">4.2%</span></div><div class="chrr"><span class="chk">Conv. Rate</span><span class="chv">8.7%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:var(--a2)">$38</span></div><div class="chrr"><span class="chk">Types</span><span class="chv">Search + PMax</span></div><div class="chrr"><span class="chk">Best Use</span><span class="chv">Intent leads</span></div></div><div class="chprog"><div class="chf" data-w="78" style="background:var(--a2)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">78% — Strongest intent channel</div></div>
+      <div class="chc"><div class="chh"><div class="chn">Meta Ads</div><span class="cb cba">Awareness + RTG</span></div><div class="chr"><div class="chrr"><span class="chk">Avg CTR</span><span class="chv">1.8%</span></div><div class="chrr"><span class="chk">Retarget CVR</span><span class="chv">6.3%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:var(--a2)">$28</span></div><div class="chrr"><span class="chk">Types</span><span class="chv">Retargeting + LAL</span></div><div class="chrr"><span class="chk">Best Use</span><span class="chv">Top-of-funnel</span></div></div><div class="chprog"><div class="chf" data-w="62" style="background:var(--a4)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">62% — Most cost-efficient awareness</div></div>
+    </div>
+    <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;margin-top:1rem;" class="r r2">
+      <div class="clbl" style="font-size:.65rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;">Best CPL Achieved Per Channel ($) — Lower is Better</div>
+      <canvas id="cplBar" style="max-height:105px;"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="w">
+    <div class="ey bl">Technology</div>
+    <h2 class="sh">My Marketing Stack</h2>
+    <p class="sd">Every tool I use daily to plan, execute, measure, and scale campaigns.</p>
+    <div class="stk r">
+      <div class="sr"><div class="srcat">Paid Advertising</div><div class="srtools"><span class="st2 hi">Google Ads</span><span class="st2 hi">LinkedIn Ads</span><span class="st2 hi">Meta Ads</span><span class="st2">TikTok Ads</span><span class="st2">Amazon Ads</span><span class="st2">Pinterest Ads</span><span class="st2">Performance Max</span><span class="st2">YouTube Ads</span></div></div>
+      <div class="sr"><div class="srcat">CRM &amp; Automation</div><div class="srtools"><span class="st2 hi">HubSpot</span><span class="st2 hi">Email Automation</span><span class="st2">Zoho CRM</span><span class="st2">Lead Scoring</span><span class="st2">WhatsApp API</span><span class="st2">Workflow Builder</span></div></div>
+      <div class="sr"><div class="srcat">Analytics &amp; Tracking</div><div class="srtools"><span class="st2 hi">Google Analytics 4</span><span class="st2 hi">Google Tag Manager</span><span class="st2 hi">Looker Studio</span><span class="st2">UTM Tracking</span><span class="st2">Funnel Analysis</span><span class="st2">Conversion Tracking</span></div></div>
+      <div class="sr"><div class="srcat">SEO &amp; Content</div><div class="srtools"><span class="st2">SEMrush</span><span class="st2">Search Console</span><span class="st2">Topic Clustering</span><span class="st2">Technical SEO</span><span class="st2">On-Page Optimisation</span></div></div>
+      <div class="sr"><div class="srcat">CRO &amp; Landing Pages</div><div class="srtools"><span class="st2 hi">Funnel Design</span><span class="st2 hi">A/B Testing</span><span class="st2">Form Optimisation</span><span class="st2">CRO</span><span class="st2">Conversion Architecture</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section style="background:var(--bg2);padding:4.5rem 3rem;">
+  <div class="w">
+    <div class="ey am">Credentials</div>
+    <h2 class="sh">Certifications</h2>
+    <div class="certs r">
+      <div class="cert"><div class="certic cbl">🎯</div><div><div class="certn">Google Ads Certified</div><div class="certi">Search · Display · Video · Google</div></div></div>
+      <div class="cert"><div class="certic cbl">📘</div><div><div class="certn">Meta Ads — Digital Marketing Associate</div><div class="certi">Meta Blueprint · Meta</div></div></div>
+      <div class="cert"><div class="certic cgr">📊</div><div><div class="certn">Google Analytics 4 (GA4)</div><div class="certi">Tracking · Funnels · Attribution · Google</div></div></div>
+      <div class="cert"><div class="certic cam">🏷️</div><div><div class="certn">Google Tag Manager</div><div class="certi">Tag Configuration · Tracking · Google</div></div></div>
+      <div class="cert"><div class="certic cgr">🔄</div><div><div class="certn">HubSpot Inbound Marketing</div><div class="certi">Automation · Nurture · HubSpot</div></div></div>
+      <div class="cert"><div class="certic cbl">🎓</div><div><div class="certn">BCA — Computer Applications</div><div class="certi">Jaya College of Arts &amp; Science · 2021</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="w">
+    <div class="ctbox r">
+      <div class="ctin">
+        <div>
+          <div class="ey gr" style="margin-bottom:.75rem;">Available Now</div>
+          <div class="cth">Let's build something<br><span class="g">remarkable together.</span></div>
+          <p class="ctp">Looking for Growth Marketing Lead, Demand Generation Manager, or Head of Performance Marketing roles at B2B SaaS companies targeting enterprise segments. $100M+ pipeline experience ready to deploy.</p>
+          <div class="chips"><span class="chip">Growth Marketing Lead</span><span class="chip">Demand Gen Manager</span><span class="chip">Performance Marketing Head</span><span class="chip">B2B SaaS</span><span class="chip">Remote / Hybrid</span></div>
+          <div style="margin-top:1.6rem;display:flex;gap:.75rem;flex-wrap:wrap;"><a href="mailto:jiaulmallik11@gmail.com" class="b1">Send an email →</a><a href="https://linkedin.com/in/jiaul-mallik/" target="_blank" class="b2">LinkedIn profile</a></div>
+        </div>
+        <div class="ctlinks">
+          <a href="mailto:jiaulmallik11@gmail.com" class="ctl"><div class="ctli">✉️</div>jiaulmallik11@gmail.com</a>
+          <a href="tel:+917996180761" class="ctl"><div class="ctli">📱</div>+91 7996180761</a>
+          <a href="https://linkedin.com/in/jiaul-mallik/" target="_blank" class="ctl"><div class="ctli">💼</div>linkedin.com/in/jiaul-mallik</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer><p>© 2025 Jiaul Mallik · Performance &amp; Growth Marketing Lead</p><p>B2B SaaS · Demand Generation · Paid Media · $100M+ Pipeline</p></footer>
+
+<script>
+// Reveal
+const io=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*70);io.unobserve(e.target);}});},{threshold:.06});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+// Counters
+function ct(id,target,dur=1800){const el=document.getElementById(id);if(!el)return;const s=performance.now();(function t(now){const p=Math.min((now-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=target>=4?(e*target/1000).toFixed(1):Math.floor(e*target);if(p<1)requestAnimationFrame(t);})(performance.now());}
+new IntersectionObserver(es=>{if(es[0].isIntersecting){ct('m1',100);ct('m2',4);ct('m3',45);ct('m4',30);}},{threshold:.5}).observe(document.querySelector('.md'));
+// Chart defaults
+Chart.defaults.color='#8896B3';Chart.defaults.borderColor='rgba(255,255,255,0.05)';Chart.defaults.font.family="'Plus Jakarta Sans',sans-serif";Chart.defaults.font.size=10;
+// Lead volume
+new Chart(document.getElementById('lc1'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+// CPL trend
+new Chart(document.getElementById('lc3'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,104],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline',data:[148,148,148,148,148,148,148,148,148],borderColor:'rgba(255,107,157,.3)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+// GA4 chart (white bg)
+Chart.defaults.color='#5f6368';
+new Chart(document.getElementById('ga4chart'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Sessions',data:[22000,24500,26000,28500,30000,33000,36000,38420],borderColor:'#1a73e8',backgroundColor:'rgba(26,115,232,.08)',tension:.4,pointRadius:2,fill:true},{label:'Conversions×20',data:[800,900,980,1100,1200,1480,1680,1843].map(v=>v*20),borderColor:'#34a853',backgroundColor:'rgba(52,168,83,.06)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:7,padding:6,font:{size:9}}}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false},ticks:{font:{size:9}}}}}});
+Chart.defaults.color='#8896B3';
+// LinkedIn chart
+new Chart(document.getElementById('li_chart'),{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[{label:'Leads',data:[95,140,165,180,210,240,260,352],borderColor:'#0077b5',backgroundColor:'rgba(0,119,181,.1)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},color:'#666'}},x:{grid:{display:false},ticks:{font:{size:9},color:'#666'}}}}});
+// SEO mini
+Chart.defaults.color='#5f6368';
+new Chart(document.getElementById('seo_mini'),{type:'bar',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8'],datasets:[{label:'Sessions',data:[8200,10200,11500,13100,14800,16200,18100,21800],backgroundColor:'rgba(52,168,83,.7)',borderRadius:3,borderSkipped:false},{label:'Baseline',data:[8200,8400,8600,8800,9000,9100,9200,9300],backgroundColor:'rgba(0,0,0,.08)',borderRadius:3,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:7,padding:6,font:{size:9}}}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false},ticks:{font:{size:9}}}}}});
+Chart.defaults.color='#8896B3';
+// Looker chart
+new Chart(document.getElementById('lk_chart'),{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{label:'Leads',data:[48,65,72,58,81,42,38],borderColor:'#7289da',backgroundColor:'rgba(114,137,218,.1)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.06)'},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}},x:{grid:{display:false},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}}}}});
+// CPL bar
+new Chart(document.getElementById('cplBar'),{type:'bar',data:{labels:['Google Ads','LinkedIn Ads','Meta Ads','Email Marketing'],datasets:[{label:'Best CPL ($)',data:[38,42,28,12],backgroundColor:['rgba(0,229,176,.7)','rgba(79,142,255,.7)','rgba(255,184,48,.7)','rgba(255,107,157,.7)'],borderRadius:4,borderSkipped:false}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>'$'+v}},y:{grid:{display:false}}}}});
+// Funnel anim
+new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.fn-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*110));}},{threshold:.3}).observe(document.getElementById('fnS'));
+// Progress bars
+new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.chf').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*90));document.querySelectorAll('.ecf').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*90));}},{threshold:.3}).observe(document.querySelector('.chg'));
+</script>
+</body>
+</html>
