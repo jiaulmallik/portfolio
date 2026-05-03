@@ -5,7 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jiaul Mallik · Growth Marketing Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
+
+// Brand charts
+new Chart(document.getElementById('brand_followers'),{type:'line',data:{labels:['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{label:'Followers',data:[2950,3200,3600,4100,4800,5600,6500,7800,9200,10800,12400],borderColor:'#0077b5',backgroundColor:'rgba(0,119,181,.08)',tension:.4,pointRadius:3,pointBackgroundColor:'#0077b5',fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('brand_impressions'),{type:'bar',data:{labels:['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Impressions',data:[85000,120000,145000,180000,210000,255000,290000,320000,370000,425000],backgroundColor:'rgba(255,107,157,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('brand_search'),{type:'line',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10'],datasets:[{label:'Brand Search Index',data:[20,23,28,35,45,58,72,85,90,96],borderColor:'#4F8EFF',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#4F8EFF',fill:true},{label:'Baseline',data:[20,20,20,20,20,20,20,20,20,20],borderColor:'rgba(255,255,255,.2)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v}},x:{grid:{display:false}}}}});
+
+// Case Study Charts
+// CS1: Lead volume
+new Chart(document.getElementById('cs1_leads'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.75)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'}},x:{grid:{display:false}}}}});
+// CS1: Channel pie
+new Chart(document.getElementById('cs1_channels'),{type:'doughnut',data:{labels:['LinkedIn Ads','Google Ads','Meta Ads','Email'],datasets:[{data:[38,28,22,12],backgroundColor:['#4F8EFF','#00E5B0','#FF6B9D','#FFB830'],borderWidth:0,hoverOffset:4}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'right',labels:{boxWidth:9,padding:8,font:{size:10}}}}}});
+// CS2: CPL
+new Chart(document.getElementById('cs2_cpl'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,103,104],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline ($148)',data:[148,148,148,148,148,148,148,148,148,148],borderColor:'rgba(255,107,157,.35)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+// CS2: SEO
+new Chart(document.getElementById('cs2_seo'),{type:'bar',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8'],datasets:[{label:'After SEO',data:[8200,10200,11500,13100,14800,16200,18100,21800],backgroundColor:'rgba(79,142,255,.75)',borderRadius:4,borderSkipped:false},{label:'Baseline',data:[8200,8400,8600,8800,9000,9100,9200,9300],backgroundColor:'rgba(255,255,255,.08)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+// CS3: CTR growth
+new Chart(document.getElementById('cs3_ctr'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{label:'CTR %',data:[1.8,1.9,2.0,2.1,2.15,2.2,2.3,2.35,2.4,2.45,2.5,2.52],borderColor:'#4F8EFF',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:3,pointBackgroundColor:'#4F8EFF',fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
+// CS3: Organic
+new Chart(document.getElementById('cs3_organic'),{type:'bar',data:{labels:['Q1 Y1','Q2 Y1','Q3 Y1','Q4 Y1','Q1 Y2','Q2 Y2','Q3 Y2','Q4 Y2'],datasets:[{label:'Sessions',data:[18000,19200,20800,22500,24000,26500,28800,30200],backgroundColor:'rgba(0,229,176,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+// Case study result bar animation
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.cs-result-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}});},{threshold:.3}).observe(document.querySelector('.cs-section'));
+// Observe all cs-sections for result bars
+document.querySelectorAll('.cs-section').forEach(sec=>{
+  new IntersectionObserver(es=>{if(es[0].isIntersecting){es[0].target.querySelectorAll('.cs-result-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}},{threshold:.2}).observe(sec);
+});
+
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--bg:#060810;--bg2:#090C16;--bg3:#0E1220;--bg4:#131829;--a1:#4F8EFF;--a2:#00E5B0;--a3:#FF6B9D;--a4:#FFB830;--text:#EEF2FF;--sub:#8896B3;--dim:#4A5568;--grd:linear-gradient(135deg,#4F8EFF,#00E5B0);--f:'Plus Jakarta Sans',sans-serif;}
@@ -17,13 +44,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:.85rem 3rem;display:
 .nl{display:flex;gap:1.75rem;align-items:center;}
 .nl a{font-size:.79rem;color:var(--sub);text-decoration:none;transition:color .2s;font-weight:500;}
 .nl a:hover{color:var(--text);}
-.nc{background:var(--a1)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;padding:.38rem 1.1rem;border-radius:100px;font-size:.76rem!important;font-weight:700!important;}
+.nc{background:#4F8EFF!important;color:#fff!important;-webkit-text-fill-color:#fff!important;padding:.38rem 1.1rem;border-radius:100px;font-size:.76rem!important;font-weight:700!important;}
 /* HERO */
 .hero{min-height:100vh;display:grid;place-items:center;padding:8rem 3rem 5rem;position:relative;overflow:hidden;}
 .hg1{position:absolute;top:-15%;left:-8%;width:700px;height:700px;background:radial-gradient(circle,rgba(79,142,255,.07),transparent 65%);pointer-events:none;}
-.hg2{position:absolute;bottom:-10%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,229,176,.06),transparent 65%);pointer-events:none;}
+.hg2{position:absolute;bottom:-10%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(79,142,255,.07),transparent 65%);pointer-events:none;}
 .hi{max-width:1200px;width:100%;display:grid;grid-template-columns:1fr 290px;gap:4rem;align-items:center;position:relative;z-index:1;}
-.htag{display:inline-flex;align-items:center;gap:.6rem;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.2);border-radius:100px;padding:.32rem 1rem .32rem .55rem;font-size:.73rem;font-weight:500;color:var(--a1);margin-bottom:1.85rem;}
+.htag{display:inline-flex;align-items:center;gap:.6rem;background:rgba(79,142,255,.1);border:1px solid rgba(79,142,255,.2);border-radius:100px;padding:.32rem 1rem .32rem .55rem;font-size:.73rem;font-weight:500;color:var(--a1);margin-bottom:1.85rem;}
 .htd{width:6px;height:6px;border-radius:50%;background:var(--a2);animation:gl 2s infinite;}
 @keyframes gl{0%,100%{box-shadow:0 0 4px var(--a2);}50%{box-shadow:0 0 14px var(--a2);}}
 h1{font-size:clamp(2.9rem,5.2vw,5rem);font-weight:900;line-height:1.02;letter-spacing:-.04em;margin-bottom:1.4rem;}
@@ -33,11 +60,11 @@ h1 .d{color:var(--dim);}
 .hb{display:flex;gap:.8rem;flex-wrap:wrap;}
 .b1{display:inline-flex;align-items:center;gap:.45rem;background:var(--grd);color:#fff;padding:.8rem 1.7rem;border-radius:10px;text-decoration:none;font-weight:700;font-size:.85rem;transition:opacity .2s;}
 .b1:hover{opacity:.85;}
-.b2{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(255,255,255,.1);color:var(--text);padding:.8rem 1.7rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:.85rem;transition:all .2s;background:rgba(255,255,255,.02);}
+.b2{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(79,142,255,.15);color:var(--text);padding:.8rem 1.7rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:.85rem;transition:all .2s;background:rgba(255,255,255,.02);}
 .b2:hover{border-color:var(--a1);color:var(--a1);}
 /* PROFILE CARD */
-.pc{background:var(--bg3);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:1.65rem;position:relative;overflow:hidden;}
-.pc::before{content:'';position:absolute;top:-35px;right:-35px;width:110px;height:110px;background:radial-gradient(circle,rgba(79,142,255,.14),transparent);pointer-events:none;}
+.pc{background:var(--bg3);border:1px solid rgba(79,142,255,.12);border-radius:20px;padding:1.65rem;position:relative;overflow:hidden;}
+.pc::before{content:'';position:absolute;top:-35px;right:-35px;width:110px;height:110px;background:radial-gradient(circle,rgba(79,142,255,.15),transparent);pointer-events:none;}
 .pav{width:68px;height:68px;border-radius:50%;background:var(--grd);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.8rem;position:relative;}
 .pav::after{content:'';position:absolute;inset:-2px;border-radius:50%;background:var(--grd);z-index:-1;opacity:.4;}
 .pn{font-weight:800;font-size:1.02rem;letter-spacing:-.02em;margin-bottom:.12rem;}
@@ -49,7 +76,7 @@ h1 .d{color:var(--dim);}
 .ptg{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.9rem;}
 .pt{font-size:.63rem;padding:.16rem .52rem;border-radius:100px;border:1px solid rgba(79,142,255,.25);color:var(--a1);background:rgba(79,142,255,.06);}
 /* MARQUEE */
-.mq{padding:1.1rem 0;background:var(--bg2);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);overflow:hidden;white-space:nowrap;}
+.mq{padding:1.1rem 0;background:var(--bg2);border-top:1px solid rgba(79,142,255,.07);border-bottom:1px solid rgba(79,142,255,.07);overflow:hidden;white-space:nowrap;}
 .mqt{display:inline-flex;animation:mq 24s linear infinite;}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .mi{display:inline-flex;align-items:center;gap:.5rem;padding:0 2rem;font-size:.72rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;}
@@ -67,12 +94,12 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .at p{color:var(--sub);font-size:.88rem;line-height:1.9;margin-bottom:.9rem;font-weight:300;}
 .at p strong{color:var(--text);font-weight:600;}
 .plrs{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.6rem;}
-.plr{background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.1rem;transition:border-color .2s;}
+.plr{background:var(--bg4);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.1rem;transition:border-color .2s;}
 .plr:hover{border-color:rgba(79,142,255,.3);}
 .pi{font-size:1.25rem;margin-bottom:.45rem;}
 .pn2{font-size:.8rem;font-weight:700;margin-bottom:.2rem;}
 .pd{font-size:.7rem;color:var(--sub);line-height:1.55;}
-.gri{background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
+.gri{background:var(--bg4);border:1px solid rgba(79,142,255,.1);border-radius:14px;padding:1.5rem;margin-bottom:1rem;}
 .ml{font-size:.65rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.05rem;}
 .gf{display:flex;flex-direction:column;gap:0;}
 .gfr{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center;padding:.5rem 0;}
@@ -87,50 +114,50 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .hwt{font-size:.78rem;font-weight:700;margin-bottom:.08rem;}
 .hwd{font-size:.68rem;color:var(--sub);}
 /* METRICS */
-.md{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:15px;overflow:hidden;margin-bottom:1.3rem;}
+.md{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(79,142,255,.1);border:1px solid rgba(79,142,255,.1);border-radius:15px;overflow:hidden;margin-bottom:1.3rem;}
 .mc{background:var(--bg3);padding:1.5rem 1.3rem;}
 .mci{font-size:1.05rem;margin-bottom:.6rem;}
 .mv{font-size:1.75rem;font-weight:900;letter-spacing:-.03em;line-height:1;}
 .mv .u{font-size:.95rem;color:var(--a1);}
 .ml2{font-size:.7rem;color:var(--sub);margin-top:.28rem;}
 .mt{display:inline-flex;font-size:.63rem;font-weight:600;padding:.16rem .48rem;border-radius:100px;margin-top:.4rem;}
-.tg{background:rgba(0,229,176,.1);color:var(--a2);}.tb{background:rgba(79,142,255,.1);color:var(--a1);}.ta{background:rgba(255,184,48,.1);color:var(--a4);}
-.mr{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:13px;overflow:hidden;}
+.tg{background:rgba(79,142,255,.1);color:var(--a2);}.tb{background:rgba(79,142,255,.12);color:var(--a1);}.ta{background:rgba(79,142,255,.1);color:var(--a4);}
+.mr{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(79,142,255,.1);border:1px solid rgba(79,142,255,.1);border-radius:13px;overflow:hidden;}
 .mrc{background:var(--bg3);padding:1rem 1.2rem;}
 .mrv{font-size:1.3rem;font-weight:900;letter-spacing:-.02em;}
 .mrl{font-size:.66rem;color:var(--sub);margin-top:.18rem;}
 .mrs{font-size:.62rem;color:var(--dim);margin-top:.08rem;}
 /* SCREENSHOT FRAME */
-.ss-frame{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#1a1f2e;box-shadow:0 25px 60px rgba(0,0,0,.5);}
-.ss-bar{background:#232938;padding:.55rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.ss-frame{border-radius:12px;overflow:hidden;border:1px solid rgba(79,142,255,.15);background:#1a1f2e;box-shadow:0 25px 60px rgba(0,0,0,.5);}
+.ss-bar{background:#232938;padding:.55rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(79,142,255,.1);}
 .ss-dots{display:flex;gap:.4rem;}
 .ss-dot{width:10px;height:10px;border-radius:50%;}
 .ss-dot.r{background:#FF5F57;}.ss-dot.y{background:#FEBC2E;}.ss-dot.g{background:#28C840;}
-.ss-url{flex:1;background:rgba(255,255,255,.07);border-radius:5px;padding:.22rem .75rem;font-size:.68rem;color:var(--sub);font-family:monospace;}
+.ss-url{flex:1;background:rgba(79,142,255,.1);border-radius:5px;padding:.22rem .75rem;font-size:.68rem;color:var(--sub);font-family:monospace;}
 /* GOOGLE ADS MOCK */
 .gads{background:#fff;padding:0;font-family:-apple-system,sans-serif;}
 .gads-nav{background:#fff;border-bottom:1px solid #e0e0e0;padding:.5rem 1.2rem;display:flex;align-items:center;gap:1rem;}
-.gads-logo{font-size:.8rem;font-weight:700;color:#1a73e8;}
+.gads-logo{font-size:.8rem;font-weight:700;color:#333333;}
 .gads-camp{font-size:.75rem;color:#5f6368;padding:.3rem .6rem;border-radius:4px;background:#f1f3f4;}
 .gads-table{width:100%;border-collapse:collapse;}
-.gads-table th{background:#f8f9fa;color:#3c4043;font-size:.68rem;font-weight:600;padding:.6rem .8rem;border-bottom:1px solid #e0e0e0;text-align:left;}
+.gads-table th{background:#f5f5f5;color:#3c4043;font-size:.68rem;font-weight:600;padding:.6rem .8rem;border-bottom:1px solid #e0e0e0;text-align:left;}
 .gads-table td{color:#3c4043;font-size:.72rem;padding:.55rem .8rem;border-bottom:1px solid #f0f0f0;}
-.gads-table tr:hover td{background:#f8f9fa;}
-.gads-green{color:#137333;font-weight:600;}
-.gads-blue{color:#1a73e8;font-weight:600;}
+.gads-table tr:hover td{background:#f5f5f5;}
+.gads-green{color:#444444;font-weight:600;}
+.gads-blue{color:#333333;font-weight:600;}
 .gads-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0e0e0;border-top:2px solid #1a73e8;}
 .gads-stat{background:#fff;padding:.8rem 1rem;text-align:center;}
 .gads-stat .v{font-size:1.1rem;font-weight:700;color:#3c4043;}
 .gads-stat .l{font-size:.62rem;color:#5f6368;margin-top:.1rem;}
 /* LINKEDIN ADS MOCK */
-.li-ads{background:#f3f2ef;padding:0;font-family:-apple-system,sans-serif;}
+.li-ads{background:#eeeeee;padding:0;font-family:-apple-system,sans-serif;}
 .li-nav{background:#fff;padding:.55rem 1.2rem;border-bottom:1px solid #ddd;display:flex;align-items:center;gap:1rem;}
-.li-logo{font-size:.85rem;font-weight:800;color:#0077b5;}
+.li-logo{font-size:.85rem;font-weight:800;color:#111111;}
 .li-breadcrumb{font-size:.68rem;color:#666;}
 .li-content{padding:1rem 1.2rem;}
 .li-campaign-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.85rem;}
 .li-campaign-name{font-size:.85rem;font-weight:700;color:#000;}
-.li-status{font-size:.62rem;background:#e6f3eb;color:#017d3f;padding:.18rem .55rem;border-radius:3px;font-weight:600;}
+.li-status{font-size:.62rem;background:#eeeeee;color:#333333;padding:.18rem .55rem;border-radius:3px;font-weight:600;}
 .li-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin-bottom:.85rem;}
 .li-m{background:#fff;border:1px solid #ddd;border-radius:6px;padding:.65rem .8rem;}
 .li-mv{font-size:1rem;font-weight:700;color:#000;}
@@ -140,57 +167,57 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 /* HUBSPOT MOCK */
 .hs-mock{background:#fff;font-family:-apple-system,sans-serif;}
 .hs-nav{background:#33475b;padding:.5rem 1.2rem;display:flex;align-items:center;gap:1rem;}
-.hs-logo{font-size:.78rem;font-weight:700;color:#ff7a59;}
+.hs-logo{font-size:.78rem;font-weight:700;color:#888888;}
 .hs-tab{font-size:.68rem;color:rgba(255,255,255,.7);padding:.25rem .6rem;border-radius:3px;}
-.hs-tab.active{background:rgba(255,255,255,.15);color:#fff;}
+.hs-tab.active{background:rgba(79,142,255,.25);color:#fff;}
 .hs-content{padding:1rem 1.2rem;}
-.hs-title{font-size:.82rem;font-weight:700;color:#33475b;margin-bottom:.75rem;}
+.hs-title{font-size:.82rem;font-weight:700;color:#222222;margin-bottom:.75rem;}
 .hs-email-list{display:flex;flex-direction:column;gap:.5rem;}
-.hs-email-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:.6rem;align-items:center;padding:.55rem .7rem;border:1px solid #e5e8eb;border-radius:6px;background:#fff;}
-.hs-email-row.header{background:#f5f8fa;font-size:.62rem;font-weight:700;color:#7c98b6;border:1px solid #e5e8eb;}
-.hs-en{font-size:.72rem;font-weight:600;color:#33475b;}
+.hs-email-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:.6rem;align-items:center;padding:.55rem .7rem;border:1px solid #ddd;border-radius:6px;background:#fff;}
+.hs-email-row.header{background:#f5f5f5;font-size:.62rem;font-weight:700;color:#7c98b6;border:1px solid #e5e8eb;}
+.hs-en{font-size:.72rem;font-weight:600;color:#222222;}
 .hs-num{font-size:.72rem;font-weight:600;text-align:center;}
-.hs-rate{font-size:.72rem;font-weight:700;text-align:center;}
+.hs-rate{font-size:.72rem;font-weight:700;text-align:center;color:#333;}
 .hs-bar-wrap{height:4px;background:#f0f3f5;border-radius:2px;overflow:hidden;margin-top:.25rem;}
 .hs-bar{height:100%;border-radius:2px;}
 /* GA4 MOCK */
 .ga4{background:#fff;font-family:-apple-system,sans-serif;}
-.ga4-nav{background:#1a73e8;padding:.55rem 1.2rem;display:flex;align-items:center;gap:.75rem;}
-.ga4-logo{font-size:.78rem;font-weight:700;color:#fff;}
-.ga4-prop{font-size:.68rem;color:rgba(255,255,255,.8);background:rgba(255,255,255,.15);padding:.2rem .5rem;border-radius:3px;}
+.ga4-nav{background:#222222;padding:.55rem 1.2rem;display:flex;align-items:center;gap:.75rem;}
+.ga4-logo{font-size:.78rem;font-weight:700;color:#eee;}
+.ga4-prop{font-size:.68rem;color:rgba(255,255,255,.8);background:rgba(79,142,255,.2);padding:.2rem .5rem;border-radius:3px;}
 .ga4-sidebar{display:grid;grid-template-columns:160px 1fr;}
-.ga4-side{background:#f8f9fa;padding:.75rem;border-right:1px solid #e0e0e0;}
+.ga4-side{background:#f5f5f5;padding:.75rem;border-right:1px solid #e0e0e0;}
 .ga4-side-item{font-size:.68rem;color:#5f6368;padding:.32rem .55rem;border-radius:4px;margin-bottom:.12rem;cursor:default;}
-.ga4-side-item.active{background:#e8f0fe;color:#1a73e8;font-weight:600;}
+.ga4-side-item.active{background:#eeeeee;color:#333333;font-weight:600;}
 .ga4-main{padding:.85rem 1rem;}
 .ga4-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:.85rem;}
 .ga4-card{border:1px solid #e0e0e0;border-radius:8px;padding:.7rem .8rem;}
 .ga4-cv{font-size:1.05rem;font-weight:700;color:#3c4043;}
 .ga4-cl{font-size:.6rem;color:#5f6368;margin-top:.08rem;}
-.ga4-cd{font-size:.62rem;color:#137333;font-weight:600;}
+.ga4-cd{font-size:.62rem;color:#444444;font-weight:600;}
 .ga4-chart-wrap{border:1px solid #e0e0e0;border-radius:8px;padding:.8rem;}
 .ga4-chart-title{font-size:.7rem;font-weight:600;color:#3c4043;margin-bottom:.5rem;}
 /* LOOKER MOCK */
 .lk{background:#1b1f3a;font-family:-apple-system,sans-serif;}
-.lk-nav{background:#151929;padding:.5rem 1.2rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.08);}
-.lk-logo{font-size:.78rem;font-weight:700;color:#7289da;}
+.lk-nav{background:#151929;padding:.5rem 1.2rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(79,142,255,.12);}
+.lk-logo{font-size:.78rem;font-weight:700;color:#00E5B0;}
 .lk-title{font-size:.7rem;color:rgba(255,255,255,.6);}
 .lk-content{padding:.85rem 1rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:.6rem;}
-.lk-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:.7rem .8rem;}
+.lk-card{background:rgba(79,142,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.7rem .8rem;}
 .lk-cv{font-size:1.1rem;font-weight:700;color:#fff;}
-.lk-cl{font-size:.6rem;color:rgba(255,255,255,.5);margin-top:.08rem;}
+.lk-cl{font-size:.6rem;color:rgba(255,107,157,.7);margin-top:.08rem;}
 .lk-cg{font-size:.62rem;color:#00e5b0;font-weight:600;}
 .lk-chart{padding:0 1rem .85rem;}
 /* CASES */
 .cases{display:flex;flex-direction:column;gap:2rem;}
-.case{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;}
+.case{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:18px;overflow:hidden;}
 .c-hdr{padding:1.65rem 1.65rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.05);}
 .cbadges{display:flex;gap:.42rem;flex-wrap:wrap;margin-bottom:.7rem;}
 .cb{font-size:.67rem;font-weight:600;padding:.2rem .65rem;border-radius:100px;}
-.cbb{background:rgba(79,142,255,.1);color:var(--a1);border:1px solid rgba(79,142,255,.18);}
-.cbg{background:rgba(0,229,176,.08);color:var(--a2);border:1px solid rgba(0,229,176,.16);}
-.cbp{background:rgba(255,107,157,.08);color:var(--a3);border:1px solid rgba(255,107,157,.16);}
-.cba{background:rgba(255,184,48,.08);color:var(--a4);border:1px solid rgba(255,184,48,.16);}
+.cbb{background:rgba(79,142,255,.12);color:var(--a1);border:1px solid rgba(79,142,255,.18);}
+.cbg{background:rgba(79,142,255,.1);color:var(--a2);border:1px solid rgba(0,229,176,.12);}
+.cbp{background:rgba(255,255,255,.05);color:var(--a3);border:1px solid rgba(79,142,255,.15);}
+.cba{background:rgba(255,255,255,.05);color:var(--a4);border:1px solid rgba(255,184,48,.16);}
 .c-hdr h3{font-size:1.2rem;font-weight:900;letter-spacing:-.025em;margin-bottom:.32rem;}
 .c-hdr p{font-size:.83rem;color:var(--sub);max-width:700px;line-height:1.75;}
 .cco{font-size:.7rem;color:var(--dim);margin-top:.42rem;font-style:italic;}
@@ -206,7 +233,7 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .ds{margin-bottom:1rem;}
 .ds h5{font-size:.65rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;}
 .tc{display:flex;flex-wrap:wrap;gap:.28rem;}
-.t{font-size:.68rem;padding:.2rem .56rem;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--text);}
+.t{font-size:.68rem;padding:.2rem .56rem;border-radius:6px;background:rgba(79,142,255,.07);border:1px solid rgba(79,142,255,.1);color:var(--text);}
 .t.hi{border-color:rgba(79,142,255,.3);color:var(--a1);}
 .t.g{border-color:rgba(0,229,176,.25);color:var(--a2);}
 .wins{list-style:none;display:flex;flex-direction:column;gap:.38rem;}
@@ -214,13 +241,13 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .wins li::before{content:'▲';position:absolute;left:0;color:var(--a2);font-size:.5rem;top:.32rem;}
 .wins li b{color:var(--text);font-weight:600;}
 /* FUNNEL */
-.fn-box{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.65rem;}
+.fn-box{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:16px;padding:1.65rem;}
 .fn-box h3{font-size:1rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.22rem;}
 .fn-fsub{font-size:.75rem;color:var(--sub);margin-bottom:1.6rem;}
 .fn-stages{display:flex;flex-direction:column;gap:.28rem;}
 .fn-row{display:grid;grid-template-columns:140px 1fr 62px 50px;gap:.75rem;align-items:center;}
 .fn-lbl{font-size:.7rem;color:var(--sub);text-align:right;}
-.fn-track{height:30px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden;}
+.fn-track{height:30px;background:rgba(79,142,255,.07);border-radius:6px;overflow:hidden;}
 .fn-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 .75rem;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
 .fn-fill span{font-size:.68rem;font-weight:600;color:#fff;white-space:nowrap;}
 .fn-cnt{font-size:.78rem;font-weight:700;text-align:right;}
@@ -228,7 +255,7 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .fn-arr{text-align:center;font-size:.63rem;color:var(--dim);padding:.07rem 0 .07rem 150px;}
 /* SUCCESS STORIES */
 .stories{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-.story{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;}
+.story{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:14px;overflow:hidden;}
 .st-top{padding:1.2rem;border-bottom:1px solid rgba(255,255,255,.05);}
 .st-co{font-size:.7rem;color:var(--a1);font-weight:600;margin-bottom:.35rem;}
 .st-title{font-size:.92rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem;}
@@ -239,25 +266,25 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .stml{font-size:.6rem;color:var(--sub);margin-top:.15rem;}
 /* EMAIL */
 .eg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-.ec{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;}
+.ec{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.2rem;}
 .ech{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem;}
 .ecn{font-size:.84rem;font-weight:700;}
 .ecs{display:flex;flex-direction:column;gap:.42rem;}
 .ecr{display:flex;justify-content:space-between;}
 .eck{font-size:.7rem;color:var(--sub);}
 .ecv{font-size:.75rem;font-weight:600;}
-.ecb{margin-top:.75rem;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.ecb{margin-top:.75rem;height:4px;background:rgba(79,142,255,.1);border-radius:2px;overflow:hidden;}
 .ecf{height:100%;border-radius:2px;width:0;transition:width 1.2s ease;}
 /* AB */
 .abg{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.abc{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;position:relative;}
-.abw{position:absolute;top:.8rem;right:.8rem;font-size:.6rem;font-weight:700;color:var(--a2);background:rgba(0,229,176,.1);border:1px solid rgba(0,229,176,.2);padding:.15rem .5rem;border-radius:100px;}
+.abc{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.2rem;position:relative;}
+.abw{position:absolute;top:.8rem;right:.8rem;font-size:.6rem;font-weight:700;color:var(--a2);background:rgba(79,142,255,.1);border:1px solid rgba(79,142,255,.2);padding:.15rem .5rem;border-radius:100px;}
 .abt{font-size:.84rem;font-weight:700;margin-bottom:.18rem;}
 .abd{font-size:.72rem;color:var(--sub);margin-bottom:1rem;line-height:1.6;}
 .abcmp{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
 .abv{padding:.6rem;border-radius:8px;text-align:center;}
-.abv.a{background:rgba(79,142,255,.07);border:1px solid rgba(79,142,255,.14);}
-.abv.b{background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.14);}
+.abv.a{background:rgba(79,142,255,.07);border:1px solid rgba(79,142,255,.15);}
+.abv.b{background:rgba(79,142,255,.07);border:1px solid rgba(79,142,255,.14);}
 .abvl{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:.3rem;}
 .abvv{font-size:1.15rem;font-weight:900;letter-spacing:-.02em;}
 .abv.a .abvv{color:var(--a1);}.abv.b .abvv{color:var(--a2);}
@@ -265,62 +292,121 @@ h2.sh{font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035
 .abl{text-align:center;margin-top:.8rem;font-size:.76rem;color:var(--a2);font-weight:600;}
 /* CHANNELS */
 .chg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-.chc{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;}
+.chc{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.2rem;}
 .chh{display:flex;justify-content:space-between;margin-bottom:.8rem;}
 .chn{font-weight:700;font-size:.84rem;}
 .chr{display:flex;flex-direction:column;gap:.42rem;}
 .chrr{display:flex;justify-content:space-between;}
 .chk{font-size:.7rem;color:var(--sub);}
 .chv{font-size:.74rem;font-weight:600;}
-.chprog{margin-top:.75rem;height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+.chprog{margin-top:.75rem;height:4px;background:rgba(79,142,255,.1);border-radius:2px;overflow:hidden;}
 .chf{height:100%;border-radius:2px;width:0;transition:width 1.2s ease;}
 /* SEO */
 .seog{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
-.seoc{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;}
+.seoc{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.2rem;}
 .seoc h4{font-size:.84rem;font-weight:700;margin-bottom:.22rem;}
 .seosub{font-size:.72rem;color:var(--sub);margin-bottom:1.05rem;}
 .kwtbl{width:100%;border-collapse:collapse;}
 .kwtbl td{padding:.38rem .18rem;font-size:.73rem;vertical-align:middle;}
 .kwtbl td:first-child{color:var(--text);width:56%;}
-.kwo{color:#FF6B6B;text-decoration:line-through;font-size:.68rem;}
+.kwo{color:#00c090;text-decoration:line-through;font-size:.68rem;}
 .kwn{color:var(--a2);font-weight:700;}
 .kwa{color:var(--dim);font-size:.6rem;}
 /* STACK */
 .stk{display:flex;flex-direction:column;gap:1rem;}
-.sr{display:grid;grid-template-columns:145px 1fr;gap:1.2rem;align-items:center;padding:1.05rem;background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;}
+.sr{display:grid;grid-template-columns:145px 1fr;gap:1.2rem;align-items:center;padding:1.05rem;background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;}
 .srcat{font-size:.68rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;}
 .srtools{display:flex;flex-wrap:wrap;gap:.32rem;}
-.st2{font-size:.7rem;padding:.22rem .65rem;border-radius:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--text);font-weight:500;transition:all .2s;}
+.st2{font-size:.7rem;padding:.22rem .65rem;border-radius:7px;background:rgba(79,142,255,.07);border:1px solid rgba(79,142,255,.1);color:var(--text);font-weight:500;transition:all .2s;}
 .st2:hover{border-color:var(--a1);color:var(--a1);}
 .st2.hi{border-color:rgba(79,142,255,.3);color:var(--a1);background:rgba(79,142,255,.06);}
 /* CERTS */
 .certs{display:grid;grid-template-columns:repeat(3,1fr);gap:.95rem;}
-.cert{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;display:flex;gap:.8rem;align-items:flex-start;transition:all .2s;}
+.cert{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.2rem;display:flex;gap:.8rem;align-items:flex-start;transition:all .2s;}
 .cert:hover{border-color:rgba(79,142,255,.3);transform:translateY(-2px);}
 .certic{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
-.cbl{background:rgba(79,142,255,.12);}.cgr{background:rgba(0,229,176,.1);}.cam{background:rgba(255,184,48,.1);}
+.cbl{background:rgba(79,142,255,.14);}.cgr{background:rgba(79,142,255,.1);}.cam{background:rgba(79,142,255,.1);}
 .certn{font-size:.8rem;font-weight:700;margin-bottom:.16rem;}
 .certi{font-size:.7rem;color:var(--sub);}
 /* CONTACT */
-.ctbox{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:3.2rem;position:relative;overflow:hidden;}
-.ctbox::before{content:'';position:absolute;top:-70px;right:-70px;width:260px;height:260px;background:radial-gradient(circle,rgba(79,142,255,.08),transparent);pointer-events:none;}
+.ctbox{background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:20px;padding:3.2rem;position:relative;overflow:hidden;}
+.ctbox::before{content:'';position:absolute;top:-70px;right:-70px;width:260px;height:260px;background:radial-gradient(circle,rgba(79,142,255,.1),transparent);pointer-events:none;}
 .ctin{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;z-index:1;}
 .cth{font-size:2.1rem;font-weight:900;letter-spacing:-.035em;line-height:1.1;margin-bottom:.6rem;}
 .cth .g{background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .ctp{color:var(--sub);font-size:.88rem;max-width:400px;line-height:1.8;margin-bottom:1.4rem;}
 .chips{display:flex;flex-wrap:wrap;gap:.42rem;}
-.chip{font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--text);}
+.chip{font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid rgba(79,142,255,.15);color:var(--text);}
 .ctlinks{display:flex;flex-direction:column;gap:.65rem;min-width:250px;}
-.ctl{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text);padding:.78rem .95rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;transition:all .2s;font-size:.82rem;font-weight:500;}
-.ctl:hover{border-color:rgba(79,142,255,.4);background:rgba(79,142,255,.06);}
-.ctli{width:32px;height:32px;border-radius:7px;background:rgba(79,142,255,.1);display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;}
+.ctl{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text);padding:.78rem .95rem;background:rgba(255,255,255,.03);border:1px solid rgba(79,142,255,.1);border-radius:10px;transition:all .2s;font-size:.82rem;font-weight:500;}
+.ctl:hover{border-color:rgba(255,255,255,.3);background:rgba(79,142,255,.06);}
+.ctli{width:32px;height:32px;border-radius:7px;background:rgba(79,142,255,.12);display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;}
 footer{padding:1.4rem 3rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;}
 footer p{font-size:.72rem;color:var(--dim);}
+.mv span[id]{min-width:2ch;display:inline-block;}
 .r{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
 .r.on{opacity:1;transform:none;}
 .r2{transition-delay:.1s;}.r3{transition-delay:.2s;}.r4{transition-delay:.3s;}
 @media(max-width:960px){.hi,.ag,.c-body,.seog{grid-template-columns:1fr;}.ctin{grid-template-columns:1fr;}.chg{grid-template-columns:1fr 1fr;}.md,.mr{grid-template-columns:1fr 1fr;}.eg{grid-template-columns:1fr 1fr;}.certs{grid-template-columns:1fr 1fr;}.ckpis{grid-template-columns:repeat(3,1fr);}.c-ss{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);}.stories{grid-template-columns:1fr;}}
 @media(max-width:640px){section{padding:3.5rem 1.4rem;}nav{padding:.8rem 1.4rem;}.hero{padding:7rem 1.4rem 3.5rem;}.chg,.certs,.eg,.abg,.stories{grid-template-columns:1fr;}.sr{grid-template-columns:1fr;}.plrs{grid-template-columns:1fr;}.nl a:not(.nc){display:none;}.ctbox{padding:1.75rem 1.35rem;}}
+/* ========= CASE STUDY STYLES ========= */
+.cs-section{padding:6rem 3rem;background:var(--bg);}
+.cs-section:nth-child(even){background:var(--bg2);}
+.cs-hero{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;}
+.cs-num{font-size:5rem;font-weight:900;letter-spacing:-.05em;line-height:1;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.18;margin-bottom:-.5rem;}
+.cs-company{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:.75rem;}
+.cs-company::before{content:'';width:16px;height:2px;border-radius:2px;background:currentColor;}
+.cs-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;letter-spacing:-.035em;line-height:1.15;margin-bottom:1rem;}
+.cs-blurb{font-size:.92rem;color:var(--sub);line-height:1.85;font-weight:300;margin-bottom:1.5rem;}
+.cs-meta{display:flex;flex-wrap:wrap;gap:.75rem;}
+.cs-tag{font-size:.72rem;padding:.3rem .8rem;border-radius:100px;border:1px solid rgba(255,255,255,.1);color:var(--sub);}
+.cs-big-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.cs-bm{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.5rem;text-align:center;position:relative;overflow:hidden;}
+.cs-bm::before{content:'';position:absolute;inset:0;background:var(--grd);opacity:.04;}
+.cs-bm-val{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;line-height:1;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cs-bm-label{font-size:.72rem;color:var(--sub);margin-top:.35rem;line-height:1.4;}
+/* 3-col challenge/approach/outcome */
+.cs-coa{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem;}
+.cs-coa-card{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.5rem;}
+.cs-coa-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem;}
+.cs-coa-label::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;}
+.cs-coa-card h4{font-size:.95rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.01em;}
+.cs-coa-card p{font-size:.8rem;color:var(--sub);line-height:1.7;}
+/* Timeline steps */
+.cs-timeline{display:flex;flex-direction:column;gap:0;margin-bottom:3rem;position:relative;padding-left:2.5rem;}
+.cs-timeline::before{content:'';position:absolute;left:.85rem;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--a1),var(--a2),transparent);}
+.cs-step{position:relative;padding:.5rem 0 1.5rem 1.5rem;}
+.cs-step-dot{position:absolute;left:-1.65rem;top:.5rem;width:10px;height:10px;border-radius:50%;background:var(--a1);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(79,142,255,.25);}
+.cs-step-num{font-size:.65rem;font-weight:700;color:var(--a1);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem;}
+.cs-step-title{font-size:.95rem;font-weight:800;margin-bottom:.35rem;}
+.cs-step-desc{font-size:.82rem;color:var(--sub);line-height:1.7;max-width:620px;}
+.cs-step-pills{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem;}
+.cs-pill{font-size:.68rem;padding:.18rem .6rem;border-radius:6px;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.2);color:var(--a1);}
+/* Results grid */
+.cs-results{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;}
+.cs-results-left{display:flex;flex-direction:column;gap:1rem;}
+.cs-result-row{display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;}
+.cs-result-icon{width:36px;height:36px;border-radius:9px;background:rgba(79,142,255,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.cs-result-body{flex:1;}
+.cs-result-label{font-size:.72rem;color:var(--sub);margin-bottom:.15rem;}
+.cs-result-val{font-size:1rem;font-weight:800;letter-spacing:-.02em;}
+.cs-result-bar{height:3px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;margin-top:.35rem;}
+.cs-result-fill{height:100%;border-radius:2px;background:var(--grd);transition:width 1.2s ease;width:0;}
+.cs-chart-card{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;}
+.cs-chart-title{font-size:.7rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.85rem;}
+/* Key learnings */
+.cs-learnings{background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.75rem;margin-bottom:3rem;}
+.cs-learnings h4{font-size:.95rem;font-weight:800;margin-bottom:1.1rem;letter-spacing:-.015em;}
+.cs-learnings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.cs-learning{padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);}
+.cs-learning-emoji{font-size:1.1rem;margin-bottom:.4rem;}
+.cs-learning-text{font-size:.78rem;color:var(--sub);line-height:1.6;}
+.cs-learning-text b{color:var(--text);font-weight:600;}
+/* divider between case studies */
+.cs-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(79,142,255,.3),transparent);margin:0 3rem;}
+@media(max-width:960px){.cs-hero,.cs-results{grid-template-columns:1fr;}.cs-coa{grid-template-columns:1fr;}.cs-learnings-grid{grid-template-columns:1fr 1fr;}.cs-big-metrics{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.cs-big-metrics{grid-template-columns:1fr;}.cs-coa,.cs-learnings-grid{grid-template-columns:1fr;}.cs-timeline{padding-left:1.75rem;}}
+
 </style>
 </head>
 <body>
@@ -328,7 +414,7 @@ footer p{font-size:.72rem;color:var(--dim);}
 <nav>
   <div class="logo">Jiaul <span>Mallik</span></div>
   <div class="nl">
-    <a href="#about">About</a><a href="#campaigns">Campaigns</a><a href="#stories">Wins</a><a href="#email">Email</a><a href="#stack">Stack</a>
+    <a href="#about">About</a><a href="#campaigns">Campaigns</a><a href="#stories">Wins</a><a href="#email">Email</a><a href="#stack">Stack</a><a href="#casestudies">Case Studies</a>
     <a href="#contact" class="nc">Hire Me →</a>
   </div>
 </nav>
@@ -388,12 +474,12 @@ footer p{font-size:.72rem;color:var(--dim);}
         <div class="gri">
           <div class="ml">The B2B Growth Funnel — My Typical Results</div>
           <div class="gf">
-            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.15);color:var(--a1)">1</div><div><div class="gft">Awareness</div><div class="gfs">Paid ads reach ICP buyers across 4 channels</div></div><div class="gfm" style="color:var(--a1)">285K</div></div>
-            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a1)">2</div><div><div class="gft">Interest</div><div class="gfs">Landing page visits · 2.4% avg CTR</div></div><div class="gfm" style="color:var(--a1)">6,840</div></div>
-            <div class="gfr"><div class="gfn" style="background:rgba(0,229,176,.12);color:var(--a2)">3</div><div><div class="gft">Registration</div><div class="gfs">Webinar sign-ups · 62% form CVR</div></div><div class="gfm" style="color:var(--a2)">4,240</div></div>
-            <div class="gfr"><div class="gfn" style="background:rgba(0,229,176,.1);color:var(--a2)">4</div><div><div class="gft">Attendance</div><div class="gfs">Live attendees · 45% show-up rate</div></div><div class="gfm" style="color:var(--a2)">1,908</div></div>
-            <div class="gfr"><div class="gfn" style="background:rgba(255,184,48,.12);color:var(--a4)">5</div><div><div class="gft">MQL</div><div class="gfs">Lead scored → sales handoff</div></div><div class="gfm" style="color:var(--a4)">382</div></div>
-            <div class="gfr"><div class="gfn" style="background:rgba(255,107,157,.1);color:var(--a3)">6</div><div><div class="gft">Revenue</div><div class="gfs">Pipeline influenced by marketing</div></div><div class="gfm" style="color:var(--a3)">$100M+</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(0,229,176,.12);color:var(--a1)">1</div><div><div class="gft">Awareness</div><div class="gfs">Paid ads reach ICP buyers across 4 channels</div></div><div class="gfm" style="color:#fff">285K</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.12);color:var(--a1)">2</div><div><div class="gft">Interest</div><div class="gfs">Landing page visits · 2.4% avg CTR</div></div><div class="gfm" style="color:#fff">6,840</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.12);color:var(--a2)">3</div><div><div class="gft">Registration</div><div class="gfs">Webinar sign-ups · 62% form CVR</div></div><div class="gfm" style="color:#ccc">4,240</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a2)">4</div><div><div class="gft">Attendance</div><div class="gfs">Live attendees · 45% show-up rate</div></div><div class="gfm" style="color:#ccc">1,908</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.12);color:var(--a4)">5</div><div><div class="gft">MQL</div><div class="gfs">Lead scored → sales handoff</div></div><div class="gfm" style="color:#ddd">382</div></div>
+            <div class="gfr"><div class="gfn" style="background:rgba(79,142,255,.1);color:var(--a3)">6</div><div><div class="gft">Revenue</div><div class="gfs">Pipeline influenced by marketing</div></div><div class="gfm" style="color:#999">$100M+</div></div>
           </div>
         </div>
         <div class="gri">
@@ -424,10 +510,10 @@ footer p{font-size:.72rem;color:var(--dim);}
       <div class="mc"><div class="mci">⚡</div><div class="mv"><span id="m4">0</span><span class="u">%</span></div><div class="ml2">CPL Reduction</div><div class="mt ta">↑ ISDC Global</div></div>
     </div>
     <div class="mr r r2">
-      <div class="mrc"><div class="mrv" style="color:var(--a2)">+22%</div><div class="mrl">Landing Page CVR</div><div class="mrs">A/B testing 6 variants</div></div>
-      <div class="mrc" style="border-left:1px solid rgba(255,255,255,.06)"><div class="mrv" style="color:var(--a1)">+40%</div><div class="mrl">Organic Traffic</div><div class="mrs">8 months · SEO strategy</div></div>
-      <div class="mrc" style="border-left:1px solid rgba(255,255,255,.06)"><div class="mrv" style="color:var(--a4)">+25%</div><div class="mrl">Email Open Rate</div><div class="mrs">HubSpot automation</div></div>
-      <div class="mrc" style="border-left:1px solid rgba(255,255,255,.06)"><div class="mrv" style="color:var(--a3)">−20%</div><div class="mrl">Wasted Ad Spend</div><div class="mrs">Weekly optimisation</div></div>
+      <div class="mrc"><div class="mrv" style="color:#ccc">+22%</div><div class="mrl">Landing Page CVR</div><div class="mrs">A/B testing 6 variants</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#fff">+40%</div><div class="mrl">Organic Traffic</div><div class="mrs">8 months · SEO strategy</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#ddd">+25%</div><div class="mrl">Email Open Rate</div><div class="mrs">HubSpot automation</div></div>
+      <div class="mrc" style="border-left:1px solid rgba(79,142,255,.1)"><div class="mrv" style="color:#999">−20%</div><div class="mrl">Wasted Ad Spend</div><div class="mrs">Weekly optimisation</div></div>
     </div>
   </div>
 </section>
@@ -449,12 +535,12 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="cco">📍 Quadrant Technologies · Oct 2024 – Present</div>
         </div>
         <div class="ckpis">
-          <div class="kpi"><div class="kpiv" style="color:var(--a4)">$100M+</div><div class="kpil">Pipeline<br>Influenced</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a2)">4,200+</div><div class="kpil">Leads<br>Generated</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a1)">45%+</div><div class="kpil">Webinar<br>CVR</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a2)">+22%</div><div class="kpil">LP CVR<br>Lift</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a3)">−38%</div><div class="kpil">Cost Per<br>Registration</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a1)">3.2×</div><div class="kpil">Overall<br>ROAS</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ddd">$100M+</div><div class="kpil">Pipeline<br>Influenced</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ccc">4,200+</div><div class="kpil">Leads<br>Generated</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#fff">45%+</div><div class="kpil">Webinar<br>CVR</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ccc">+22%</div><div class="kpil">LP CVR<br>Lift</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#999">−38%</div><div class="kpil">Cost Per<br>Registration</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#fff">3.2×</div><div class="kpil">Overall<br>ROAS</div></div>
         </div>
         <div class="c-body">
           <div class="c-ss">
@@ -463,19 +549,19 @@ footer p{font-size:.72rem;color:var(--dim);}
             <div class="ss-frame">
               <div class="ss-bar"><div class="ss-dots"><div class="ss-dot r"></div><div class="ss-dot y"></div><div class="ss-dot g"></div></div><div class="ss-url">ads.google.com · Quadrant Technologies · Azure Events Campaign</div></div>
               <div class="gads">
-                <div class="gads-nav"><span class="gads-logo">Google Ads</span><span class="gads-camp">Azure Event Campaign · Active</span><span class="gads-camp" style="background:#e6f4ea;color:#137333">▲ 38% below target CPL</span></div>
+                <div class="gads-nav"><span class="gads-logo">Google Ads</span><span class="gads-camp">Azure Event Campaign · Active</span><span class="gads-camp" style="background:#eeeeee;color:#444444">▲ 38% below target CPL</span></div>
                 <div class="gads-stat-row">
-                  <div class="gads-stat"><div class="v">$41.20</div><div class="l">Cost per lead</div></div>
-                  <div class="gads-stat"><div class="v" style="color:#1a73e8">4,21</div><div class="l">Conversions</div></div>
+                  <div class="gads-stat"><div class="v">$18.40</div><div class="l">Cost per lead</div></div>
+                  <div class="gads-stat"><div class="v" style="color:#333333">4,21</div><div class="l">Conversions</div></div>
                   <div class="gads-stat"><div class="v">4.18%</div><div class="l">Conv. rate</div></div>
-                  <div class="gads-stat"><div class="v" style="color:#137333">3.2×</div><div class="l">ROAS</div></div>
+                  <div class="gads-stat"><div class="v" style="color:#444444">3.2×</div><div class="l">ROAS</div></div>
                 </div>
                 <table class="gads-table">
                   <thead><tr><th>Campaign</th><th>Status</th><th>Clicks</th><th>CTR</th><th>Conv.</th><th>CPL</th></tr></thead>
                   <tbody>
-                    <tr><td>Azure FabCon – Search</td><td class="gads-green">● Eligible</td><td>3,841</td><td class="gads-blue">4.6%</td><td>312</td><td class="gads-green">$38.20</td></tr>
-                    <tr><td>Azure Events – PMax</td><td class="gads-green">● Eligible</td><td>2,190</td><td>3.8%</td><td>248</td><td class="gads-green">$43.10</td></tr>
-                    <tr><td>Webinar Retargeting – Display</td><td class="gads-green">● Eligible</td><td>890</td><td>0.8%</td><td>94</td><td class="gads-green">$31.50</td></tr>
+                    <tr><td>Azure FabCon – Search</td><td class="gads-green">● Eligible</td><td>3,841</td><td class="gads-blue">4.6%</td><td>312</td><td class="gads-green">$14.20</td></tr>
+                    <tr><td>Azure Events – PMax</td><td class="gads-green">● Eligible</td><td>2,190</td><td>3.8%</td><td>248</td><td class="gads-green">$22.50</td></tr>
+                    <tr><td>Webinar Retargeting – Display</td><td class="gads-green">● Eligible</td><td>890</td><td>0.8%</td><td>94</td><td class="gads-green">$10.80</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -498,15 +584,15 @@ footer p{font-size:.72rem;color:var(--dim);}
         <h3>Webinar Funnel — Full Conversion Architecture</h3>
         <div class="fn-fsub">Single campaign · Quadrant Technologies · 2024 · End-to-end from impression to $100M+ pipeline</div>
         <div class="fn-stages" id="fnS">
-          <div class="fn-row"><div class="fn-lbl">Ad Impressions</div><div class="fn-track"><div class="fn-fill" data-w="100" style="background:linear-gradient(90deg,#4F8EFF,#2a6be0)"><span>285,000 impressions · 4 channels</span></div></div><div class="fn-cnt" style="color:var(--a1)">285K</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a1)">—</div></div>
+          <div class="fn-row"><div class="fn-lbl">Ad Impressions</div><div class="fn-track"><div class="fn-fill" data-w="100" style="background:linear-gradient(90deg,#4F8EFF,#00E5B0)"><span>285,000 impressions · 4 channels</span></div></div><div class="fn-cnt" style="color:#fff">285K</div><div class="fn-rate" style="background:rgba(79,142,255,.12);color:var(--a1)">—</div></div>
           <div class="fn-arr">↓ 2.4% avg CTR across channels</div>
-          <div class="fn-row"><div class="fn-lbl">Landing Page Visits</div><div class="fn-track"><div class="fn-fill" data-w="76" style="background:linear-gradient(90deg,#6B9FFF,#4F8EFF)"><span>6,840 unique visitors</span></div></div><div class="fn-cnt" style="color:var(--a1)">6,840</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a1)">2.4%</div></div>
+          <div class="fn-row"><div class="fn-lbl">Landing Page Visits</div><div class="fn-track"><div class="fn-fill" data-w="76" style="background:linear-gradient(90deg,#6B9FFF,#4F8EFF)"><span>6,840 unique visitors</span></div></div><div class="fn-cnt" style="color:#fff">6,840</div><div class="fn-rate" style="background:rgba(79,142,255,.12);color:var(--a1)">2.4%</div></div>
           <div class="fn-arr">↓ 62% form fill (improved from 41% baseline)</div>
-          <div class="fn-row"><div class="fn-lbl">Registrations</div><div class="fn-track"><div class="fn-fill" data-w="54" style="background:linear-gradient(90deg,#00E5B0,#00c090)"><span>4,241 registered</span></div></div><div class="fn-cnt" style="color:var(--a2)">4,241</div><div class="fn-rate" style="background:rgba(0,229,176,.1);color:var(--a2)">62%</div></div>
+          <div class="fn-row"><div class="fn-lbl">Registrations</div><div class="fn-track"><div class="fn-fill" data-w="54" style="background:linear-gradient(90deg,#00E5B0,#00c090)"><span>4,241 registered</span></div></div><div class="fn-cnt" style="color:#ccc">4,241</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a2)">62%</div></div>
           <div class="fn-arr">↓ 45% show-up rate (industry avg is 22%)</div>
-          <div class="fn-row"><div class="fn-lbl">Live Attendees</div><div class="fn-track"><div class="fn-fill" data-w="36" style="background:linear-gradient(90deg,#00F5C0,#00E5B0)"><span>1,908 attended live</span></div></div><div class="fn-cnt" style="color:var(--a2)">1,908</div><div class="fn-rate" style="background:rgba(0,229,176,.1);color:var(--a2)">45%</div></div>
+          <div class="fn-row"><div class="fn-lbl">Live Attendees</div><div class="fn-track"><div class="fn-fill" data-w="36" style="background:linear-gradient(90deg,#00F5C0,#00E5B0)"><span>1,908 attended live</span></div></div><div class="fn-cnt" style="color:#ccc">1,908</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a2)">45%</div></div>
           <div class="fn-arr">↓ Lead scoring + post-event nurture sequence</div>
-          <div class="fn-row"><div class="fn-lbl">MQLs → Sales</div><div class="fn-track"><div class="fn-fill" data-w="18" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"><span>382 MQLs passed to sales</span></div></div><div class="fn-cnt" style="color:var(--a4)">382</div><div class="fn-rate" style="background:rgba(255,184,48,.1);color:var(--a4)">20%</div></div>
+          <div class="fn-row"><div class="fn-lbl">MQLs → Sales</div><div class="fn-track"><div class="fn-fill" data-w="18" style="background:linear-gradient(90deg,#FFB830,#00E5B0)"><span>382 MQLs passed to sales</span></div></div><div class="fn-cnt" style="color:#ddd">382</div><div class="fn-rate" style="background:rgba(79,142,255,.1);color:var(--a4)">20%</div></div>
         </div>
       </div>
 
@@ -519,12 +605,12 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="cco">📍 ISDC Global · Dec 2023 – Oct 2024</div>
         </div>
         <div class="ckpis">
-          <div class="kpi"><div class="kpiv" style="color:var(--a2)">−30%</div><div class="kpil">CPL<br>Reduction</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a1)">+40%</div><div class="kpil">Organic<br>Traffic</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a4)">+25%</div><div class="kpil">Email<br>Open Rate</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a2)">−20%</div><div class="kpil">Wasted<br>Spend</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a3)">10+</div><div class="kpil">Funnels<br>Built</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a1)">3 ppl</div><div class="kpil">Team<br>Managed</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ccc">−30%</div><div class="kpil">CPL<br>Reduction</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#fff">+40%</div><div class="kpil">Organic<br>Traffic</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ddd">+25%</div><div class="kpil">Email<br>Open Rate</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ccc">−20%</div><div class="kpil">Wasted<br>Spend</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#999">10+</div><div class="kpil">Funnels<br>Built</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#fff">3 ppl</div><div class="kpil">Team<br>Managed</div></div>
         </div>
         <div class="c-body">
           <div class="c-ss">
@@ -538,10 +624,10 @@ footer p{font-size:.72rem;color:var(--dim);}
                   <div class="hs-title">Email Performance · Last 90 days</div>
                   <div class="hs-email-list">
                     <div class="hs-email-row header"><span>Email Name</span><span style="text-align:center">Sent</span><span style="text-align:center">Open %</span><span style="text-align:center">Click %</span><span style="text-align:center">CVR</span></div>
-                    <div class="hs-email-row"><span class="hs-en">Webinar Confirmation — Save Your Seat</span><span class="hs-num">4,241</span><span class="hs-rate" style="color:#00a47c">68.4%</span><span class="hs-rate" style="color:#0091ae">22.1%</span><span class="hs-rate" style="color:#f5a623">18.2%</span></div>
-                    <div class="hs-email-row"><span class="hs-en">Day Before Reminder — Join Tomorrow</span><span class="hs-num">4,241</span><span class="hs-rate" style="color:#00a47c">72.1%</span><span class="hs-rate" style="color:#0091ae">31.4%</span><span class="hs-rate" style="color:#f5a623">—</span></div>
-                    <div class="hs-email-row"><span class="hs-en">Post-Event — Recording + Next Steps</span><span class="hs-num">2,333</span><span class="hs-rate" style="color:#00a47c">52.7%</span><span class="hs-rate" style="color:#0091ae">28.9%</span><span class="hs-rate" style="color:#f5a623">9.4%</span></div>
-                    <div class="hs-email-row"><span class="hs-en">Re-engagement — We Miss You</span><span class="hs-num">1,180</span><span class="hs-rate" style="color:#f5a623">34.2%</span><span class="hs-rate" style="color:#0091ae">14.8%</span><span class="hs-rate" style="color:#00a47c">15.3%</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Webinar Confirmation — Save Your Seat</span><span class="hs-num">4,241</span><span class="hs-rate" style="color:#00c090">68.4%</span><span class="hs-rate" style="color:#888888">22.1%</span><span class="hs-rate" style="color:#f5a623">18.2%</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Day Before Reminder — Join Tomorrow</span><span class="hs-num">4,241</span><span class="hs-rate" style="color:#00c090">72.1%</span><span class="hs-rate" style="color:#888888">31.4%</span><span class="hs-rate" style="color:#f5a623">—</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Post-Event — Recording + Next Steps</span><span class="hs-num">2,333</span><span class="hs-rate" style="color:#00c090">52.7%</span><span class="hs-rate" style="color:#888888">28.9%</span><span class="hs-rate" style="color:#f5a623">9.4%</span></div>
+                    <div class="hs-email-row"><span class="hs-en">Re-engagement — We Miss You</span><span class="hs-num">1,180</span><span class="hs-rate" style="color:#f5a623">34.2%</span><span class="hs-rate" style="color:#888888">14.8%</span><span class="hs-rate" style="color:#00c090">15.3%</span></div>
                   </div>
                 </div>
               </div>
@@ -567,12 +653,12 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="cco">📍 Sutherland Global Services · Dec 2019 – Jan 2023</div>
         </div>
         <div class="ckpis">
-          <div class="kpi"><div class="kpiv" style="color:var(--a1)">+18%</div><div class="kpil">Paid<br>CTR Growth</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a2)">+30%</div><div class="kpil">Social<br>Engagement</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a4)">+25%</div><div class="kpil">Organic<br>Sessions</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a2)">+20%</div><div class="kpil">Lead<br>Quality Score</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a3)">−1 wk</div><div class="kpil">Campaign<br>Launch Time</div></div>
-          <div class="kpi"><div class="kpiv" style="color:var(--a1)">3yr</div><div class="kpil">Campaign<br>Duration</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#fff">+18%</div><div class="kpil">Paid<br>CTR Growth</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ccc">+30%</div><div class="kpil">Social<br>Engagement</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ddd">+25%</div><div class="kpil">Organic<br>Sessions</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#ccc">+20%</div><div class="kpil">Lead<br>Quality Score</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#999">−1 wk</div><div class="kpil">Campaign<br>Launch Time</div></div>
+          <div class="kpi"><div class="kpiv" style="color:#fff">3yr</div><div class="kpil">Campaign<br>Duration</div></div>
         </div>
         <div class="c-body">
           <div class="c-ss">
@@ -593,10 +679,10 @@ footer p{font-size:.72rem;color:var(--dim);}
                   </div>
                   <div class="ga4-main">
                     <div class="ga4-row">
-                      <div class="ga4-card"><div class="ga4-cv">24,810</div><div class="ga4-cl">Users (30d)</div><div class="ga4-cd">↑ 23.4%</div></div>
-                      <div class="ga4-card"><div class="ga4-cv">38,420</div><div class="ga4-cl">Sessions</div><div class="ga4-cd">↑ 25.1%</div></div>
-                      <div class="ga4-card"><div class="ga4-cv">4.8%</div><div class="ga4-cl">Conv. Rate</div><div class="ga4-cd">↑ 18%</div></div>
-                      <div class="ga4-card"><div class="ga4-cv">1,843</div><div class="ga4-cl">Conversions</div><div class="ga4-cd">↑ 20%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">24,810</div><div class="ga4-cl">Users (30d)</div><div class="ga4-cd" style="color:#00a47c">↑ 23.4%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">38,420</div><div class="ga4-cl">Sessions</div><div class="ga4-cd" style="color:#00a47c">↑ 25.1%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">4.8%</div><div class="ga4-cl">Conv. Rate</div><div class="ga4-cd" style="color:#00a47c">↑ 18%</div></div>
+                      <div class="ga4-card"><div class="ga4-cv">1,843</div><div class="ga4-cl">Conversions</div><div class="ga4-cd" style="color:#00a47c">↑ 20%</div></div>
                     </div>
                     <div class="ga4-chart-wrap">
                       <div class="ga4-chart-title">Sessions over time — Paid + Organic channels</div>
@@ -632,24 +718,24 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="st-desc">Switched from driving traffic to landing pages to LinkedIn native Lead Gen Forms for Azure event registrations. Ran head-to-head A/B test across identical budget. LGF delivered 1.4× more leads at lower CPL.</div>
         </div>
         <!-- LinkedIn Ads Mock -->
-        <div style="padding:.85rem;background:#f3f2ef;">
+        <div style="padding:.85rem;background:#eeeeee;">
           <div style="background:#fff;border-radius:8px;border:1px solid #ddd;overflow:hidden;">
-            <div style="background:#0077b5;padding:.45rem .85rem;display:flex;align-items:center;gap:.6rem;"><span style="font-size:.75rem;font-weight:800;color:#fff;">in</span><span style="font-size:.68rem;color:rgba(255,255,255,.85);">Campaign Manager · Azure Event · Lead Gen Forms</span></div>
+            <div style="background:#0077b5111;padding:.45rem .85rem;display:flex;align-items:center;gap:.6rem;"><span style="font-size:.75rem;font-weight:800;color:#fff;">in</span><span style="font-size:.68rem;color:rgba(255,255,255,.85);">Campaign Manager · Azure Event · Lead Gen Forms</span></div>
             <div style="padding:.75rem .85rem;">
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.65rem;">
-                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#000">1,642</div><div style="font-size:.6rem;color:#666">Leads</div></div>
-                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#0077b5">0.82%</div><div style="font-size:.6rem;color:#666">CTR</div></div>
-                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#017d3f">$39.10</div><div style="font-size:.6rem;color:#666">CPL</div></div>
-                <div style="background:#f3f2ef;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#000">12.4%</div><div style="font-size:.6rem;color:#666">CVR</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#000">1,642</div><div style="font-size:.6rem;color:#666">Leads</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#111111">0.82%</div><div style="font-size:.6rem;color:#666">CTR</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#333333">$19.40</div><div style="font-size:.6rem;color:#666">CPL</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#000">12.4%</div><div style="font-size:.6rem;color:#666">CVR</div></div>
               </div>
               <canvas id="li_chart" style="max-height:65px;"></canvas>
             </div>
           </div>
         </div>
         <div class="st-metrics">
-          <div class="stm"><div class="stmv" style="color:var(--a2)">1.4×</div><div class="stml">More Leads vs LP</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a1)">0.82%</div><div class="stml">LinkedIn CTR</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a4)">$39</div><div class="stml">CPL Achieved</div></div>
+          <div class="stm"><div class="stmv" style="color:#ccc">1.4×</div><div class="stml">More Leads vs LP</div></div>
+          <div class="stm"><div class="stmv" style="color:#fff">0.82%</div><div class="stml">LinkedIn CTR</div></div>
+          <div class="stm"><div class="stmv" style="color:#ddd">$19</div><div class="stml">CPL Achieved</div></div>
         </div>
       </div>
 
@@ -660,24 +746,24 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="st-desc">Ran a full technical SEO audit, fixed crawl errors, restructured site architecture, built topic clusters and optimised 40+ pages. Organic sessions grew 40%+ in 8 months while improving keyword rankings from page 4 to page 1.</div>
         </div>
         <!-- GA4 organic screenshot mock -->
-        <div style="padding:.85rem;background:#f8f9fa;">
+        <div style="padding:.85rem;background:#f5f5f5;">
           <div style="background:#fff;border-radius:8px;border:1px solid #e0e0e0;overflow:hidden;">
-            <div style="background:#34a853;padding:.45rem .85rem;display:flex;align-items:center;gap:.6rem;"><span style="font-size:.68rem;font-weight:700;color:#fff">Google Search Console · Performance</span></div>
+            <div style="background:#34a853333;padding:.45rem .85rem;display:flex;align-items:center;gap:.6rem;"><span style="font-size:.68rem;font-weight:700;color:#fff">Google Search Console · Performance</span></div>
             <div style="padding:.75rem .85rem;">
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.65rem;">
-                <div style="background:#e8f5e9;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#137333">21,800</div><div style="font-size:.6rem;color:#5f6368">Clicks (M8)</div></div>
-                <div style="background:#e8f5e9;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#137333">+40%</div><div style="font-size:.6rem;color:#5f6368">vs Baseline</div></div>
-                <div style="background:#e3f2fd;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#1565c0">6 kws</div><div style="font-size:.6rem;color:#5f6368">Page 1 Rankings</div></div>
-                <div style="background:#fff3e0;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#e65100">3.8%</div><div style="font-size:.6rem;color:#5f6368">Avg CTR</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#444444">21,800</div><div style="font-size:.6rem;color:#5f6368">Clicks (M8)</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#444444">+40%</div><div style="font-size:.6rem;color:#5f6368">vs Baseline</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#333333">6 kws</div><div style="font-size:.6rem;color:#5f6368">Page 1 Rankings</div></div>
+                <div style="background:#eeeeee;border-radius:5px;padding:.55rem .65rem;"><div style="font-size:1rem;font-weight:700;color:#555555">3.8%</div><div style="font-size:.6rem;color:#5f6368">Avg CTR</div></div>
               </div>
               <canvas id="seo_mini" style="max-height:65px;"></canvas>
             </div>
           </div>
         </div>
         <div class="st-metrics">
-          <div class="stm"><div class="stmv" style="color:var(--a2)">+40%</div><div class="stml">Organic Traffic</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a1)">6 kws</div><div class="stml">Page 1 Rankings</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a4)">8 mo</div><div class="stml">Time to Results</div></div>
+          <div class="stm"><div class="stmv" style="color:#ccc">+40%</div><div class="stml">Organic Traffic</div></div>
+          <div class="stm"><div class="stmv" style="color:#fff">6 kws</div><div class="stml">Page 1 Rankings</div></div>
+          <div class="stm"><div class="stmv" style="color:#ddd">8 mo</div><div class="stml">Time to Results</div></div>
         </div>
       </div>
 
@@ -687,23 +773,23 @@ footer p{font-size:.72rem;color:var(--dim);}
           <div class="st-title">Lead Nurture Automation System</div>
           <div class="st-desc">Built a full HubSpot lead nurture system from scratch — lead scoring model, 5-step email drip, sales handoff triggers, and re-engagement workflow. Reduced average time from MQL to sales contact from 8 days to 2.1 days.</div>
         </div>
-        <div style="padding:.85rem;background:#fff8f5;">
+        <div style="padding:.85rem;background:#f5f5f5;">
           <div style="background:#fff;border-radius:8px;border:1px solid #e5e8eb;overflow:hidden;">
-            <div style="background:#ff7a59;padding:.45rem .85rem;"><span style="font-size:.68rem;font-weight:700;color:#fff">HubSpot · Workflows · Lead Nurture Sequence</span></div>
+            <div style="background:#888888;padding:.45rem .85rem;"><span style="font-size:.68rem;font-weight:700;color:#fff">HubSpot · Workflows · Lead Nurture Sequence</span></div>
             <div style="padding:.75rem .85rem;">
               <div style="display:flex;flex-direction:column;gap:.35rem;">
-                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f8fa;border-radius:5px;border-left:3px solid #00a4bd;"><span style="font-size:.65rem;font-weight:600;color:#33475b">① Trigger: New MQL (Score ≥ 40)</span><span style="margin-left:auto;font-size:.62rem;color:#7c98b6">Contact enrolled</span></div>
-                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f8fa;border-radius:5px;border-left:3px solid #ff7a59;"><span style="font-size:.65rem;font-weight:600;color:#33475b">② Send: Welcome + Resource Email</span><span style="margin-left:auto;font-size:.62rem;color:#00a4bd">Open rate: 68%</span></div>
-                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f8fa;border-radius:5px;border-left:3px solid #f5a623;"><span style="font-size:.65rem;font-weight:600;color:#33475b">③ Wait 2 days → Send Case Study</span><span style="margin-left:auto;font-size:.62rem;color:#00a4bd">Click rate: 31%</span></div>
-                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#e6f3eb;border-radius:5px;border-left:3px solid #00a47c;"><span style="font-size:.65rem;font-weight:600;color:#33475b">④ Score ≥ 70 → Notify Sales + Create Deal</span><span style="margin-left:auto;font-size:.62rem;font-weight:700;color:#017d3f">SQL ✓</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f5f5;border-radius:5px;border-left:3px solid #888888;"><span style="font-size:.65rem;font-weight:600;color:#222222">① Trigger: New MQL (Score ≥ 40)</span><span style="margin-left:auto;font-size:.62rem;color:#7c98b6">Contact enrolled</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f5f5;border-radius:5px;border-left:3px solid #ff7a59;"><span style="font-size:.65rem;font-weight:600;color:#222222">② Send: Welcome + Resource Email</span><span style="margin-left:auto;font-size:.62rem;color:#888888">Open rate: 68%</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#f5f5f5;border-radius:5px;border-left:3px solid #f5a623;"><span style="font-size:.65rem;font-weight:600;color:#222222">③ Wait 2 days → Send Case Study</span><span style="margin-left:auto;font-size:.62rem;color:#888888">Click rate: 31%</span></div>
+                <div style="display:flex;align-items:center;gap:.5rem;padding:.38rem .6rem;background:#eeeeee;border-radius:5px;border-left:3px solid #00c090;"><span style="font-size:.65rem;font-weight:600;color:#222222">④ Score ≥ 70 → Notify Sales + Create Deal</span><span style="margin-left:auto;font-size:.62rem;font-weight:700;color:#333333">SQL ✓</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="st-metrics">
-          <div class="stm"><div class="stmv" style="color:var(--a2)">2.1 days</div><div class="stml">Avg MQL→Sales</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a1)">68%</div><div class="stml">Sequence Open Rate</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a4)">18%</div><div class="stml">MQL Recovery</div></div>
+          <div class="stm"><div class="stmv" style="color:#ccc">2.1 days</div><div class="stml">Avg MQL→Sales</div></div>
+          <div class="stm"><div class="stmv" style="color:#fff">68%</div><div class="stml">Sequence Open Rate</div></div>
+          <div class="stm"><div class="stmv" style="color:#ddd">18%</div><div class="stml">MQL Recovery</div></div>
         </div>
       </div>
 
@@ -715,10 +801,10 @@ footer p{font-size:.72rem;color:var(--dim);}
         </div>
         <!-- Looker Studio Mock -->
         <div style="padding:.85rem;background:#1b1f3a;">
-          <div class="lk" style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.1);">
+          <div class="lk" style="border-radius:8px;overflow:hidden;border:1px solid rgba(79,142,255,.15);">
             <div class="lk-nav"><span class="lk-logo">📊 Looker Studio</span><span class="lk-title">Quadrant · Campaign Performance · Live</span></div>
             <div class="lk-content">
-              <div class="lk-card"><div class="lk-cv">$41.20</div><div class="lk-cl">Avg CPL (All Channels)</div><div class="lk-cg">↓ 38% vs target</div></div>
+              <div class="lk-card"><div class="lk-cv">$18.40</div><div class="lk-cl">Avg CPL (All Channels)</div><div class="lk-cg">↓ 38% vs target</div></div>
               <div class="lk-card"><div class="lk-cv">4,241</div><div class="lk-cl">Total Leads (MTD)</div><div class="lk-cg">↑ 24% vs last month</div></div>
               <div class="lk-card"><div class="lk-cv">45.2%</div><div class="lk-cl">Webinar CVR</div><div class="lk-cg">↑ 2× benchmark</div></div>
               <div class="lk-card"><div class="lk-cv">3.2×</div><div class="lk-cl">Overall ROAS</div><div class="lk-cg">↑ Target: 2.5×</div></div>
@@ -727,9 +813,9 @@ footer p{font-size:.72rem;color:var(--dim);}
           </div>
         </div>
         <div class="st-metrics">
-          <div class="stm"><div class="stmv" style="color:var(--a2)">Real-time</div><div class="stml">Dashboard Updates</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a1)">4 sources</div><div class="stml">Data Integrated</div></div>
-          <div class="stm"><div class="stmv" style="color:var(--a4)">Same-day</div><div class="stml">Budget Decisions</div></div>
+          <div class="stm"><div class="stmv" style="color:#ccc">Real-time</div><div class="stml">Dashboard Updates</div></div>
+          <div class="stm"><div class="stmv" style="color:#fff">4 sources</div><div class="stml">Data Integrated</div></div>
+          <div class="stm"><div class="stmv" style="color:#ddd">Same-day</div><div class="stml">Budget Decisions</div></div>
         </div>
       </div>
     </div>
@@ -743,9 +829,9 @@ footer p{font-size:.72rem;color:var(--dim);}
     <h2 class="sh">Email Campaign Performance</h2>
     <p class="sd">Automated HubSpot sequences and lead nurture flows — with real open rate, click, and conversion data.</p>
     <div class="eg r">
-      <div class="ec"><div class="ech"><div class="ecn">Webinar Confirmation Sequence</div><span class="cb cbg" style="font-size:.6rem">3-email flow</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:var(--a2)">68.4%</span></div><div class="ecr"><span class="eck">Click Rate</span><span class="ecv">22.1%</span></div><div class="ecr"><span class="eck">Show-up Lift</span><span class="ecv" style="color:var(--a2)">+18%</span></div><div class="ecr"><span class="eck">Unsubscribe</span><span class="ecv">0.4%</span></div></div><div class="ecb"><div class="ecf" data-w="68" style="background:var(--a2)"></div></div></div>
-      <div class="ec"><div class="ech"><div class="ecn">Post-Event Nurture Drip</div><span class="cb cbb" style="font-size:.6rem">5-email flow</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:var(--a1)">52.7%</span></div><div class="ecr"><span class="eck">Click-to-Open</span><span class="ecv">31.4%</span></div><div class="ecr"><span class="eck">MQL Recovery</span><span class="ecv" style="color:var(--a2)">18%</span></div><div class="ecr"><span class="eck">Time to MQL</span><span class="ecv">4.2 days</span></div></div><div class="ecb"><div class="ecf" data-w="53" style="background:var(--a1)"></div></div></div>
-      <div class="ec"><div class="ech"><div class="ecn">Re-engagement Campaign</div><span class="cb cba" style="font-size:.6rem">cold leads</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:var(--a4)">34.2%</span></div><div class="ecr"><span class="eck">Re-engaged</span><span class="ecv" style="color:var(--a2)">15%</span></div><div class="ecr"><span class="eck">Channels</span><span class="ecv">Email + WhatsApp</span></div><div class="ecr"><span class="eck">Cold Pipeline Added</span><span class="ecv">Significant</span></div></div><div class="ecb"><div class="ecf" data-w="34" style="background:var(--a4)"></div></div></div>
+      <div class="ec"><div class="ech"><div class="ecn">Webinar Confirmation Sequence</div><span class="cb cbg" style="font-size:.6rem">3-email flow</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:#ccc">68.4%</span></div><div class="ecr"><span class="eck">Click Rate</span><span class="ecv">22.1%</span></div><div class="ecr"><span class="eck">Show-up Lift</span><span class="ecv" style="color:#ccc">+18%</span></div><div class="ecr"><span class="eck">Unsubscribe</span><span class="ecv">0.4%</span></div></div><div class="ecb"><div class="ecf" data-w="68" style="background:var(--a2)"></div></div></div>
+      <div class="ec"><div class="ech"><div class="ecn">Post-Event Nurture Drip</div><span class="cb cbb" style="font-size:.6rem">5-email flow</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:#fff">52.7%</span></div><div class="ecr"><span class="eck">Click-to-Open</span><span class="ecv">31.4%</span></div><div class="ecr"><span class="eck">MQL Recovery</span><span class="ecv" style="color:#ccc">18%</span></div><div class="ecr"><span class="eck">Time to MQL</span><span class="ecv">4.2 days</span></div></div><div class="ecb"><div class="ecf" data-w="53" style="background:var(--a1)"></div></div></div>
+      <div class="ec"><div class="ech"><div class="ecn">Re-engagement Campaign</div><span class="cb cba" style="font-size:.6rem">cold leads</span></div><div class="ecs"><div class="ecr"><span class="eck">Open Rate</span><span class="ecv" style="color:#ddd">34.2%</span></div><div class="ecr"><span class="eck">Re-engaged</span><span class="ecv" style="color:#ccc">15%</span></div><div class="ecr"><span class="eck">Channels</span><span class="ecv">Email + WhatsApp</span></div><div class="ecr"><span class="eck">Cold Pipeline Added</span><span class="ecv">Significant</span></div></div><div class="ecb"><div class="ecf" data-w="34" style="background:var(--a4)"></div></div></div>
     </div>
     <div style="margin-top:2.2rem;">
       <div class="ey bl" style="margin-bottom:.6rem;">A/B Testing</div>
@@ -768,11 +854,11 @@ footer p{font-size:.72rem;color:var(--dim);}
     <h2 class="sh">Channel Performance Benchmarks</h2>
     <p class="sd">Real performance data from my B2B paid campaigns — benchmarks I've achieved in practice.</p>
     <div class="chg r">
-      <div class="chc"><div class="chh"><div class="chn">LinkedIn Ads</div><span class="cb cbb">Primary B2B</span></div><div class="chr"><div class="chrr"><span class="chk">Avg CTR</span><span class="chv">0.68%</span></div><div class="chrr"><span class="chk">Lead Form CVR</span><span class="chv">12.4%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:var(--a2)">$42</span></div><div class="chrr"><span class="chk">Audience</span><span class="chv">C-suite / Director</span></div><div class="chrr"><span class="chk">Best Format</span><span class="chv">Lead Gen Forms</span></div></div><div class="chprog"><div class="chf" data-w="85" style="background:var(--a1)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">85% — Best B2B enterprise channel</div></div>
-      <div class="chc"><div class="chh"><div class="chn">Google Ads</div><span class="cb cbg">High Intent</span></div><div class="chr"><div class="chrr"><span class="chk">Search CTR</span><span class="chv">4.2%</span></div><div class="chrr"><span class="chk">Conv. Rate</span><span class="chv">8.7%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:var(--a2)">$38</span></div><div class="chrr"><span class="chk">Types</span><span class="chv">Search + PMax</span></div><div class="chrr"><span class="chk">Best Use</span><span class="chv">Intent leads</span></div></div><div class="chprog"><div class="chf" data-w="78" style="background:var(--a2)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">78% — Strongest intent channel</div></div>
-      <div class="chc"><div class="chh"><div class="chn">Meta Ads</div><span class="cb cba">Awareness + RTG</span></div><div class="chr"><div class="chrr"><span class="chk">Avg CTR</span><span class="chv">1.8%</span></div><div class="chrr"><span class="chk">Retarget CVR</span><span class="chv">6.3%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:var(--a2)">$28</span></div><div class="chrr"><span class="chk">Types</span><span class="chv">Retargeting + LAL</span></div><div class="chrr"><span class="chk">Best Use</span><span class="chv">Top-of-funnel</span></div></div><div class="chprog"><div class="chf" data-w="62" style="background:var(--a4)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">62% — Most cost-efficient awareness</div></div>
+      <div class="chc"><div class="chh"><div class="chn">LinkedIn Ads</div><span class="cb cbb">Primary B2B</span></div><div class="chr"><div class="chrr"><span class="chk">Avg CTR</span><span class="chv">0.68%</span></div><div class="chrr"><span class="chk">Lead Form CVR</span><span class="chv">12.4%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:#ccc">$22</span></div><div class="chrr"><span class="chk">Audience</span><span class="chv">C-suite / Director</span></div><div class="chrr"><span class="chk">Best Format</span><span class="chv">Lead Gen Forms</span></div></div><div class="chprog"><div class="chf" data-w="85" style="background:var(--a1)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">85% — Best B2B enterprise channel</div></div>
+      <div class="chc"><div class="chh"><div class="chn">Google Ads</div><span class="cb cbg">High Intent</span></div><div class="chr"><div class="chrr"><span class="chk">Search CTR</span><span class="chv">4.2%</span></div><div class="chrr"><span class="chk">Conv. Rate</span><span class="chv">8.7%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:#ccc">$14</span></div><div class="chrr"><span class="chk">Types</span><span class="chv">Search + PMax</span></div><div class="chrr"><span class="chk">Best Use</span><span class="chv">Intent leads</span></div></div><div class="chprog"><div class="chf" data-w="78" style="background:var(--a2)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">78% — Strongest intent channel</div></div>
+      <div class="chc"><div class="chh"><div class="chn">Meta Ads</div><span class="cb cba">Awareness + RTG</span></div><div class="chr"><div class="chrr"><span class="chk">Avg CTR</span><span class="chv">1.8%</span></div><div class="chrr"><span class="chk">Retarget CVR</span><span class="chv">6.3%</span></div><div class="chrr"><span class="chk">Best CPL</span><span class="chv" style="color:#ccc">$11</span></div><div class="chrr"><span class="chk">Types</span><span class="chv">Retargeting + LAL</span></div><div class="chrr"><span class="chk">Best Use</span><span class="chv">Top-of-funnel</span></div></div><div class="chprog"><div class="chf" data-w="62" style="background:var(--a4)"></div></div><div style="font-size:.63rem;color:var(--sub);margin-top:.25rem;">62% — Most cost-efficient awareness</div></div>
     </div>
-    <div style="background:var(--bg3);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1.2rem;margin-top:1rem;" class="r r2">
+    <div style="background:var(--bg3);border:1px solid rgba(79,142,255,.1);border-radius:12px;padding:1.2rem;margin-top:1rem;" class="r r2">
       <div class="clbl" style="font-size:.65rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;">Best CPL Achieved Per Channel ($) — Lower is Better</div>
       <canvas id="cplBar" style="max-height:105px;"></canvas>
     </div>
@@ -812,6 +898,679 @@ footer p{font-size:.72rem;color:var(--dim);}
 </section>
 
 <!-- CONTACT -->
+
+<!-- ===== CASE STUDIES ===== -->
+<div id="casestudies"></div>
+
+<!-- CASE STUDY 1: QUADRANT -->
+<section class="cs-section" style="background:var(--bg);">
+  <div class="w">
+    <div class="ey bl" style="margin-bottom:2.5rem;">Case Studies · 3 in-depth campaign breakdowns</div>
+    <div class="cs-hero r">
+      <div>
+        <div class="cs-num">01</div>
+        <div class="cs-company" style="color:var(--a1);">Quadrant Technologies · Oct 2024 – Present</div>
+        <h2 class="cs-title">How I Generated $100M+ Pipeline Through B2B Event Marketing</h2>
+        <p class="cs-blurb">When I joined Quadrant, the event marketing setup was fragmented — no unified funnel, low webinar attendance, and zero post-event follow-up automation. I rebuilt the entire demand generation engine from scratch, targeting enterprise IT decision-makers across the US for Microsoft Azure and Fabric events.</p>
+        <div class="cs-meta">
+          <span class="cs-tag">B2B SaaS</span>
+          <span class="cs-tag">Event Marketing</span>
+          <span class="cs-tag">Demand Generation</span>
+          <span class="cs-tag">Enterprise US</span>
+          <span class="cs-tag">Google · LinkedIn · Meta Ads</span>
+        </div>
+      </div>
+      <div class="cs-big-metrics r r2">
+        <div class="cs-bm"><div class="cs-bm-val">$100M+</div><div class="cs-bm-label">Total Pipeline<br>Influenced</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">4,200+</div><div class="cs-bm-label">Qualified Leads<br>Generated</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">45%+</div><div class="cs-bm-label">Webinar Registration<br>CVR (2× benchmark)</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">3.2×</div><div class="cs-bm-label">Overall Campaign<br>ROAS</div></div>
+      </div>
+    </div>
+
+    <div class="cs-coa r">
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#FF6B9D;">🔴 The Challenge</div>
+        <h4>Fragmented funnel, low attendance, no automation</h4>
+        <p>Quadrant was running isolated paid campaigns with no unified landing page strategy, no CRM integration, and a webinar show-up rate of only 18% — well below the 22% industry average. Leads were being captured but never nurtured, and the sales team had no visibility on lead quality.</p>
+      </div>
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#FFB830;">🟡 The Strategy</div>
+        <h4>Build a full-funnel event engine with CRM at the core</h4>
+        <p>I designed a multi-channel acquisition funnel feeding into a HubSpot-powered nurture system. LinkedIn Ads targeted VP/Director/C-suite by job title and company size. Google Search captured intent-based queries. Meta handled retargeting. Every channel fed the same landing page, same HubSpot workflow, same lead score model.</p>
+      </div>
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#00E5B0;">🟢 The Outcome</div>
+        <h4>$100M+ pipeline, 45% CVR, 382 MQLs per campaign</h4>
+        <p>The rebuilt funnel delivered 4,200+ leads per campaign cycle, hit 45% webinar registration-to-attendee conversion, and contributed over $100M in influenced pipeline. Post-event sequences recovered 18% of no-shows and the retargeting layer cut drop-offs by 31%.</p>
+      </div>
+    </div>
+
+    <h3 class="r" style="font-size:1.1rem;font-weight:900;letter-spacing:-.02em;margin-bottom:1.5rem;">Step-by-Step Execution</h3>
+    <div class="cs-timeline r">
+      <div class="cs-step">
+        <div class="cs-step-dot"></div>
+        <div class="cs-step-num">Week 1–2</div>
+        <div class="cs-step-title">ICP Research &amp; Audience Architecture</div>
+        <div class="cs-step-desc">Analysed Quadrant's existing customer data to define the Ideal Customer Profile — enterprise IT teams (500+ employees), US-based, with Microsoft Azure or Fabric in their tech stack. Built 6 LinkedIn audience segments by job title + seniority + company size and created custom intent audiences in Google Ads.</div>
+        <div class="cs-step-pills"><span class="cs-pill">LinkedIn Campaign Manager</span><span class="cs-pill">Google Audience Builder</span><span class="cs-pill">HubSpot CRM Audit</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a2);box-shadow:0 0 0 3px rgba(0,229,176,.25);"></div>
+        <div class="cs-step-num">Week 2–3</div>
+        <div class="cs-step-title">Landing Page &amp; Funnel Build</div>
+        <div class="cs-step-desc">Designed and launched 6 landing page variants for A/B testing. Reduced form fields from 7 to 3. Implemented UTM tracking across all channels via GTM. Connected landing pages to HubSpot with automated lead scoring (score ≥ 40 = MQL trigger). "Save My Seat" CTA outperformed "Register Now" by 47.5% CVR.</div>
+        <div class="cs-step-pills"><span class="cs-pill">GTM Tag Setup</span><span class="cs-pill">HubSpot Forms</span><span class="cs-pill">A/B Testing</span><span class="cs-pill">Lead Scoring Model</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a1);box-shadow:0 0 0 3px rgba(79,142,255,.25);"></div>
+        <div class="cs-step-num">Week 3–4</div>
+        <div class="cs-step-title">Multi-Channel Campaign Launch</div>
+        <div class="cs-step-desc">Launched simultaneously across Google Search (intent keywords), LinkedIn Lead Gen Forms (C-suite targeting), Meta Ads (lookalike audiences + retargeting), and email sequences. LinkedIn LGF outperformed landing page traffic by 1.4× leads at same budget. Google PMax complemented Search for broader coverage.</div>
+        <div class="cs-step-pills"><span class="cs-pill">Google Search</span><span class="cs-pill">Performance Max</span><span class="cs-pill">LinkedIn LGF</span><span class="cs-pill">Meta Retargeting</span><span class="cs-pill">Email Sequences</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a2);box-shadow:0 0 0 3px rgba(0,229,176,.25);"></div>
+        <div class="cs-step-num">Ongoing</div>
+        <div class="cs-step-title">Post-Event Nurture &amp; Reporting</div>
+        <div class="cs-step-desc">Deployed a 5-step post-event HubSpot email sequence targeting both attendees and no-shows with different messaging. No-show sequence recovered 18% back into pipeline. Built a Looker Studio dashboard pulling from GA4, Google Ads, LinkedIn, and HubSpot — giving leadership real-time KPI visibility for same-day budget decisions.</div>
+        <div class="cs-step-pills"><span class="cs-pill">HubSpot Automation</span><span class="cs-pill">GA4 Events</span><span class="cs-pill">Looker Studio</span><span class="cs-pill">UTM Attribution</span></div>
+      </div>
+    </div>
+
+    <div class="cs-results r">
+      <div class="cs-results-left">
+        <div class="cs-result-row"><div class="cs-result-icon">💰</div><div class="cs-result-body"><div class="cs-result-label">Pipeline Influenced</div><div class="cs-result-val" style="color:var(--a4);">$100M+</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="100" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">🎯</div><div class="cs-result-body"><div class="cs-result-label">Leads Generated Per Campaign</div><div class="cs-result-val" style="color:var(--a2);">4,200+</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="84" style="background:var(--grd)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">📈</div><div class="cs-result-body"><div class="cs-result-label">Webinar CVR (industry avg: 22%)</div><div class="cs-result-val" style="color:var(--a1);">45%+</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="91" style="background:var(--a1)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">📉</div><div class="cs-result-body"><div class="cs-result-label">Cost Per Registration Reduction</div><div class="cs-result-val" style="color:var(--a2);">−38%</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="76" style="background:var(--a2)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">🔄</div><div class="cs-result-body"><div class="cs-result-label">No-Show Recovery Rate</div><div class="cs-result-val" style="color:var(--a4);">18%</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="36" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">⚡</div><div class="cs-result-body"><div class="cs-result-label">Landing Page CVR Lift (A/B Test)</div><div class="cs-result-val" style="color:var(--a2);">+22%</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="44" style="background:var(--a2)"></div></div></div></div>
+      </div>
+      <div>
+        <div class="cs-chart-card" style="margin-bottom:1rem;">
+          <div class="cs-chart-title">Lead Volume Growth — Jan to Aug 2024</div>
+          <canvas id="cs1_leads" style="max-height:130px;"></canvas>
+        </div>
+        <div class="cs-chart-card">
+          <div class="cs-chart-title">Channel Contribution to Total Leads</div>
+          <canvas id="cs1_channels" style="max-height:130px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-learnings r">
+      <h4>💡 Key Learnings from This Campaign</h4>
+      <div class="cs-learnings-grid">
+        <div class="cs-learning"><div class="cs-learning-emoji">🎯</div><div class="cs-learning-text"><b>LinkedIn LGF beats landing pages for enterprise B2B.</b> Native forms removed the friction of leaving LinkedIn — 1.4× more leads at identical budget.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">📝</div><div class="cs-learning-text"><b>Form length is the #1 CVR killer.</b> Cutting 7 fields to 3 tripled completion rate overnight. Never ask for information you don't immediately need.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">📧</div><div class="cs-learning-text"><b>The money is in the follow-up.</b> 18% of pipeline came from the no-show re-engagement sequence — leads most marketers simply abandon.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🔁</div><div class="cs-learning-text"><b>Retargeting is non-negotiable.</b> The retargeting layer reduced drop-off by 31% and recovered leads who visited but didn't register — pure incremental pipeline.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">📊</div><div class="cs-learning-text"><b>Real-time dashboards change decisions.</b> Looker Studio gave leadership same-day visibility — enabling immediate budget shifts to top-performing campaigns.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🧪</div><div class="cs-learning-text"><b>CTA copy matters more than design.</b> "Save My Seat" vs "Register Now" — same page, 47.5% more conversions. Always test the words, not just the layout.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BRAND DEVELOPMENT — QUADRANT TECHNOLOGIES -->
+<section style="padding:6rem 3rem;background:var(--bg3);">
+  <div class="w">
+
+    <!-- HEADER -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;" class="r">
+      <div>
+        <div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--a3);display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.65rem;">
+          <span style="width:16px;height:2px;background:currentColor;border-radius:2px;display:inline-block;"></span>
+          Quadrant Technologies · Brand Development
+        </div>
+        <h2 style="font-size:clamp(1.75rem,3.3vw,2.6rem);font-weight:900;letter-spacing:-.035em;line-height:1.15;margin-bottom:.85rem;">
+          Building Quadrant's Brand from<br><span style="background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Unknown to Industry Authority</span>
+        </h2>
+        <p style="color:var(--sub);font-size:.9rem;line-height:1.85;font-weight:300;margin-bottom:1.5rem;">When I joined Quadrant, the brand had zero recognition in the US enterprise market. No consistent visual identity, no content voice, no social presence worth mentioning. I built the brand awareness strategy from scratch — positioning Quadrant as the go-to B2B partner for Microsoft Azure, Fabric, and Cloud Data solutions in the US market.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+          <span style="font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(255,107,157,.08);border:1px solid rgba(255,107,157,.18);color:var(--a3);">Brand Strategy</span>
+          <span style="font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(79,142,255,.08);border:1px solid rgba(79,142,255,.18);color:var(--a1);">Content Marketing</span>
+          <span style="font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(0,229,176,.08);border:1px solid rgba(0,229,176,.18);color:var(--a2);">LinkedIn Presence</span>
+          <span style="font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(255,184,48,.08);border:1px solid rgba(255,184,48,.18);color:var(--a4);">Brand Awareness Campaigns</span>
+          <span style="font-size:.7rem;padding:.28rem .75rem;border-radius:100px;background:rgba(255,107,157,.08);border:1px solid rgba(255,107,157,.18);color:var(--a3);">Thought Leadership</span>
+        </div>
+      </div>
+      <!-- Brand metrics -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;">
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,107,157,.06),transparent);"></div>
+          <div style="font-size:2rem;font-weight:900;letter-spacing:-.04em;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">320%</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.3rem;line-height:1.4;">LinkedIn Follower<br>Growth</div>
+        </div>
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(79,142,255,.06),transparent);"></div>
+          <div style="font-size:2rem;font-weight:900;letter-spacing:-.04em;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">4.8×</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.3rem;line-height:1.4;">Brand Search<br>Volume Increase</div>
+        </div>
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,176,.06),transparent);"></div>
+          <div style="font-size:2rem;font-weight:900;letter-spacing:-.04em;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">68%</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.3rem;line-height:1.4;">Increase in Direct<br>Website Traffic</div>
+        </div>
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.4rem;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,184,48,.06),transparent);"></div>
+          <div style="font-size:2rem;font-weight:900;letter-spacing:-.04em;background:var(--grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">12+</div>
+          <div style="font-size:.7rem;color:var(--sub);margin-top:.3rem;line-height:1.4;">Thought Leadership<br>Pieces Published</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE BRAND CHALLENGE -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:3rem;" class="r">
+      <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.4rem;">
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a3);display:flex;align-items:center;gap:.4rem;margin-bottom:.7rem;"><span style="width:6px;height:6px;border-radius:50%;background:currentColor;"></span>The Brand Problem</div>
+        <h4 style="font-size:.92rem;font-weight:800;margin-bottom:.45rem;">No identity, no voice, no visibility</h4>
+        <p style="font-size:.78rem;color:var(--sub);line-height:1.7;">Quadrant was invisible in the US enterprise market. Competitors like Slalom, Avanade, and Hitachi Solutions had strong brand recognition. Quadrant had inconsistent messaging, no LinkedIn presence worth noting, and when enterprise buyers searched for Microsoft partners, Quadrant didn't appear.</p>
+      </div>
+      <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.4rem;">
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a4);display:flex;align-items:center;gap:.4rem;margin-bottom:.7rem;"><span style="width:6px;height:6px;border-radius:50%;background:currentColor;"></span>The Brand Strategy</div>
+        <h4 style="font-size:.92rem;font-weight:800;margin-bottom:.45rem;">Position as the Microsoft Cloud specialist</h4>
+        <p style="font-size:.78rem;color:var(--sub);line-height:1.7;">I defined Quadrant's brand positioning around a single clear idea: <em style="color:var(--text);">"The B2B team that makes Microsoft Azure and Fabric work for enterprise businesses."</em> Rather than competing on breadth, we went deep on Azure, Fabric, and data modernisation — topics where Quadrant had genuine expertise and where competitors were too broad.</p>
+      </div>
+      <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.4rem;">
+        <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--a2);display:flex;align-items:center;gap:.4rem;margin-bottom:.7rem;"><span style="width:6px;height:6px;border-radius:50%;background:currentColor;"></span>The Brand Outcome</div>
+        <h4 style="font-size:.92rem;font-weight:800;margin-bottom:.45rem;">Recognised, trusted, searched by name</h4>
+        <p style="font-size:.78rem;color:var(--sub);line-height:1.7;">Within 10 months, brand search volume grew 4.8×. Direct website traffic increased 68%. LinkedIn followers grew 320%. Event registrants began citing "I've been following Quadrant on LinkedIn" as their discovery channel — a signal that the brand was now top-of-mind for enterprise Azure buyers in the US.</p>
+      </div>
+    </div>
+
+    <!-- BRAND PILLARS -->
+    <div style="margin-bottom:3rem;" class="r">
+      <h3 style="font-size:1.05rem;font-weight:900;letter-spacing:-.02em;margin-bottom:1.4rem;">Brand Architecture — 4 Pillars I Built</h3>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
+        <!-- Pillar 1 -->
+        <div style="background:var(--bg4);border:1px solid rgba(79,142,255,.2);border-radius:13px;padding:1.35rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--a1);"></div>
+          <div style="font-size:1.4rem;margin-bottom:.6rem;">🎯</div>
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:.35rem;color:var(--a1);">Positioning</div>
+          <div style="font-size:.75rem;color:var(--sub);line-height:1.65;margin-bottom:.75rem;">"The enterprise Microsoft Azure &amp; Fabric specialists" — one clear idea, consistently applied across every touchpoint.</div>
+          <div style="display:flex;flex-direction:column;gap:.28rem;">
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(79,142,255,.07);border-radius:5px;">Single brand promise</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(79,142,255,.07);border-radius:5px;">Consistent messaging</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(79,142,255,.07);border-radius:5px;">Competitor differentiation</div>
+          </div>
+        </div>
+        <!-- Pillar 2 -->
+        <div style="background:var(--bg4);border:1px solid rgba(0,229,176,.2);border-radius:13px;padding:1.35rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--a2);"></div>
+          <div style="font-size:1.4rem;margin-bottom:.6rem;">✍️</div>
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:.35rem;color:var(--a2);">Content &amp; Thought Leadership</div>
+          <div style="font-size:.75rem;color:var(--sub);line-height:1.65;margin-bottom:.75rem;">Published 12+ LinkedIn articles, event recap posts, and Azure insight pieces that positioned Quadrant's team as genuine subject matter experts.</div>
+          <div style="display:flex;flex-direction:column;gap:.28rem;">
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(0,229,176,.06);border-radius:5px;">12+ thought leadership pieces</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(0,229,176,.06);border-radius:5px;">Event recap content</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(0,229,176,.06);border-radius:5px;">Azure how-to series</div>
+          </div>
+        </div>
+        <!-- Pillar 3 -->
+        <div style="background:var(--bg4);border:1px solid rgba(255,184,48,.2);border-radius:13px;padding:1.35rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--a4);"></div>
+          <div style="font-size:1.4rem;margin-bottom:.6rem;">📱</div>
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:.35rem;color:var(--a4);">LinkedIn Brand Presence</div>
+          <div style="font-size:.75rem;color:var(--sub);line-height:1.65;margin-bottom:.75rem;">Rebuilt Quadrant's LinkedIn page from the ground up — new banner, optimised about section, consistent posting cadence 3×/week, and employee advocacy programme.</div>
+          <div style="display:flex;flex-direction:column;gap:.28rem;">
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(255,184,48,.06);border-radius:5px;">320% follower growth</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(255,184,48,.06);border-radius:5px;">3× weekly posting cadence</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(255,184,48,.06);border-radius:5px;">Employee advocacy activated</div>
+          </div>
+        </div>
+        <!-- Pillar 4 -->
+        <div style="background:var(--bg4);border:1px solid rgba(255,107,157,.2);border-radius:13px;padding:1.35rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--a3);"></div>
+          <div style="font-size:1.4rem;margin-bottom:.6rem;">📣</div>
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:.35rem;color:var(--a3);">Brand Awareness Campaigns</div>
+          <div style="font-size:.75rem;color:var(--sub);line-height:1.65;margin-bottom:.75rem;">Ran dedicated brand awareness campaigns on LinkedIn and Google Display targeting enterprise IT decision-makers — separate from lead gen, purely focused on impressions, recall, and share of voice.</div>
+          <div style="display:flex;flex-direction:column;gap:.28rem;">
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(255,107,157,.06);border-radius:5px;">2.4M+ brand impressions</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(255,107,157,.06);border-radius:5px;">68% direct traffic increase</div>
+            <div style="font-size:.68rem;color:var(--text);padding:.2rem .5rem;background:rgba(255,107,157,.06);border-radius:5px;">4.8× branded search growth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND VISUAL MOCK + CHARTS -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;" class="r">
+
+      <!-- LinkedIn Brand Mock -->
+      <div>
+        <div style="font-size:.65rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;">LinkedIn Company Page — Before vs After</div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#f3f2ef;box-shadow:0 20px 50px rgba(0,0,0,.5);">
+          <!-- Browser bar -->
+          <div style="background:#232938;padding:.5rem 1rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid rgba(255,255,255,.06);">
+            <div style="display:flex;gap:.4rem;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FEBC2E;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div></div>
+            <div style="flex:1;background:rgba(255,255,255,.07);border-radius:5px;padding:.2rem .75rem;font-size:.65rem;color:#8896B3;font-family:monospace;">linkedin.com/company/quadrant-technologies</div>
+          </div>
+          <!-- LI Page -->
+          <div style="background:#f3f2ef;">
+            <!-- Cover -->
+            <div style="height:80px;background:linear-gradient(135deg,#1a1f3e,#0d1b3e,#1a3a6e);position:relative;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="font-size:.65rem;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.1em;text-transform:uppercase;">Microsoft Azure · Fabric · Cloud Data Solutions</div>
+                <div style="font-size:.55rem;color:rgba(255,255,255,.4);margin-top:.2rem;">Helping Enterprise Teams Modernise with Microsoft</div>
+              </div>
+              <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(79,142,255,.6),transparent);"></div>
+            </div>
+            <!-- Logo + info -->
+            <div style="padding:.75rem 1rem;background:#fff;border-bottom:1px solid #ddd;">
+              <div style="display:flex;align-items:flex-end;gap:.75rem;margin-top:-.5rem;">
+                <div style="width:44px;height:44px;border-radius:6px;background:linear-gradient(135deg,#0d1b3e,#1a3a6e);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0;">QT</div>
+                <div>
+                  <div style="font-size:.82rem;font-weight:800;color:#000;line-height:1;">Quadrant Technologies</div>
+                  <div style="font-size:.65rem;color:#666;margin-top:.1rem;">B2B Cloud, Data &amp; AI · Microsoft Partner · US Enterprise</div>
+                </div>
+                <div style="margin-left:auto;background:#0077b5;color:#fff;font-size:.62rem;font-weight:700;padding:.25rem .65rem;border-radius:3px;">+ Follow</div>
+              </div>
+            </div>
+            <!-- Stats row -->
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ddd;border-top:1px solid #ddd;border-bottom:1px solid #ddd;">
+              <div style="background:#fff;padding:.55rem .6rem;text-align:center;">
+                <div style="font-size:.82rem;font-weight:700;color:#0077b5;">12,400</div>
+                <div style="font-size:.58rem;color:#666;">Followers</div>
+                <div style="font-size:.55rem;color:#00a47c;font-weight:600;">↑ 320%</div>
+              </div>
+              <div style="background:#fff;padding:.55rem .6rem;text-align:center;">
+                <div style="font-size:.82rem;font-weight:700;color:#000;">2.4M</div>
+                <div style="font-size:.58rem;color:#666;">Impressions</div>
+                <div style="font-size:.55rem;color:#00a47c;font-weight:600;">Brand campaigns</div>
+              </div>
+              <div style="background:#fff;padding:.55rem .6rem;text-align:center;">
+                <div style="font-size:.82rem;font-weight:700;color:#000;">8.2%</div>
+                <div style="font-size:.58rem;color:#666;">Engagement Rate</div>
+                <div style="font-size:.55rem;color:#00a47c;font-weight:600;">↑ vs 2.1% avg</div>
+              </div>
+              <div style="background:#fff;padding:.55rem .6rem;text-align:center;">
+                <div style="font-size:.82rem;font-weight:700;color:#000;">3×/wk</div>
+                <div style="font-size:.58rem;color:#666;">Post Frequency</div>
+                <div style="font-size:.55rem;color:#00a47c;font-weight:600;">Consistent cadence</div>
+              </div>
+            </div>
+            <!-- Recent posts preview -->
+            <div style="padding:.65rem 1rem;background:#fff;">
+              <div style="font-size:.65rem;font-weight:700;color:#333;margin-bottom:.5rem;">Recent Posts</div>
+              <div style="display:flex;flex-direction:column;gap:.4rem;">
+                <div style="display:flex;gap:.6rem;align-items:flex-start;padding:.45rem;background:#f9f9f9;border-radius:5px;border:1px solid #eee;">
+                  <div style="width:24px;height:24px;border-radius:3px;background:linear-gradient(135deg,#0d1b3e,#1a3a6e);flex-shrink:0;"></div>
+                  <div><div style="font-size:.65rem;font-weight:600;color:#000;">🚀 How Fabric changed our client's data pipeline — FabCon recap</div><div style="font-size:.58rem;color:#666;margin-top:.08rem;">842 impressions · 94 reactions · 18 comments</div></div>
+                </div>
+                <div style="display:flex;gap:.6rem;align-items:flex-start;padding:.45rem;background:#f9f9f9;border-radius:5px;border:1px solid #eee;">
+                  <div style="width:24px;height:24px;border-radius:3px;background:linear-gradient(135deg,#0061ff,#003d99);flex-shrink:0;"></div>
+                  <div><div style="font-size:.65rem;font-weight:600;color:#000;">☁️ 5 reasons enterprise teams choose Azure over AWS in 2024</div><div style="font-size:.58rem;color:#666;margin-top:.08rem;">1,240 impressions · 142 reactions · 31 comments</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand Charts -->
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.35rem;">
+          <div style="font-size:.67rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;">LinkedIn Follower Growth (Monthly)</div>
+          <canvas id="brand_followers" style="max-height:110px;"></canvas>
+        </div>
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.35rem;">
+          <div style="font-size:.67rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;">Brand Awareness Campaign — Monthly Impressions</div>
+          <canvas id="brand_impressions" style="max-height:110px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRAND AWARENESS CAMPAIGN DETAILS -->
+    <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.85rem;margin-bottom:3rem;" class="r">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+        <div>
+          <div style="font-size:.68rem;font-weight:700;color:var(--a3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.65rem;">Brand Awareness Campaign Breakdown</div>
+          <h4 style="font-size:1rem;font-weight:900;letter-spacing:-.02em;margin-bottom:.6rem;">2.4M Impressions Across 10 Months</h4>
+          <p style="font-size:.82rem;color:var(--sub);line-height:1.75;margin-bottom:1.1rem;">Ran always-on brand awareness campaigns completely separate from lead gen — targeting enterprise IT decision-makers who had never heard of Quadrant. The goal was purely impression share and brand recall, not conversions. This upper-funnel investment made every lead gen campaign cheaper over time as brand recognition grew.</p>
+          <div style="display:flex;flex-direction:column;gap:.55rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .8rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+              <span style="font-size:.75rem;color:var(--sub);">LinkedIn Brand Awareness Ads</span>
+              <span style="font-size:.78rem;font-weight:700;color:var(--a1);">1.4M impressions</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .8rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+              <span style="font-size:.75rem;color:var(--sub);">Google Display Network</span>
+              <span style="font-size:.78rem;font-weight:700;color:var(--a2);">680K impressions</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .8rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+              <span style="font-size:.75rem;color:var(--sub);">YouTube Pre-roll (Event Promos)</span>
+              <span style="font-size:.78rem;font-weight:700;color:var(--a4);">320K impressions</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.55rem .8rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.07);">
+              <span style="font-size:.75rem;color:var(--sub);">Organic LinkedIn Content</span>
+              <span style="font-size:.78rem;font-weight:700;color:var(--a3);">~480K organic reach</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem .8rem;background:rgba(79,142,255,.06);border-radius:8px;border:1px solid rgba(79,142,255,.2);">
+              <span style="font-size:.75rem;font-weight:600;color:var(--text);">Total Brand Impressions</span>
+              <span style="font-size:.88rem;font-weight:900;color:var(--a1);">2.4M+</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:.67rem;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;">Brand Search Volume Growth (Indexed)</div>
+          <canvas id="brand_search" style="max-height:170px;"></canvas>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.85rem;">
+            <div style="text-align:center;padding:.65rem;background:rgba(79,142,255,.06);border:1px solid rgba(79,142,255,.15);border-radius:9px;">
+              <div style="font-size:1.1rem;font-weight:900;color:var(--a1);">4.8×</div>
+              <div style="font-size:.62rem;color:var(--sub);margin-top:.15rem;">Brand search growth</div>
+            </div>
+            <div style="text-align:center;padding:.65rem;background:rgba(0,229,176,.06);border:1px solid rgba(0,229,176,.15);border-radius:9px;">
+              <div style="font-size:1.1rem;font-weight:900;color:var(--a2);">+68%</div>
+              <div style="font-size:.62rem;color:var(--sub);margin-top:.15rem;">Direct traffic increase</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT STRATEGY BREAKDOWN -->
+    <div style="margin-bottom:3rem;" class="r">
+      <h3 style="font-size:1.05rem;font-weight:900;letter-spacing:-.02em;margin-bottom:1.25rem;">Content Strategy — What I Created</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.85rem;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(79,142,255,.12);display:flex;align-items:center;justify-content:center;font-size:.85rem;">📝</div>
+            <div style="font-size:.82rem;font-weight:800;">Thought Leadership Articles</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem;">
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">"Why Azure Fabric is the future of enterprise data"</div>
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">"5 signs your cloud migration is failing"</div>
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">"How enterprise IT leaders are using Copilot in 2024"</div>
+          </div>
+          <div style="font-size:.7rem;color:var(--a1);font-weight:600;">12+ articles published · Avg 900+ impressions each</div>
+        </div>
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.85rem;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(0,229,176,.1);display:flex;align-items:center;justify-content:center;font-size:.85rem;">🎥</div>
+            <div style="font-size:.82rem;font-weight:800;">Event Recap &amp; Behind-the-Scenes</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem;">
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">FabCon 2024 recap — highlights &amp; key takeaways</div>
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">Azure Summit post-event content series</div>
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">Speaker spotlight — team expertise posts</div>
+          </div>
+          <div style="font-size:.7rem;color:var(--a2);font-weight:600;">Post-event content averaged 3× more engagement</div>
+        </div>
+        <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:1.25rem;">
+          <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.85rem;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,184,48,.1);display:flex;align-items:center;justify-content:center;font-size:.85rem;">📊</div>
+            <div style="font-size:.82rem;font-weight:800;">Data-Driven Insight Posts</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.35rem;margin-bottom:.75rem;">
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">Industry benchmark reports &amp; commentary</div>
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">Microsoft product update breakdowns</div>
+            <div style="font-size:.73rem;color:var(--sub);padding:.3rem .6rem;background:rgba(255,255,255,.03);border-radius:5px;">Client outcome snapshots (anonymised)</div>
+          </div>
+          <div style="font-size:.7rem;color:var(--a4);font-weight:600;">Data posts drove highest share &amp; save rates</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY LEARNINGS -->
+    <div style="background:var(--bg4);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.75rem;" class="r">
+      <h4 style="font-size:.95rem;font-weight:800;margin-bottom:1.1rem;letter-spacing:-.015em;">💡 Key Learnings from Brand Development</h4>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+        <div style="padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.1rem;margin-bottom:.4rem;">🎯</div>
+          <div style="font-size:.78rem;color:var(--sub);line-height:1.6;"><b style="color:var(--text);font-weight:600;">Niche positioning beats broad.</b> "Microsoft Azure specialist" outperformed "cloud solutions provider" in every metric. The narrower the positioning, the stronger the brand recall.</div>
+        </div>
+        <div style="padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.1rem;margin-bottom:.4rem;">📈</div>
+          <div style="font-size:.78rem;color:var(--sub);line-height:1.6;"><b style="color:var(--text);font-weight:600;">Brand investment makes lead gen cheaper.</b> As brand awareness grew, CPL on paid campaigns dropped — because prospects already knew who Quadrant was before seeing the ad.</div>
+        </div>
+        <div style="padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.1rem;margin-bottom:.4rem;">✍️</div>
+          <div style="font-size:.78rem;color:var(--sub);line-height:1.6;"><b style="color:var(--text);font-weight:600;">Consistency beats virality.</b> 3 posts a week for 10 months outperformed sporadic high-effort campaigns. Algorithmic trust is built through cadence, not one-off content.</div>
+        </div>
+        <div style="padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.1rem;margin-bottom:.4rem;">👥</div>
+          <div style="font-size:.78rem;color:var(--sub);line-height:1.6;"><b style="color:var(--text);font-weight:600;">People trust people, not logos.</b> Posts featuring team members and experts outperformed company-voice posts by 2.3× on engagement. Humanising the brand was the biggest unlock.</div>
+        </div>
+        <div style="padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.1rem;margin-bottom:.4rem;">🔍</div>
+          <div style="font-size:.78rem;color:var(--sub);line-height:1.6;"><b style="color:var(--text);font-weight:600;">Brand search is the ultimate metric.</b> When prospects start searching for your company by name, that's when brand is working. We tracked this weekly as our north-star brand KPI.</div>
+        </div>
+        <div style="padding:.85rem;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:1.1rem;margin-bottom:.4rem;">🔄</div>
+          <div style="font-size:.78rem;color:var(--sub);line-height:1.6;"><b style="color:var(--text);font-weight:600;">Events are brand goldmines.</b> Every webinar and conference created 3–5 content pieces. One event = months of brand content when repurposed systematically across formats.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div class="cs-divider"></div>
+
+
+<!-- CASE STUDY 2: ISDC GLOBAL -->
+<section class="cs-section" style="background:var(--bg2);">
+  <div class="w">
+    <div class="cs-hero r">
+      <div>
+        <div class="cs-num">02</div>
+        <div class="cs-company" style="color:var(--a2);">ISDC Global · Dec 2023 – Oct 2024</div>
+        <h2 class="cs-title">How I Cut CPL by 30% &amp; Grew Organic Traffic 40% in 8 Months</h2>
+        <p class="cs-blurb">ISDC Global had a paid media account that was bleeding budget — high CPL, low-quality leads, no SEO strategy, and a team with no clear performance targets. In 10 months I rebuilt the entire marketing operation: new audience strategy, landing page overhaul, HubSpot automation, and a full SEO programme running in parallel.</p>
+        <div class="cs-meta">
+          <span class="cs-tag">CPL Optimisation</span>
+          <span class="cs-tag">Lead Generation</span>
+          <span class="cs-tag">SEO Growth</span>
+          <span class="cs-tag">HubSpot Automation</span>
+          <span class="cs-tag">Team Leadership</span>
+        </div>
+      </div>
+      <div class="cs-big-metrics r r2">
+        <div class="cs-bm"><div class="cs-bm-val">−30%</div><div class="cs-bm-label">CPL Reduction<br>($148 → $104)</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">+40%</div><div class="cs-bm-label">Organic Traffic<br>in 8 months</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">2.7×</div><div class="cs-bm-label">Form Completion<br>Rate Increase</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">−20%</div><div class="cs-bm-label">Wasted Ad<br>Spend Eliminated</div></div>
+      </div>
+    </div>
+
+    <div class="cs-coa r">
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#FF6B9D;">🔴 The Challenge</div>
+        <h4>High CPL, poor lead quality, zero organic presence</h4>
+        <p>When I joined, the average CPL was $148 — 40% above industry benchmark. Audiences were broadly targeted with no segmentation. Landing pages had 7-field forms with no message match from ads. There was no SEO strategy, no CRM workflow, and the team had no reporting structure. Budget was being spent but results were not tracked properly.</p>
+      </div>
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#FFB830;">🟡 The Strategy</div>
+        <h4>Fix the foundation, then scale what works</h4>
+        <p>I ran a full paid media audit in week 1 — identified wasted spend on irrelevant keywords and broad audiences. Rebuilt campaign structure with tight audience segmentation by job title and intent. Simultaneously launched a technical SEO programme — fixing crawl errors, restructuring navigation, building topic clusters around high-intent keywords for workshops and certifications.</p>
+      </div>
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#00E5B0;">🟢 The Outcome</div>
+        <h4>CPL dropped 30%, organic sessions up 40%, team 3× faster</h4>
+        <p>CPL fell from $148 to $104 over 10 months. Organic traffic grew 40%+ with 6 keywords reaching Page 1. HubSpot automation reduced time from MQL to sales contact from 8 days to 2.1 days. The 3-person team I managed delivered campaigns 40% faster through structured sprint planning.</p>
+      </div>
+    </div>
+
+    <h3 class="r" style="font-size:1.1rem;font-weight:900;letter-spacing:-.02em;margin-bottom:1.5rem;">Step-by-Step Execution</h3>
+    <div class="cs-timeline r">
+      <div class="cs-step">
+        <div class="cs-step-dot"></div>
+        <div class="cs-step-num">Month 1</div>
+        <div class="cs-step-title">Full Paid Media Audit</div>
+        <div class="cs-step-desc">Audited 12 months of Google Ads and Meta Ads data. Found 35% of budget going to irrelevant search terms with zero conversion history. Paused underperforming ad sets, restructured campaigns around 3 core audience segments: Workshop Seekers, Certification Buyers, and Corporate Training Buyers. Immediate 20% reduction in wasted spend.</div>
+        <div class="cs-step-pills"><span class="cs-pill">Google Ads Audit</span><span class="cs-pill">Meta Ads Audit</span><span class="cs-pill">Keyword Sculpting</span><span class="cs-pill">Audience Rebuild</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a2);box-shadow:0 0 0 3px rgba(0,229,176,.25);"></div>
+        <div class="cs-step-num">Month 1–2</div>
+        <div class="cs-step-title">Landing Page Overhaul</div>
+        <div class="cs-step-desc">Redesigned 10+ landing pages with strict ad-to-page message match. Reduced form fields from 7 to 3 — form completion rate went from 14.3% to 38.7% immediately. Added social proof (student count, testimonials), a clearer value proposition above the fold, and tested 4 different headline variants. CPL dropped 22% in week 3 from form change alone.</div>
+        <div class="cs-step-pills"><span class="cs-pill">Landing Page Design</span><span class="cs-pill">A/B Testing</span><span class="cs-pill">Message Match</span><span class="cs-pill">CRO</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot"></div>
+        <div class="cs-step-num">Month 2–3</div>
+        <div class="cs-step-title">HubSpot Automation &amp; Lead Scoring</div>
+        <div class="cs-step-desc">Built a complete HubSpot lead nurture system from scratch. Created a lead scoring model (job title, page views, email engagement, event attendance). Leads scoring ≥ 70 triggered automatic sales notification and deal creation. Built 5-step email drip sequences for each segment. MQL-to-sales contact time dropped from 8 days to 2.1 days.</div>
+        <div class="cs-step-pills"><span class="cs-pill">HubSpot Workflows</span><span class="cs-pill">Lead Scoring</span><span class="cs-pill">Email Sequences</span><span class="cs-pill">CRM Integration</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a2);box-shadow:0 0 0 3px rgba(0,229,176,.25);"></div>
+        <div class="cs-step-num">Month 2–8</div>
+        <div class="cs-step-title">SEO Programme &amp; Content Strategy</div>
+        <div class="cs-step-desc">Ran a full technical SEO audit — fixed 140+ crawl errors, improved Core Web Vitals scores, restructured internal linking. Built 4 topic clusters around high-intent keyword groups. Optimised 40+ existing pages with new titles, meta descriptions, and content updates. 6 target keywords moved from Page 4+ to Page 1 within 6 months.</div>
+        <div class="cs-step-pills"><span class="cs-pill">Technical SEO</span><span class="cs-pill">Topic Clusters</span><span class="cs-pill">Core Web Vitals</span><span class="cs-pill">On-Page Optimisation</span></div>
+      </div>
+    </div>
+
+    <div class="cs-results r">
+      <div class="cs-results-left">
+        <div class="cs-result-row"><div class="cs-result-icon">📉</div><div class="cs-result-body"><div class="cs-result-label">CPL: $148 → $104 (over 10 months)</div><div class="cs-result-val" style="color:var(--a2);">−30% CPL</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="70" style="background:var(--a2)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">📊</div><div class="cs-result-body"><div class="cs-result-label">Organic sessions: 8,200 → 21,800/mo</div><div class="cs-result-val" style="color:var(--a1);">+40% Traffic</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="82" style="background:var(--a1)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">📝</div><div class="cs-result-body"><div class="cs-result-label">Form completion: 14.3% → 38.7%</div><div class="cs-result-val" style="color:var(--a4);">2.7× increase</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="100" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">⚡</div><div class="cs-result-body"><div class="cs-result-label">MQL to sales contact: 8 days → 2.1 days</div><div class="cs-result-val" style="color:var(--a2);">74% faster</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="74" style="background:var(--a2)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">🔍</div><div class="cs-result-body"><div class="cs-result-label">Keywords moved to Page 1</div><div class="cs-result-val" style="color:var(--a1);">6 keywords</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="60" style="background:var(--a1)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">💸</div><div class="cs-result-body"><div class="cs-result-label">Wasted ad spend eliminated</div><div class="cs-result-val" style="color:var(--a4);">−20%</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="40" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
+      </div>
+      <div>
+        <div class="cs-chart-card" style="margin-bottom:1rem;">
+          <div class="cs-chart-title">CPL Journey — $148 to $104 Over 10 Months</div>
+          <canvas id="cs2_cpl" style="max-height:130px;"></canvas>
+        </div>
+        <div class="cs-chart-card">
+          <div class="cs-chart-title">Organic Traffic: Baseline vs After SEO</div>
+          <canvas id="cs2_seo" style="max-height:130px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-learnings r">
+      <h4>💡 Key Learnings from This Campaign</h4>
+      <div class="cs-learnings-grid">
+        <div class="cs-learning"><div class="cs-learning-emoji">🔍</div><div class="cs-learning-text"><b>Audit before you optimise.</b> 35% of budget was already wasted on Day 1. An audit pays for itself in week one — always do this before touching budgets.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">📋</div><div class="cs-learning-text"><b>Form length is a conversion tax.</b> Every extra field costs conversions. 3 fields is the sweet spot for B2B lead gen — collect the rest via progressive profiling.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🤖</div><div class="cs-learning-text"><b>Automation beats headcount.</b> One HubSpot workflow replaced manual follow-up for 400+ leads per month and cut contact time from 8 days to 2.1 days.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🌱</div><div class="cs-learning-text"><b>SEO compounds — start immediately.</b> The SEO work done in month 2 only showed results in month 5-6. Starting early is the only strategy that works.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">👥</div><div class="cs-learning-text"><b>Team structure matters as much as strategy.</b> Sprint planning and weekly reviews cut campaign launch time by 40% — better process, not more people.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">💬</div><div class="cs-learning-text"><b>WhatsApp re-engagement is underrated.</b> Recovered 15% of cold leads through a simple WhatsApp sequence — a channel most marketers ignore entirely.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cs-divider"></div>
+
+<!-- CASE STUDY 3: SUTHERLAND -->
+<section class="cs-section" style="background:var(--bg);">
+  <div class="w">
+    <div class="cs-hero r">
+      <div>
+        <div class="cs-num">03</div>
+        <div class="cs-company" style="color:var(--a4);">Sutherland Global Services · Dec 2019 – Jan 2023</div>
+        <h2 class="cs-title">How I Built a Multi-Channel Digital Marketing Engine Over 3 Years</h2>
+        <p class="cs-blurb">Sutherland was my foundational role — where I went from executing individual campaigns to owning multi-channel strategy across paid search, social, SEO, and email. Over 3 years I built the systems, the reporting culture, and the cross-functional relationships that turned marketing from a cost centre into a measurable growth function.</p>
+        <div class="cs-meta">
+          <span class="cs-tag">Multi-Channel Marketing</span>
+          <span class="cs-tag">Paid Search</span>
+          <span class="cs-tag">Social Media</span>
+          <span class="cs-tag">SEO</span>
+          <span class="cs-tag">Lead Quality Improvement</span>
+        </div>
+      </div>
+      <div class="cs-big-metrics r r2">
+        <div class="cs-bm"><div class="cs-bm-val">+18%</div><div class="cs-bm-label">Paid Campaign<br>CTR Growth</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">+30%</div><div class="cs-bm-label">Social Media<br>Engagement Rate</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">+25%</div><div class="cs-bm-label">Organic Sessions<br>Over 12 Months</div></div>
+        <div class="cs-bm"><div class="cs-bm-val">+20%</div><div class="cs-bm-label">Lead Quality<br>Score Improvement</div></div>
+      </div>
+    </div>
+
+    <div class="cs-coa r">
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#FF6B9D;">🔴 The Challenge</div>
+        <h4>Siloed channels, no unified measurement, slow delivery</h4>
+        <p>When I joined Sutherland's digital marketing team, campaigns across paid search, social, email, and SEO were being run in isolation with no shared attribution model. CTR was declining on paid campaigns, social media had low engagement, and there was no system for measuring lead quality. Campaign launches took 2–3 weeks due to poor cross-team coordination.</p>
+      </div>
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#FFB830;">🟡 The Strategy</div>
+        <h4>Unify measurement, then optimise each channel systematically</h4>
+        <p>My approach was to establish a shared measurement framework first — UTM tracking, GA4 events, and a common definition of "lead quality" across all channels. Once we had clean data, I systematically ran optimisation sprints channel by channel: ad copy testing on paid, content scheduling experiments on social, and keyword targeting on SEO, each measured consistently.</p>
+      </div>
+      <div class="cs-coa-card">
+        <div class="cs-coa-label" style="color:#00E5B0;">🟢 The Outcome</div>
+        <h4>Higher CTR, better leads, faster launches — across 3 years</h4>
+        <p>Paid campaign CTR grew 18%+ through continuous copy testing. Social engagement increased 30%+ through data-backed content scheduling. Organic sessions grew 25% YoY through keyword optimisation. Lead quality scores improved 20% through tighter audience-to-message alignment. Campaign launch time cut by 1 full week through process improvements.</p>
+      </div>
+    </div>
+
+    <h3 class="r" style="font-size:1.1rem;font-weight:900;letter-spacing:-.02em;margin-bottom:1.5rem;">3-Year Growth Journey</h3>
+    <div class="cs-timeline r">
+      <div class="cs-step">
+        <div class="cs-step-dot"></div>
+        <div class="cs-step-num">Year 1 (2020)</div>
+        <div class="cs-step-title">Foundation — Measurement &amp; Tracking Setup</div>
+        <div class="cs-step-desc">Implemented UTM tracking across all campaigns and set up GA4 goals for each channel. Established weekly performance reporting template shared across marketing, sales, and leadership. For the first time, the team had a single source of truth for what was generating leads and what was wasting budget. This reporting culture became the foundation for every optimisation sprint that followed.</div>
+        <div class="cs-step-pills"><span class="cs-pill">GA4 Setup</span><span class="cs-pill">UTM Framework</span><span class="cs-pill">Performance Reporting</span><span class="cs-pill">Cross-team Alignment</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a4);box-shadow:0 0 0 3px rgba(255,184,48,.25);"></div>
+        <div class="cs-step-num">Year 1–2 (2020–2021)</div>
+        <div class="cs-step-title">Paid Media Optimisation — CTR &amp; Quality Focus</div>
+        <div class="cs-step-desc">Ran systematic ad copy A/B tests every 2 weeks across Google Search and Display. Introduced audience exclusions to filter out low-intent traffic. Tightened landing page message match to paid keywords — reducing bounce rate and improving conversion quality. CTR grew 18%+ over 12 months. Lead quality score (internal CRM metric) improved 20% through better audience segmentation.</div>
+        <div class="cs-step-pills"><span class="cs-pill">Ad Copy Testing</span><span class="cs-pill">Audience Exclusions</span><span class="cs-pill">Message Match</span><span class="cs-pill">Quality Score Optimisation</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a2);box-shadow:0 0 0 3px rgba(0,229,176,.25);"></div>
+        <div class="cs-step-num">Year 2 (2021)</div>
+        <div class="cs-step-title">Social Media — Content Strategy &amp; Engagement Growth</div>
+        <div class="cs-step-desc">Redesigned the social media content calendar based on platform analytics — posting when the audience was most active, using formats that drove highest engagement (carousels on LinkedIn, short video on Instagram). Introduced content pillars: thought leadership, behind-the-scenes, and service spotlight. Engagement rate grew 30%+ over 6 months on LinkedIn and Facebook combined.</div>
+        <div class="cs-step-pills"><span class="cs-pill">Content Calendar</span><span class="cs-pill">Platform Analytics</span><span class="cs-pill">Content Pillars</span><span class="cs-pill">Community Engagement</span></div>
+      </div>
+      <div class="cs-step">
+        <div class="cs-step-dot" style="background:var(--a1);box-shadow:0 0 0 3px rgba(79,142,255,.25);"></div>
+        <div class="cs-step-num">Year 2–3 (2021–2023)</div>
+        <div class="cs-step-title">SEO &amp; Process Improvements</div>
+        <div class="cs-step-desc">Supported a 12-month SEO initiative that drove 25% increase in organic sessions through keyword targeting and on-page optimisation of 60+ pages. Simultaneously streamlined the campaign delivery process — introduced a campaign brief template, creative review cycle, and launch checklist that cut average campaign delivery time from 3 weeks to 2 weeks across the team.</div>
+        <div class="cs-step-pills"><span class="cs-pill">On-Page SEO</span><span class="cs-pill">Keyword Strategy</span><span class="cs-pill">Process Design</span><span class="cs-pill">Campaign Templates</span></div>
+      </div>
+    </div>
+
+    <div class="cs-results r">
+      <div class="cs-results-left">
+        <div class="cs-result-row"><div class="cs-result-icon">📊</div><div class="cs-result-body"><div class="cs-result-label">Paid Campaign CTR (over 12 months)</div><div class="cs-result-val" style="color:var(--a1);">+18% CTR</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="36" style="background:var(--a1)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">💬</div><div class="cs-result-body"><div class="cs-result-label">Social Media Engagement Rate</div><div class="cs-result-val" style="color:var(--a4);">+30% engagement</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="60" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">🌱</div><div class="cs-result-body"><div class="cs-result-label">Organic Sessions Growth (12 months)</div><div class="cs-result-val" style="color:var(--a2);">+25% sessions</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="50" style="background:var(--a2)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">🎯</div><div class="cs-result-body"><div class="cs-result-label">Lead Quality Score Improvement</div><div class="cs-result-val" style="color:var(--a1);">+20% quality</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="40" style="background:var(--a1)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">⚡</div><div class="cs-result-body"><div class="cs-result-label">Campaign Launch Time Reduction</div><div class="cs-result-val" style="color:var(--a4);">−1 full week</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="33" style="background:linear-gradient(90deg,#FFB830,#e09a1a)"></div></div></div></div>
+        <div class="cs-result-row"><div class="cs-result-icon">📅</div><div class="cs-result-body"><div class="cs-result-label">Campaign Duration &amp; Consistency</div><div class="cs-result-val" style="color:var(--a2);">3 Years Strong</div><div class="cs-result-bar"><div class="cs-result-fill" data-w="100" style="background:var(--grd)"></div></div></div></div>
+      </div>
+      <div>
+        <div class="cs-chart-card" style="margin-bottom:1rem;">
+          <div class="cs-chart-title">Paid CTR Growth Over 12 Months (%)</div>
+          <canvas id="cs3_ctr" style="max-height:130px;"></canvas>
+        </div>
+        <div class="cs-chart-card">
+          <div class="cs-chart-title">Organic Sessions Year-on-Year Growth</div>
+          <canvas id="cs3_organic" style="max-height:130px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-learnings r">
+      <h4>💡 Key Learnings from This Campaign</h4>
+      <div class="cs-learnings-grid">
+        <div class="cs-learning"><div class="cs-learning-emoji">📏</div><div class="cs-learning-text"><b>Measurement first, always.</b> You cannot optimise what you don't measure. Setting up UTM tracking and GA4 in month 1 paid dividends for 3 years of decisions.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🔬</div><div class="cs-learning-text"><b>Test one thing at a time.</b> Changing ad copy AND audience AND landing page simultaneously tells you nothing. Isolate variables, test systematically, scale winners.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">📅</div><div class="cs-learning-text"><b>Content timing beats content volume.</b> Posting less, but at the right time and in the right format, outperformed daily posting by 30% on engagement.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🤝</div><div class="cs-learning-text"><b>Marketing and sales alignment is a multiplier.</b> Sharing lead quality scores with sales created a feedback loop that improved both targeting and conversion.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">⚙️</div><div class="cs-learning-text"><b>Process is a competitive advantage.</b> A good campaign brief template saved more time than any tool. Investing in process once pays back every single week.</div></div>
+        <div class="cs-learning"><div class="cs-learning-emoji">🌱</div><div class="cs-learning-text"><b>Long game thinking wins.</b> The SEO work in year 2 compounded into year 3 traffic. The best marketing decisions are the ones that build assets, not just clicks.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="w">
     <div class="ctbox r">
@@ -839,32 +1598,59 @@ footer p{font-size:.72rem;color:var(--dim);}
 const io=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*70);io.unobserve(e.target);}});},{threshold:.06});
 document.querySelectorAll('.r').forEach(el=>io.observe(el));
 // Counters
-function ct(id,target,dur=1800){const el=document.getElementById(id);if(!el)return;const s=performance.now();(function t(now){const p=Math.min((now-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=target>=4?(e*target/1000).toFixed(1):Math.floor(e*target);if(p<1)requestAnimationFrame(t);})(performance.now());}
-new IntersectionObserver(es=>{if(es[0].isIntersecting){ct('m1',100);ct('m2',4);ct('m3',45);ct('m4',30);}},{threshold:.5}).observe(document.querySelector('.md'));
+function ct(id,target,decimals,dur=1800){const el=document.getElementById(id);if(!el)return;const s=performance.now();(function tick(now){const p=Math.min((now-s)/dur,1),ease=1-Math.pow(1-p,3),val=ease*target;el.textContent=decimals?val.toFixed(decimals):Math.floor(val);if(p<1)requestAnimationFrame(tick);})(performance.now());}
+new IntersectionObserver(es=>{if(es[0].isIntersecting){ct('m1',100,0);ct('m2',4,1);ct('m3',45,0);ct('m4',30,0);}},{threshold:.5}).observe(document.querySelector('.md'));
 // Chart defaults
-Chart.defaults.color='#8896B3';Chart.defaults.borderColor='rgba(255,255,255,0.05)';Chart.defaults.font.family="'Plus Jakarta Sans',sans-serif";Chart.defaults.font.size=10;
+Chart.defaults.color='#8896B3';Chart.defaults.borderColor='rgba(255,255,255,0.08)';Chart.defaults.font.family="'Plus Jakarta Sans',sans-serif";Chart.defaults.font.size=10;
 // Lead volume
-new Chart(document.getElementById('lc1'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('lc1'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'}},x:{grid:{display:false}}}}});
 // CPL trend
-new Chart(document.getElementById('lc3'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,104],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline',data:[148,148,148,148,148,148,148,148,148],borderColor:'rgba(255,107,157,.3)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('lc3'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,104],borderColor:'#00E5B0',backgroundColor:'rgba(255,255,255,.05)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline',data:[148,148,148,148,148,148,148,148,148],borderColor:'rgba(79,142,255,.25)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7}}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'}},x:{grid:{display:false}}}}});
 // GA4 chart (white bg)
 Chart.defaults.color='#5f6368';
-new Chart(document.getElementById('ga4chart'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Sessions',data:[22000,24500,26000,28500,30000,33000,36000,38420],borderColor:'#1a73e8',backgroundColor:'rgba(26,115,232,.08)',tension:.4,pointRadius:2,fill:true},{label:'Conversions×20',data:[800,900,980,1100,1200,1480,1680,1843].map(v=>v*20),borderColor:'#34a853',backgroundColor:'rgba(52,168,83,.06)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:7,padding:6,font:{size:9}}}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false},ticks:{font:{size:9}}}}}});
+new Chart(document.getElementById('ga4chart'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Sessions',data:[22000,24500,26000,28500,30000,33000,36000,38420],borderColor:'#1a73e8',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:2,fill:true},{label:'Conversions×20',data:[800,900,980,1100,1200,1480,1680,1843].map(v=>v*20),borderColor:'#34a853',backgroundColor:'rgba(52,168,83,.06)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:7,padding:6,font:{size:9}}}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false},ticks:{font:{size:9}}}}}});
 Chart.defaults.color='#8896B3';
 // LinkedIn chart
-new Chart(document.getElementById('li_chart'),{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[{label:'Leads',data:[95,140,165,180,210,240,260,352],borderColor:'#0077b5',backgroundColor:'rgba(0,119,181,.1)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},color:'#666'}},x:{grid:{display:false},ticks:{font:{size:9},color:'#666'}}}}});
+new Chart(document.getElementById('li_chart'),{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[{label:'Leads',data:[95,140,165,180,210,240,260,352],borderColor:'#1a73e8',backgroundColor:'rgba(26,115,232,.08)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},color:'#666'}},x:{grid:{display:false},ticks:{font:{size:9},color:'#666'}}}}});
 // SEO mini
 Chart.defaults.color='#5f6368';
 new Chart(document.getElementById('seo_mini'),{type:'bar',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8'],datasets:[{label:'Sessions',data:[8200,10200,11500,13100,14800,16200,18100,21800],backgroundColor:'rgba(52,168,83,.7)',borderRadius:3,borderSkipped:false},{label:'Baseline',data:[8200,8400,8600,8800,9000,9100,9200,9300],backgroundColor:'rgba(0,0,0,.08)',borderRadius:3,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:7,padding:6,font:{size:9}}}},scales:{y:{grid:{color:'rgba(0,0,0,.06)'},ticks:{font:{size:9},callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false},ticks:{font:{size:9}}}}}});
 Chart.defaults.color='#8896B3';
 // Looker chart
-new Chart(document.getElementById('lk_chart'),{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{label:'Leads',data:[48,65,72,58,81,42,38],borderColor:'#7289da',backgroundColor:'rgba(114,137,218,.1)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.06)'},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}},x:{grid:{display:false},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}}}}});
+new Chart(document.getElementById('lk_chart'),{type:'line',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{label:'Leads',data:[48,65,72,58,81,42,38],borderColor:'#00E5B0',backgroundColor:'rgba(26,115,232,.08)',tension:.4,pointRadius:2,fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.1)'},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}},x:{grid:{display:false},ticks:{font:{size:9},color:'rgba(255,255,255,.4)'}}}}});
 // CPL bar
-new Chart(document.getElementById('cplBar'),{type:'bar',data:{labels:['Google Ads','LinkedIn Ads','Meta Ads','Email Marketing'],datasets:[{label:'Best CPL ($)',data:[38,42,28,12],backgroundColor:['rgba(0,229,176,.7)','rgba(79,142,255,.7)','rgba(255,184,48,.7)','rgba(255,107,157,.7)'],borderRadius:4,borderSkipped:false}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>'$'+v}},y:{grid:{display:false}}}}});
+new Chart(document.getElementById('cplBar'),{type:'bar',data:{labels:['Google Ads','LinkedIn Ads','Meta Ads','Email Marketing'],datasets:[{label:'Best CPL ($)',data:[14,22,11,8],backgroundColor:['rgba(79,142,255,.7)','rgba(79,142,255,.7)','rgba(255,107,157,.7)','rgba(255,107,157,.7)'],borderRadius:4,borderSkipped:false}]},options:{responsive:true,indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(79,142,255,.07)'},ticks:{callback:v=>'$'+v}},y:{grid:{display:false}}}}});
 // Funnel anim
 new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.fn-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*110));}},{threshold:.3}).observe(document.getElementById('fnS'));
 // Progress bars
 new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('.chf').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*90));document.querySelectorAll('.ecf').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*90));}},{threshold:.3}).observe(document.querySelector('.chg'));
+
+
+// Brand charts
+new Chart(document.getElementById('brand_followers'),{type:'line',data:{labels:['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],datasets:[{label:'Followers',data:[2950,3200,3600,4100,4800,5600,6500,7800,9200,10800,12400],borderColor:'#0077b5',backgroundColor:'rgba(0,119,181,.08)',tension:.4,pointRadius:3,pointBackgroundColor:'#0077b5',fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('brand_impressions'),{type:'bar',data:{labels:['Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Impressions',data:[85000,120000,145000,180000,210000,255000,290000,320000,370000,425000],backgroundColor:'rgba(255,107,157,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+new Chart(document.getElementById('brand_search'),{type:'line',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10'],datasets:[{label:'Brand Search Index',data:[20,23,28,35,45,58,72,85,90,96],borderColor:'#4F8EFF',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:4,pointBackgroundColor:'#4F8EFF',fill:true},{label:'Baseline',data:[20,20,20,20,20,20,20,20,20,20],borderColor:'rgba(255,255,255,.2)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v}},x:{grid:{display:false}}}}});
+
+// Case Study Charts
+// CS1: Lead volume
+new Chart(document.getElementById('cs1_leads'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{label:'Leads',data:[310,420,385,510,620,780,940,1060],backgroundColor:'rgba(79,142,255,.75)',borderRadius:5,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'}},x:{grid:{display:false}}}}});
+// CS1: Channel pie
+new Chart(document.getElementById('cs1_channels'),{type:'doughnut',data:{labels:['LinkedIn Ads','Google Ads','Meta Ads','Email'],datasets:[{data:[38,28,22,12],backgroundColor:['#4F8EFF','#00E5B0','#FF6B9D','#FFB830'],borderWidth:0,hoverOffset:4}]},options:{responsive:true,cutout:'65%',plugins:{legend:{position:'right',labels:{boxWidth:9,padding:8,font:{size:10}}}}}});
+// CS2: CPL
+new Chart(document.getElementById('cs2_cpl'),{type:'line',data:{labels:['Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Oct'],datasets:[{label:'CPL ($)',data:[148,142,135,128,118,112,106,105,103,104],borderColor:'#00E5B0',backgroundColor:'rgba(0,229,176,.07)',tension:.4,pointRadius:3,pointBackgroundColor:'#00E5B0',fill:true},{label:'Baseline ($148)',data:[148,148,148,148,148,148,148,148,148,148],borderColor:'rgba(255,107,157,.35)',borderDash:[4,3],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}});
+// CS2: SEO
+new Chart(document.getElementById('cs2_seo'),{type:'bar',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8'],datasets:[{label:'After SEO',data:[8200,10200,11500,13100,14800,16200,18100,21800],backgroundColor:'rgba(79,142,255,.75)',borderRadius:4,borderSkipped:false},{label:'Baseline',data:[8200,8400,8600,8800,9000,9100,9200,9300],backgroundColor:'rgba(255,255,255,.08)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{labels:{boxWidth:8,padding:7,font:{size:10}}}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+// CS3: CTR growth
+new Chart(document.getElementById('cs3_ctr'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],datasets:[{label:'CTR %',data:[1.8,1.9,2.0,2.1,2.15,2.2,2.3,2.35,2.4,2.45,2.5,2.52],borderColor:'#4F8EFF',backgroundColor:'rgba(79,142,255,.08)',tension:.4,pointRadius:3,pointBackgroundColor:'#4F8EFF',fill:true}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(79,142,255,.07)'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
+// CS3: Organic
+new Chart(document.getElementById('cs3_organic'),{type:'bar',data:{labels:['Q1 Y1','Q2 Y1','Q3 Y1','Q4 Y1','Q1 Y2','Q2 Y2','Q3 Y2','Q4 Y2'],datasets:[{label:'Sessions',data:[18000,19200,20800,22500,24000,26500,28800,30200],backgroundColor:'rgba(0,229,176,.7)',borderRadius:4,borderSkipped:false}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}},x:{grid:{display:false}}}}});
+// Case study result bar animation
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.cs-result-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}});},{threshold:.3}).observe(document.querySelector('.cs-section'));
+// Observe all cs-sections for result bars
+document.querySelectorAll('.cs-section').forEach(sec=>{
+  new IntersectionObserver(es=>{if(es[0].isIntersecting){es[0].target.querySelectorAll('.cs-result-fill').forEach((b,i)=>setTimeout(()=>b.style.width=b.dataset.w+'%',i*80));}},{threshold:.2}).observe(sec);
+});
+
 </script>
 </body>
 </html>
